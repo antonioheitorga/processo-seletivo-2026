@@ -119,8 +119,3 @@ Limpeza via regex: remoção de caracteres de controle, hifenização de quebra 
 
 ---
 
-A todos, desejamos um bom projeto, e boa sorte.
-
-Atenciosamente,
-
-Caio Johnston, Gabriel Mattos, Giovanni Braga, e Isaac Elgrably.
