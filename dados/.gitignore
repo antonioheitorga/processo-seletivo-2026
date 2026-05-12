@@ -1,0 +1,11 @@
+# Diretórios gerados pela pipeline (recriar com pipeline.py)
+extracted/
+processed/
+chunks/
+vectorstore/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
