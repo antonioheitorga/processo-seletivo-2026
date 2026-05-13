@@ -111,11 +111,106 @@ Limpeza via regex: remoção de caracteres de controle, hifenização de quebra 
 - Total indexado: **4.288 chunks** (chunks com ≥ 30 chars)
 - Tempo de ingestão: ~82s em hardware local
 
-### LLM para geração (próxima etapa)
-`llama3.2` ou `gemma3:4b` via Ollama — ambos já disponíveis localmente.
+### LLM para geração
+**`llama3.1:8b`** via Ollama local (RTX 4090, 24GB VRAM). Zero custo de API, ambiente reproduzível via Docker. Troca de modelo é uma linha no `.env`.
 
 ---
 
+## Sistema RAG Multiagente
 
----
+### Sprint 3 — Agente Retriever
 
+Implementado em `agents/retriever.py`, responsável por:
+- executar busca vetorial no ChromaDB (`dados/vectorstore`)
+- ler `RETRIEVER_THRESHOLD` do `.env`
+- retornar `retriever_result` com os chunks relevantes
+
+Variáveis de ambiente relevantes:
+- `RETRIEVER_THRESHOLD` (default: `0.30`)
+- `RETRIEVER_TOP_K` (default: `5`)
+- `CHROMA_COLLECTION` (default: `fia_2026_regulations`)
+- `EMBED_MODEL` (default: `nomic-embed-text`)
+
+Formato de saída no estado:
+- `retriever_result.query`
+- `retriever_result.threshold`
+- `retriever_result.top_k`
+- `retriever_result.total_hits`
+- `retriever_result.hits` (`content`, `score`, `metadata`)
+
+### Pré-requisitos
+
+- Python 3.11+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado e rodando
+- Driver NVIDIA atualizado (para GPU passthrough no Docker)
+
+### 1. Instalar dependências
+
+```bash
+pip install -r requirements.txt
+```
+
+### 2. Subir o Ollama via Docker
+
+```bash
+# Sobe o container em background
+docker compose up -d ollama
+
+# Confirma que está rodando (deve aparecer "running")
+docker compose ps
+
+# Baixa os modelos (primeira vez — llama3.1:8b ~4.7GB, nomic-embed-text ~274MB)
+docker exec -it f1-rag-ollama ollama pull llama3.1:8b
+docker exec -it f1-rag-ollama ollama pull nomic-embed-text
+
+# Testa que o LLM responde
+docker exec -it f1-rag-ollama ollama run llama3.1:8b "say hi in one word"
+```
+
+### 3. Configurar variáveis de ambiente
+
+```bash
+cp .env.example .env
+```
+
+O `.env.example` já vem com os valores padrão configurados. Preencha apenas `TAVILY_API_KEY` quando for usar o agente de busca web.
+
+### 4. Rodar os testes
+
+#### Testes rápidos — sem dependências externas (mock)
+
+```bash
+pytest tests/ -v
+```
+
+Esses testes não precisam de Ollama rodando. Usam mocks e executam em menos de 1 segundo.
+
+Saída esperada:
+
+```
+tests/test_reformulator.py::test_reformulate_estrutura_saida PASSED
+tests/test_reformulator.py::test_reformulate_strip_aplica PASSED
+tests/test_reformulator.py::test_reformulate_appenda_trace_existente PASSED
+3 passed, 1 deselected
+```
+
+#### Testes de integração — requerem Ollama rodando
+
+```bash
+pytest tests/ -m integration -v
+```
+
+Esses testes chamam o LLM real. Confirme que o container está ativo (`docker compose ps`) antes de rodar.
+
+Saída esperada:
+
+```
+tests/test_reformulator.py::test_reformulate_integracao_ollama PASSED
+1 passed
+```
+
+#### Rodar todos os testes de uma vez
+
+```bash
+pytest tests/ -m "not integration or integration" -v
+```

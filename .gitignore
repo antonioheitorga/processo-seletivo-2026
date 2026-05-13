@@ -22,3 +22,8 @@ traces/
 CLAUDE.md
 context.md
 sessao.md
+
+# Local data placeholders
+**/.gitignore
+.env
+**/.env
