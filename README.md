@@ -3,7 +3,7 @@
 ## Candidatos
 
 | Nome | WhatsApp |
-|------|--------|----------|
+|------|----------|
 | Wisley Gabriel | +55 91 98225-0731 |
 | Antonio Heitor | +55 91 98129-1004 |
 
