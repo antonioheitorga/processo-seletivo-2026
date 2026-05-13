@@ -17,8 +17,14 @@ A **pipeline de ingestão de conhecimento** foi concluída. O projeto constrói 
 
 ```
 PDF → Extração → Limpeza → Chunking → Embeddings → ChromaDB ✅
-Sistema Multiagente RAG                                       🔄 em desenvolvimento
+Reformulador                                                  ✅
+Retriever                                                     ✅
+Web Searcher                                                  ✅
+Gerador + Orquestrador                                        🔄 em desenvolvimento
+Interface Streamlit                                           🔜
 ```
+
+📐 Arquitetura completa documentada em [docs/architecture.md](docs/architecture.md).
 
 ### Estrutura do projeto
 
@@ -37,6 +43,22 @@ dados/
 ```
 
 Os diretórios `extracted/`, `processed/`, `chunks/` e `vectorstore/` são gerados automaticamente pela pipeline e estão no `.gitignore`.
+
+```
+agents/
+├── reformulator.py    # Reescreve a query para busca semântica
+├── retriever.py       # Busca vetorial no ChromaDB
+└── web_searcher.py    # Fallback via Tavily quando o corpus não tem a resposta
+
+tests/
+├── test_reformulator.py
+├── test_retriever.py
+├── test_web_searcher.py
+└── conftest.py        # Carrega .env antes dos testes
+
+docs/
+└── architecture.md    # Diagrama do fluxo + contratos dos agentes
+```
 
 ---
 
