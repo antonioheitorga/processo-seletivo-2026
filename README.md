@@ -2,10 +2,10 @@
 
 ## Candidatos
 
-| Nome | Trilha | WhatsApp |
+| Nome | WhatsApp |
 |------|--------|----------|
-| Wisley Gabriel | Trilha de Dados — Sistema Agêntico de IA | +55 91 98225-0731 |
-| Antonio Heitor | Trilha de Dados — Sistema Agêntico de IA | +55 91 98129-1004 |
+| Wisley Gabriel | +55 91 98225-0731 |
+| Antonio Heitor | +55 91 98129-1004 |
 
 ---
 
