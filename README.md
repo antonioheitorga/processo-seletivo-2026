@@ -118,6 +118,26 @@ Limpeza via regex: remoção de caracteres de controle, hifenização de quebra 
 
 ## Sistema RAG Multiagente
 
+### Sprint 3 — Agente Retriever
+
+Implementado em `agents/retriever.py`, responsável por:
+- executar busca vetorial no ChromaDB (`dados/vectorstore`)
+- ler `RETRIEVER_THRESHOLD` do `.env`
+- retornar `retriever_result` com os chunks relevantes
+
+Variáveis de ambiente relevantes:
+- `RETRIEVER_THRESHOLD` (default: `0.30`)
+- `RETRIEVER_TOP_K` (default: `5`)
+- `CHROMA_COLLECTION` (default: `fia_2026_regulations`)
+- `EMBED_MODEL` (default: `nomic-embed-text`)
+
+Formato de saída no estado:
+- `retriever_result.query`
+- `retriever_result.threshold`
+- `retriever_result.top_k`
+- `retriever_result.total_hits`
+- `retriever_result.hits` (`content`, `score`, `metadata`)
+
 ### Pré-requisitos
 
 - Python 3.11+
