@@ -20,7 +20,8 @@ PDF → Extração → Limpeza → Chunking → Embeddings → ChromaDB ✅
 Reformulador                                                  ✅
 Retriever                                                     ✅
 Web Searcher                                                  ✅
-Gerador + Orquestrador                                        🔄 em desenvolvimento
+Gerador                                                       ✅
+Orquestrador                                                  🔄 em desenvolvimento
 Interface Streamlit                                           🔜
 ```
 
@@ -47,13 +48,16 @@ Os diretórios `extracted/`, `processed/`, `chunks/` e `vectorstore/` são gerad
 ```
 agents/
 ├── reformulator.py    # Reescreve a query para busca semântica
-├── retriever.py       # Busca vetorial no ChromaDB
-└── web_searcher.py    # Fallback via Tavily quando o corpus não tem a resposta
+├── retriever.py       # Busca vetorial no ChromaDB com controle de confiança
+├── web_searcher.py    # Fallback via Tavily quando o corpus não é suficiente
+└── generator.py       # Gera resposta final com contexto corpus/web
 
 tests/
 ├── test_reformulator.py
 ├── test_retriever.py
+├── test_retriever_integration.py
 ├── test_web_searcher.py
+├── test_generator.py
 └── conftest.py        # Carrega .env antes dos testes
 
 docs/
@@ -68,27 +72,52 @@ docs/
 
 - Python 3.11+
 - [Ollama](https://ollama.com) instalado e rodando localmente
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (opcional para subir Ollama via container)
 
 ### 1. Instalar dependências Python
 
+Na raiz do projeto (`processo-seletivo-2026/`):
+
 ```bash
-cd dados/
 python3 -m pip install -r requirements.txt
 ```
 
-### 2. Baixar o modelo de embedding
+### 2. Subir Ollama e baixar modelos
+
+Opção A — Ollama local:
 
 ```bash
+ollama pull llama3.1:8b
 ollama pull nomic-embed-text
 ```
 
-### 3. Executar a pipeline completa
+Opção B — Docker Compose:
 
 ```bash
+docker compose up -d ollama
+docker compose ps
+docker exec -it f1-rag-ollama ollama pull llama3.1:8b
+docker exec -it f1-rag-ollama ollama pull nomic-embed-text
+```
+
+### 3. Configurar variáveis de ambiente
+
+```bash
+cp .env.example .env
+```
+
+Preencha especialmente:
+- `TAVILY_API_KEY` para busca web
+- parâmetros de Retriever (`RETRIEVER_THRESHOLD`, `RETRIEVER_TOP_K`) se necessário
+
+### 4. Executar pipeline de dados (opcional para rebuild da base vetorial)
+
+```bash
+cd dados/
 python3 pipeline.py
 ```
 
-Isso executa automaticamente os 6 passos em sequência:
+Isso executa os 6 passos em sequência:
 
 | Passo | Script | O que faz |
 |-------|--------|-----------|
@@ -99,146 +128,112 @@ Isso executa automaticamente os 6 passos em sequência:
 | 5 | `05_embed_ingest.py` | Gera embeddings e indexa no ChromaDB com metadados |
 | 6 | `06_verify.py` | Valida o vector store com consultas semânticas de teste |
 
-### 4. Executar passos individuais (opcional)
+Rodar passos individuais:
 
 ```bash
-python3 pipeline.py --from 5   # re-ingere no ChromaDB sem re-extrair
-python3 pipeline.py --only 6   # só verifica o estado atual
+python3 pipeline.py --from 5
+python3 pipeline.py --only 6
 ```
-
----
-
-## Decisões Técnicas
-
-### Corpus
-6 documentos regulatórios da FIA F1 2026 (Sections A–F), totalizando 590 páginas e ~1,5M de caracteres. Todos renomeados para padrão `snake_case`.
-
-### Extração
-**pdfplumber** — escolhido sobre PyPDF2 por preservar melhor a estrutura de texto em documentos técnicos com tabelas e layout complexo.
-
-### Pré-processamento
-Limpeza via regex: remoção de caracteres de controle, hifenização de quebra de linha, rodapés numéricos e linhas decorativas. Normalização de espaços e quebras consecutivas.
-
-### Chunking
-**RecursiveCharacterTextSplitter** (LangChain) com `chunk_size=512` e `chunk_overlap=64`. Testadas 4 configurações (256, 512, 1024, 2048 chars) — 512 oferece o melhor equilíbrio entre granularidade e contexto para RAG.
-
-- Total de chunks: **4.591** distribuídos em 6 arquivos
-
-### Embeddings
-**`nomic-embed-text`** via Ollama (local, 274 MB). Escolhido sobre `all-MiniLM-L6-v2` por ter context window de 8.192 tokens vs. 512, e sobre OpenAI por ser 100% local sem custo por token.
-
-### Vector Store
-**ChromaDB** com similaridade cosine, client persistente em `vectorstore/`. Cada chunk indexado com metadados: `source_file`, `section`, `chunk_id`, `char_count`.
-
-- Total indexado: **4.288 chunks** (chunks com ≥ 30 chars)
-- Tempo de ingestão: ~82s em hardware local
-
-### LLM para geração
-**`llama3.1:8b`** via Ollama local (RTX 4090, 24GB VRAM). Zero custo de API, ambiente reproduzível via Docker. Troca de modelo é uma linha no `.env`.
 
 ---
 
 ## Sistema RAG Multiagente
 
-### Sprint 3 — Agente Retriever
+### Sprint 1 — Reformulador (`agents/reformulator.py`)
+Responsável por reescrever a query para melhorar recuperação semântica no corpus FIA 2026.
 
-Implementado em `agents/retriever.py`, responsável por:
-- executar busca vetorial no ChromaDB (`dados/vectorstore`)
-- ler `RETRIEVER_THRESHOLD` do `.env`
-- calcular `best_score` (melhor score encontrado entre os resultados)
-- definir `fallback_to_web` quando `best_score < RETRIEVER_THRESHOLD`
-- retornar aviso de confiança (`confidence_warning`) quando a recuperação estiver abaixo do mínimo esperado
-- retornar `retriever_result` com os chunks relevantes
+Saída principal:
+- `query_reformulada`
+- `trace` (append)
 
-Variáveis de ambiente relevantes:
+### Sprint 3 — Retriever (`agents/retriever.py`)
+Responsável por busca vetorial no ChromaDB com avaliação de confiança.
+
+Leituras:
+- `query_reformulada`
+
+Saída (`retriever_result`):
+- `query`
+- `threshold`
+- `top_k`
+- `best_score`
+- `fallback_to_web`
+- `confidence_warning`
+- `total_hits`
+- `hits` (`content`, `score`, `metadata`)
+
+Também appenda em `trace`.
+
+### Sprint 3 — Web Searcher (`agents/web_searcher.py`)
+Executa fallback de busca web via Tavily quando necessário.
+
+Saída (`web_result`):
+- `resultados` (`titulo`, `trecho`, `url`)
+- `encontrou`
+
+Também appenda em `trace`.
+
+### Sprint 4 — Gerador (`agents/generator.py`)
+Gera resposta final com contexto do corpus e/ou web.
+
+Entradas:
+- `query_original` / `query_reformulada`
+- `retriever_result`
+- `web_result` (com compatibilidade para `resultados_web` / `encontrou_web`)
+
+Saídas:
+- `generator_result`:
+  - `answer`
+  - `sources_used` (`corpus`, `web`, `hybrid`, `none`)
+  - `low_confidence`
+  - `confidence_notice`
+- campos compatíveis no state:
+  - `resposta`
+  - `fonte`
+  - `low_confidence`
+  - `confidence_warning`
+- `trace` (append)
+
+---
+
+## Variáveis de ambiente relevantes
+
+- `OLLAMA_BASE_URL` (default: `http://localhost:11434`)
+- `LLM_MODEL` (default: `llama3.1:8b`)
+- `EMBED_MODEL` (default: `nomic-embed-text`)
+- `CHROMA_COLLECTION` (default: `fia_2026_regulations`)
 - `RETRIEVER_THRESHOLD` (default: `0.30`)
 - `RETRIEVER_TOP_K` (default: `5`)
-- `CHROMA_COLLECTION` (default: `fia_2026_regulations`)
-- `EMBED_MODEL` (default: `nomic-embed-text`)
+- `TAVILY_API_KEY` (obrigatória para web search)
 
-Formato de saída no estado:
-- `retriever_result.query`
-- `retriever_result.threshold`
-- `retriever_result.top_k`
-- `retriever_result.best_score`
-- `retriever_result.fallback_to_web`
-- `retriever_result.confidence_warning`
-- `retriever_result.total_hits`
-- `retriever_result.hits` (`content`, `score`, `metadata`)
+---
 
-### Pré-requisitos
+## Testes
 
-- Python 3.11+
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado e rodando
-- Driver NVIDIA atualizado (para GPU passthrough no Docker)
-
-### 1. Instalar dependências
+### Testes rápidos (unitários/focados)
 
 ```bash
-pip install -r requirements.txt
+pytest -q tests/test_generator.py tests/test_retriever.py tests/test_web_searcher.py
 ```
 
-### 2. Subir o Ollama via Docker
+### Suite completa
 
 ```bash
-# Sobe o container em background
-docker compose up -d ollama
-
-# Confirma que está rodando (deve aparecer "running")
-docker compose ps
-
-# Baixa os modelos (primeira vez — llama3.1:8b ~4.7GB, nomic-embed-text ~274MB)
-docker exec -it f1-rag-ollama ollama pull llama3.1:8b
-docker exec -it f1-rag-ollama ollama pull nomic-embed-text
-
-# Testa que o LLM responde
-docker exec -it f1-rag-ollama ollama run llama3.1:8b "say hi in one word"
+pytest -q
 ```
 
-### 3. Configurar variáveis de ambiente
+### Integração
 
 ```bash
-cp .env.example .env
+pytest -q -m integration
 ```
 
-O `.env.example` já vem com os valores padrão configurados. Preencha apenas `TAVILY_API_KEY` quando for usar o agente de busca web.
+---
 
-### 4. Rodar os testes
+## Segurança e versionamento
 
-#### Testes rápidos — sem dependências externas (mock)
-
-```bash
-pytest tests/ -v
-```
-
-Esses testes não precisam de Ollama rodando. Usam mocks e executam em menos de 1 segundo.
-
-Saída esperada:
-
-```
-tests/test_reformulator.py::test_reformulate_estrutura_saida PASSED
-tests/test_reformulator.py::test_reformulate_strip_aplica PASSED
-tests/test_reformulator.py::test_reformulate_appenda_trace_existente PASSED
-3 passed, 1 deselected
-```
-
-#### Testes de integração — requerem Ollama rodando
-
-```bash
-pytest tests/ -m integration -v
-```
-
-Esses testes chamam o LLM real. Confirme que o container está ativo (`docker compose ps`) antes de rodar.
-
-Saída esperada:
-
-```
-tests/test_reformulator.py::test_reformulate_integracao_ollama PASSED
-1 passed
-```
-
-#### Rodar todos os testes de uma vez
-
-```bash
-pytest tests/ -m "not integration or integration" -v
-```
+- **Nunca subir dados sensíveis**:
+  - `.env`
+  - chaves de API
+  - arquivos temporários locais
+- Manter `.gitignore` corretamente configurado para impedir versionamento acidental de segredos.
