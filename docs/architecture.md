@@ -153,7 +153,7 @@ flowchart TD
 | `EMBEDDING_MODEL` | `nomic-embed-text` | Modelo de embeddings para o Retriever |
 | `CHROMA_PERSIST_DIR` | `./dados/vectorstore` | Caminho do vector store persistente |
 | `CHROMA_COLLECTION` | `fia_2026_regulations` | Nome da coleção no ChromaDB |
-| `RETRIEVER_THRESHOLD` | `0.80` | Similaridade mínima para usar um chunk |
+| `RETRIEVER_THRESHOLD` | `0.75` | Similaridade mínima para usar um chunk |
 | `RETRIEVER_TOP_K` | `5` | Número máximo de chunks retornados |
 | `TAVILY_API_KEY` | — | Chave da API Tavily (obrigatória para web search) |
 | `TRACES_DIR` | `./traces` | Diretório para export de traces JSON |
