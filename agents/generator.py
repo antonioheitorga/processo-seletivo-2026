@@ -39,7 +39,18 @@ def _build_contexts(state: dict) -> tuple[str, str, str, bool, str]:
         raise ValueError("State inválido: informe 'query_reformulada' ou 'query_original'.")
 
     retriever_result = state.get("retriever_result") or {}
-    web_result = state.get("web_result") or {}
+
+    web_result = state.get("web_result")
+    if web_result is None:
+        resultados = state.get("resultados_web")
+        encontrou = state.get("encontrou_web")
+        if resultados is not None or encontrou is not None:
+            web_result = {
+                "resultados": resultados or [],
+                "encontrou": bool(encontrou),
+            }
+        else:
+            web_result = {}
 
     hits = retriever_result.get("hits", [])
     corpus_context = "\n\n".join([h.get("content", "") for h in hits if h.get("content")]).strip()
@@ -96,6 +107,9 @@ def generate(state: dict) -> dict:
 
     confidence_notice = confidence_warning if low_confidence else None
 
+    resposta = answer
+    fonte = sources_used
+
     generator_result = {
         "answer": answer,
         "sources_used": sources_used,
@@ -105,12 +119,16 @@ def generate(state: dict) -> dict:
 
     return {
         "generator_result": generator_result,
+        "resposta": resposta,
+        "fonte": fonte,
+        "low_confidence": low_confidence,
+        "confidence_warning": confidence_notice,
         "trace": state.get("trace", [])
         + [
             {
                 "agente": "generator",
                 "entrada": query,
-                "saida": f"answer gerada com fonte={sources_used}, low_confidence={low_confidence}",
+                "saida": f"resposta gerada com fonte={fonte}, low_confidence={low_confidence}",
                 "timestamp": datetime.now(timezone.utc).isoformat(),
                 "latencia_ms": int((time.time() - inicio) * 1000),
             }

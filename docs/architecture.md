@@ -57,21 +57,26 @@ flowchart TD
 | `query_reformulada` | `str` | Reformulador | Retriever, Web Searcher |
 | `retriever_result` | `dict` | Retriever | Orquestrador, Gerador |
 | `web_result` | `dict\|None` | Web Searcher | Orquestrador, Gerador |
-| `fonte` | `str` | Orquestrador | Gerador, Streamlit |
-| `low_confidence` | `bool` | Orquestrador | Gerador, Streamlit |
+| `resultados_web` | `list[dict]\|None` | Orquestrador/Web Searcher (compat) | Gerador |
+| `encontrou_web` | `bool\|None` | Orquestrador/Web Searcher (compat) | Gerador |
+| `fonte` | `str` | Orquestrador ou Gerador | Streamlit |
+| `low_confidence` | `bool` | Orquestrador ou Gerador | Streamlit |
+| `confidence_warning` | `str\|None` | Retriever ou Gerador | Streamlit |
 | `resposta` | `str` | Gerador | Orquestrador (END), Streamlit |
+| `generator_result` | `dict` | Gerador | Orquestrador, Streamlit |
 | `trace` | `list[dict]` | Todos (append) | Streamlit, export JSON |
 
 ### `retriever_result` — shape completo
 
 ```python
 {
-    "query":        str,    # query que foi buscada
-    "threshold":    float,  # valor do threshold usado
-    "top_k":        int,    # número máximo de resultados pedidos
-    "total_hits":   int,    # quantos chunks passaram o threshold
-    "melhor_score": float,  # score do chunk mais relevante (0.0 se nenhum)
-    "fallback":     bool,   # True se nenhum chunk passou o threshold
+    "query":              str,       # query que foi buscada
+    "threshold":          float,     # valor do threshold usado
+    "top_k":              int,       # número máximo de resultados pedidos
+    "total_hits":         int,       # quantos chunks passaram o threshold
+    "best_score":         float,     # score do chunk mais relevante (0.0 se nenhum)
+    "fallback_to_web":    bool,      # True se nenhum chunk passou o threshold
+    "confidence_warning": str|None,  # aviso quando baixa confiança
     "hits": [
         {
             "content":  str,   # texto do chunk
@@ -118,7 +123,7 @@ flowchart TD
 | **Reformulador** | `agents/reformulator.py` | ✅ llama3.1:8b | `query_original` | `query_reformulada`, `trace` |
 | **Retriever** | `agents/retriever.py` | ❌ | `query_reformulada` | `retriever_result`, `trace` |
 | **Web Searcher** | `agents/web_searcher.py` | ❌ | `query_reformulada` | `web_result`, `trace` |
-| **Gerador** | `agents/generator.py` | ✅ llama3.1:8b | `query_original`, `retriever_result`, `web_result`, `fonte`, `low_confidence` | `resposta`, `trace` |
+| **Gerador** | `agents/generator.py` | ✅ llama3.1:8b | `query_original/query_reformulada`, `retriever_result`, `web_result` (ou `resultados_web`/`encontrou_web`) | `generator_result`, `resposta`, `fonte`, `low_confidence`, `confidence_warning`, `trace` |
 | **Orquestrador** | `orchestration/orchestrator.py` | ❌ | `retriever_result`, `web_result` | `fonte`, `low_confidence` |
 
 ---
