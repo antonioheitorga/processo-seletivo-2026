@@ -90,3 +90,28 @@ def test_generate_hybrid(mock_prompt_cls, _mock_llm_cls):
 def test_generate_state_invalido():
     with pytest.raises(ValueError, match="State inválido"):
         generate({})
+
+
+@patch("agents.generator.ChatOllama")
+@patch("agents.generator.ChatPromptTemplate")
+def test_generate_preserva_query_original_no_prompt(mock_prompt_cls, _mock_llm_cls):
+    """Garante que o prompt recebe a query_original (idioma do usuário) e a query_reformulada separadas."""
+    chain = mock_prompt_cls.from_template.return_value.__or__.return_value
+    chain.invoke.return_value.content = "O DRS é..."
+
+    state = {
+        "query_original": "O que é DRS?",
+        "query_reformulada": "Drag Reduction System Formula 1 2026 regulations",
+        "retriever_result": {
+            "fallback_to_web": False,
+            "confidence_warning": None,
+            "hits": [{"content": "DRS context.", "score": 0.9, "metadata": {}}],
+        },
+    }
+
+    generate(state)
+
+    # invoke foi chamado com as duas queries separadas
+    invoke_args = chain.invoke.call_args[0][0]
+    assert invoke_args["query_original"] == "O que é DRS?"
+    assert invoke_args["query_reformulada"] == "Drag Reduction System Formula 1 2026 regulations"

@@ -15,8 +15,11 @@ from langchain_ollama import ChatOllama
 
 PROMPT_TEMPLATE = """You are an expert assistant for FIA Formula 1 2026 regulations.
 
-User query:
-{query}
+Original user query (preserve this language in your response):
+{query_original}
+
+Reformulated query (used for retrieval — for your reference only):
+{query_reformulada}
 
 Available context from corpus:
 {corpus_context}
@@ -26,6 +29,7 @@ Available context from web:
 
 Instructions:
 - Answer using only the provided context.
+- Respond in the SAME language as the original user query above.
 - If context is insufficient, clearly say the answer may be uncertain.
 - Prefer corpus context for regulatory details.
 - Keep the answer concise and objective.
@@ -33,10 +37,14 @@ Instructions:
 Final answer:"""
 
 
-def _build_contexts(state: dict) -> tuple[str, str, str, bool, str]:
-    query = (state.get("query_reformulada") or state.get("query_original") or "").strip()
-    if not query:
+def _build_contexts(state: dict) -> tuple[str, str, str, str, bool, str]:
+    query_original = (state.get("query_original") or "").strip()
+    query_reformulada = (state.get("query_reformulada") or query_original).strip()
+    if not query_reformulada:
         raise ValueError("State inválido: informe 'query_reformulada' ou 'query_original'.")
+    if not query_original:
+        # fallback raro: caller passou só query_reformulada, sem original
+        query_original = query_reformulada
 
     retriever_result = state.get("retriever_result") or {}
 
@@ -67,7 +75,7 @@ def _build_contexts(state: dict) -> tuple[str, str, str, bool, str]:
     confidence_warning = retriever_result.get("confidence_warning") or ""
     low_confidence = fallback_to_web
 
-    return query, corpus_context, web_context, low_confidence, confidence_warning
+    return query_original, query_reformulada, corpus_context, web_context, low_confidence, confidence_warning
 
 
 def generate(state: dict) -> dict:
@@ -78,7 +86,7 @@ def generate(state: dict) -> dict:
     """
     inicio = time.time()
 
-    query, corpus_context, web_context, low_confidence, confidence_warning = _build_contexts(state)
+    query_original, query_reformulada, corpus_context, web_context, low_confidence, confidence_warning = _build_contexts(state)
 
     llm = ChatOllama(
         base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
@@ -89,7 +97,8 @@ def generate(state: dict) -> dict:
     chain = ChatPromptTemplate.from_template(PROMPT_TEMPLATE) | llm
     resposta = chain.invoke(
         {
-            "query": query,
+            "query_original": query_original,
+            "query_reformulada": query_reformulada,
             "corpus_context": corpus_context or "N/A",
             "web_context": web_context or "N/A",
         }
@@ -127,7 +136,7 @@ def generate(state: dict) -> dict:
         + [
             {
                 "agente": "generator",
-                "entrada": query,
+                "entrada": query_original,
                 "saida": f"resposta gerada com fonte={fonte}, low_confidence={low_confidence}",
                 "timestamp": datetime.now(timezone.utc).isoformat(),
                 "latencia_ms": int((time.time() - inicio) * 1000),
