@@ -21,8 +21,8 @@ Reformulador                                                  ✅
 Retriever                                                     ✅
 Web Searcher                                                  ✅
 Gerador                                                       ✅
-Orquestrador                                                  🔄 em desenvolvimento
-Interface Streamlit                                           🔜
+Orquestrador                                                  ✅
+Interface Streamlit                                           🔄 em desenvolvimento
 ```
 
 📐 Arquitetura completa documentada em [docs/architecture.md](docs/architecture.md).
@@ -52,12 +52,16 @@ agents/
 ├── web_searcher.py    # Fallback via Tavily quando o corpus não é suficiente
 └── generator.py       # Gera resposta final com contexto corpus/web
 
+orchestration/
+└── orchestrator.py    # Grafo LangGraph com roteamento condicional
+
 tests/
 ├── test_reformulator.py
 ├── test_retriever.py
 ├── test_retriever_integration.py
 ├── test_web_searcher.py
 ├── test_generator.py
+├── test_orchestrator.py
 └── conftest.py        # Carrega .env antes dos testes
 
 docs/
@@ -194,6 +198,34 @@ Saídas:
   - `confidence_warning`
 - `trace` (append)
 
+### Sprint 4 — Orquestrador (`orchestration/orchestrator.py`)
+Monta o grafo LangGraph que conecta os 4 agentes. Roteamento condicional determinístico (sem LLM):
+
+```
+reformulator → retriever → {fallback_to_web?}
+                              ├─ False → generator
+                              └─ True  → web_searcher → generator
+```
+
+Componentes expostos:
+- `GraphState` — TypedDict com todos os campos do estado compartilhado
+- `build_graph()` — monta e compila o grafo
+- `run(query_original, session_id=None)` — helper que dispara o grafo e gera `session_id` automaticamente via `uuid4` se não fornecido
+
+Exemplo de uso:
+
+```python
+from dotenv import load_dotenv
+load_dotenv()
+
+from orchestration.orchestrator import run
+
+resultado = run("What is DRS?")
+print(resultado["fonte"])         # "corpus" | "web" | "hybrid" | "none"
+print(resultado["resposta"])
+print(resultado["trace"])         # lista com entrada de cada agente
+```
+
 ---
 
 ## Variáveis de ambiente relevantes
@@ -202,7 +234,7 @@ Saídas:
 - `LLM_MODEL` (default: `llama3.1:8b`)
 - `EMBED_MODEL` (default: `nomic-embed-text`)
 - `CHROMA_COLLECTION` (default: `fia_2026_regulations`)
-- `RETRIEVER_THRESHOLD` (default: `0.30`)
+- `RETRIEVER_THRESHOLD` (default: `0.70`)
 - `RETRIEVER_TOP_K` (default: `5`)
 - `TAVILY_API_KEY` (obrigatória para web search)
 
