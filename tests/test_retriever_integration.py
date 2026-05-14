@@ -48,6 +48,11 @@ def test_retriever_integracao_chroma_ollama_real(monkeypatch):
     assert isinstance(rr["hits"], list)
     # Em ambiente real, a distância pode vir >1 e o score (1-dist) ficar negativo;
     # o retriever filtra por threshold, podendo resultar em 0 hits mesmo com item indexado.
+    assert "best_score" in rr
+    assert isinstance(rr["best_score"], float)
+    assert "fallback_to_web" in rr
+    assert isinstance(rr["fallback_to_web"], bool)
+    assert "confidence_warning" in rr
     assert "total_hits" in rr
     assert rr["total_hits"] >= 0
 
@@ -109,5 +114,9 @@ def test_retriever_carga_basica_multiplas_consultas(monkeypatch):
         assert isinstance(out["retriever_result"], dict)
         assert "hits" in out["retriever_result"]
         assert isinstance(out["retriever_result"]["hits"], list)
+        assert "best_score" in out["retriever_result"]
+        assert isinstance(out["retriever_result"]["best_score"], float)
+        assert "fallback_to_web" in out["retriever_result"]
+        assert isinstance(out["retriever_result"]["fallback_to_web"], bool)
 
     client.delete_collection(collection_name)

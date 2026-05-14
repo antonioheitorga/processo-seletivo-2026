@@ -64,6 +64,9 @@ def test_retrieve_estrutura_saida(_mock_exists):
     assert rr["query"] == "DRS rules"
     assert rr["threshold"] == 0.5
     assert rr["top_k"] == 5
+    assert rr["best_score"] == 0.9
+    assert rr["fallback_to_web"] is False
+    assert rr["confidence_warning"] is None
     assert rr["total_hits"] == 2
     assert len(rr["hits"]) == 2
     assert rr["hits"][0]["content"] == "doc A"
@@ -113,6 +116,9 @@ def test_retrieve_aplica_threshold(_mock_exists):
         result = retrieve({"query_original": "engine regulations"})
 
     rr = result["retriever_result"]
+    assert rr["best_score"] == 0.8
+    assert rr["fallback_to_web"] is False
+    assert rr["confidence_warning"] is None
     assert rr["total_hits"] == 1
     assert len(rr["hits"]) == 1
     assert rr["hits"][0]["content"] == "doc A"
@@ -169,3 +175,94 @@ def test_retrieve_appenda_trace_existente(_mock_exists):
     assert len(result["trace"]) == 2
     assert result["trace"][0]["agente"] == "reformulator"
     assert result["trace"][1]["agente"] == "retriever"
+
+
+@patch("agents.retriever.Path.exists", return_value=True)
+def test_retrieve_aciona_fallback_quando_best_score_abaixo_threshold(_mock_exists):
+    query_result = {
+        "documents": [["doc low"]],
+        "metadatas": [[{"section": "L"}]],
+        "distances": [[0.35]],  # score: 0.65
+    }
+
+    with patch("builtins.__import__") as mock_import, patch("agents.retriever.os.getenv") as getenv:
+        real_import = __import__
+
+        def _fake_import(name, *args, **kwargs):
+            if name == "chromadb":
+                class _FakeChromadb:
+                    @staticmethod
+                    def PersistentClient(path):
+                        _ = path
+                        return _FakeClient(query_result)
+                return _FakeChromadb
+            if name == "ollama":
+                class _FakeOllama:
+                    @staticmethod
+                    def embeddings(model, prompt):
+                        _ = model
+                        _ = prompt
+                        return {"embedding": [0.9, 0.1]}
+                return _FakeOllama
+            return real_import(name, *args, **kwargs)
+
+        mock_import.side_effect = _fake_import
+        getenv.side_effect = lambda k, d=None: {
+            "RETRIEVER_THRESHOLD": "0.7",
+            "RETRIEVER_TOP_K": "3",
+        }.get(k, d)
+
+        result = retrieve({"query_original": "fallback case"})
+
+    rr = result["retriever_result"]
+    assert rr["best_score"] == 0.65
+    assert rr["fallback_to_web"] is True
+    assert rr["confidence_warning"] is not None
+    assert "abaixo do threshold" in rr["confidence_warning"]
+    assert rr["total_hits"] == 0
+    assert rr["hits"] == []
+
+
+@patch("agents.retriever.Path.exists", return_value=True)
+def test_retrieve_sem_resultados_define_best_score_zero_e_fallback_true(_mock_exists):
+    query_result = {
+        "documents": [[]],
+        "metadatas": [[]],
+        "distances": [[]],
+    }
+
+    with patch("builtins.__import__") as mock_import, patch("agents.retriever.os.getenv") as getenv:
+        real_import = __import__
+
+        def _fake_import(name, *args, **kwargs):
+            if name == "chromadb":
+                class _FakeChromadb:
+                    @staticmethod
+                    def PersistentClient(path):
+                        _ = path
+                        return _FakeClient(query_result)
+                return _FakeChromadb
+            if name == "ollama":
+                class _FakeOllama:
+                    @staticmethod
+                    def embeddings(model, prompt):
+                        _ = model
+                        _ = prompt
+                        return {"embedding": [0.2, 0.8]}
+                return _FakeOllama
+            return real_import(name, *args, **kwargs)
+
+        mock_import.side_effect = _fake_import
+        getenv.side_effect = lambda k, d=None: {
+            "RETRIEVER_THRESHOLD": "0.7",
+            "RETRIEVER_TOP_K": "3",
+        }.get(k, d)
+
+        result = retrieve({"query_original": "no hits case"})
+
+    rr = result["retriever_result"]
+    assert rr["best_score"] == 0.0
+    assert rr["fallback_to_web"] is True
+    assert rr["confidence_warning"] is not None
+    assert rr["total_hits"] == 0
+    assert rr["hits"] == []

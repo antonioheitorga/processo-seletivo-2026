@@ -70,20 +70,31 @@ def retrieve(state: dict) -> dict:
     metas = raw.get("metadatas", [[]])[0]
     dists = raw.get("distances", [[]])[0]
 
-    hits = []
+    scored_results = []
     for doc, meta, dist in zip(docs, metas, dists):
         score = 1 - float(dist)
-        if score >= threshold:
-            hits.append({
-                "content": doc,
-                "score": round(score, 4),
-                "metadata": meta or {},
-            })
+        scored_results.append({
+            "content": doc,
+            "score": round(score, 4),
+            "metadata": meta or {},
+        })
+
+    hits = [item for item in scored_results if item["score"] >= threshold]
+    best_score = max((item["score"] for item in scored_results), default=0.0)
+    fallback_to_web = best_score < threshold
+    confidence_warning = (
+        f"Best score {best_score:.4f} abaixo do threshold {threshold:.4f}. "
+        "Resposta potencialmente não confiável; considere fallback web."
+        if fallback_to_web else None
+    )
 
     retriever_result = {
         "query": query,
         "threshold": threshold,
         "top_k": top_k,
+        "best_score": round(best_score, 4),
+        "fallback_to_web": fallback_to_web,
+        "confidence_warning": confidence_warning,
         "total_hits": len(hits),
         "hits": hits,
     }
@@ -93,7 +104,11 @@ def retrieve(state: dict) -> dict:
         "trace": state.get("trace", []) + [{
             "agente": "retriever",
             "entrada": query,
-            "saida": f"{len(hits)} hits acima de {threshold}",
+            "saida": (
+                f"{len(hits)} hits acima de {threshold}; "
+                f"best_score={round(best_score, 4)}; "
+                f"fallback_to_web={fallback_to_web}"
+            ),
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "latencia_ms": int((time.time() - inicio) * 1000),
         }],

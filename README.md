@@ -145,6 +145,9 @@ Limpeza via regex: remoção de caracteres de controle, hifenização de quebra 
 Implementado em `agents/retriever.py`, responsável por:
 - executar busca vetorial no ChromaDB (`dados/vectorstore`)
 - ler `RETRIEVER_THRESHOLD` do `.env`
+- calcular `best_score` (melhor score encontrado entre os resultados)
+- definir `fallback_to_web` quando `best_score < RETRIEVER_THRESHOLD`
+- retornar aviso de confiança (`confidence_warning`) quando a recuperação estiver abaixo do mínimo esperado
 - retornar `retriever_result` com os chunks relevantes
 
 Variáveis de ambiente relevantes:
@@ -157,6 +160,9 @@ Formato de saída no estado:
 - `retriever_result.query`
 - `retriever_result.threshold`
 - `retriever_result.top_k`
+- `retriever_result.best_score`
+- `retriever_result.fallback_to_web`
+- `retriever_result.confidence_warning`
 - `retriever_result.total_hits`
 - `retriever_result.hits` (`content`, `score`, `metadata`)
 
