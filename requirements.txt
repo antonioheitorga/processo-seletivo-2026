@@ -1,7 +1,11 @@
+# Pipeline de ingestão (Wisley) — pdfplumber, langchain-text-splitters
+-r dados/requirements.txt
+
 # LLM & Embeddings
 langchain==0.3.7
 langchain-ollama==0.2.0
 langchain-community==0.3.7
+ollama==0.6.2
 
 # Orquestração
 langgraph==0.2.50
