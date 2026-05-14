@@ -37,7 +37,8 @@ def test_generate_corpus_only(mock_prompt_cls, _mock_llm_cls):
 
 @patch("agents.generator.ChatOllama")
 @patch("agents.generator.ChatPromptTemplate")
-def test_generate_web_fallback_low_confidence(mock_prompt_cls, _mock_llm_cls):
+def test_generate_web_fallback_com_resultados(mock_prompt_cls, _mock_llm_cls):
+    """Web foi acionada e encontrou resultados → low_confidence=False."""
     chain = mock_prompt_cls.from_template.return_value.__or__.return_value
     chain.invoke.return_value.content = "Resposta com base na web."
 
@@ -60,6 +61,31 @@ def test_generate_web_fallback_low_confidence(mock_prompt_cls, _mock_llm_cls):
     gr = result["generator_result"]
 
     assert gr["sources_used"] == "web"
+    assert gr["low_confidence"] is False
+    assert gr["confidence_notice"] is None
+
+
+@patch("agents.generator.ChatOllama")
+@patch("agents.generator.ChatPromptTemplate")
+def test_generate_sem_contexto_low_confidence(mock_prompt_cls, _mock_llm_cls):
+    """Corpus e web vazios → low_confidence=True."""
+    chain = mock_prompt_cls.from_template.return_value.__or__.return_value
+    chain.invoke.return_value.content = "Não tenho informação suficiente."
+
+    state = {
+        "query_original": "regra inexistente",
+        "retriever_result": {
+            "fallback_to_web": True,
+            "confidence_warning": "Score abaixo do mínimo configurado.",
+            "hits": [],
+        },
+        "web_result": {"resultados": [], "encontrou": False},
+    }
+
+    result = generate(state)
+    gr = result["generator_result"]
+
+    assert gr["sources_used"] == "none"
     assert gr["low_confidence"] is True
     assert "Score abaixo" in gr["confidence_notice"]
 

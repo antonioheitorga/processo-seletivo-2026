@@ -71,9 +71,8 @@ def _build_contexts(state: dict) -> tuple[str, str, str, str, bool, str]:
         ]
     ).strip()
 
-    fallback_to_web = bool(retriever_result.get("fallback_to_web", False))
     confidence_warning = retriever_result.get("confidence_warning") or ""
-    low_confidence = fallback_to_web
+    low_confidence = not corpus_context and not web_context
 
     return query_original, query_reformulada, corpus_context, web_context, low_confidence, confidence_warning
 
