@@ -27,3 +27,9 @@ sessao.md
 **/.gitignore
 .env
 **/.env
+
+# Artefatos da pipeline de ingestão (gerados localmente)
+dados/extracted/
+dados/processed/
+dados/chunks/
+dados/vectorstore/
