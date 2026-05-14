@@ -22,7 +22,8 @@ Retriever                                                     ✅
 Web Searcher                                                  ✅
 Gerador                                                       ✅
 Orquestrador                                                  ✅
-Interface Streamlit                                           🔄 em desenvolvimento
+Observabilidade (trace JSON)                                  ✅
+Interface Streamlit                                           ✅
 ```
 
 📐 Arquitetura completa documentada em [docs/architecture.md](docs/architecture.md).
@@ -228,6 +229,18 @@ print(resultado["trace"])         # lista com entrada de cada agente
 
 ---
 
+## Como executar o sistema
+
+Com o Ollama rodando, o `.env` configurado e as dependências instaladas:
+
+```bash
+streamlit run app.py
+```
+
+A interface sobe em `http://localhost:8501`. Cada query executada gera um arquivo `traces/{session_id}.json` com o trace completo (query, resposta, fonte, latência por agente).
+
+---
+
 ## Variáveis de ambiente relevantes
 
 - `OLLAMA_BASE_URL` (default: `http://localhost:11434`)
@@ -237,6 +250,7 @@ print(resultado["trace"])         # lista com entrada de cada agente
 - `RETRIEVER_THRESHOLD` (default: `0.70`)
 - `RETRIEVER_TOP_K` (default: `5`)
 - `TAVILY_API_KEY` (obrigatória para web search)
+- `TRACES_DIR` (default: `./traces`) — pasta onde o trace de cada execução é salvo
 
 ---
 
