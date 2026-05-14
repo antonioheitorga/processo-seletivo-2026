@@ -230,10 +230,4 @@ pytest -q -m integration
 
 ---
 
-## Segurança e versionamento
 
-- **Nunca subir dados sensíveis**:
-  - `.env`
-  - chaves de API
-  - arquivos temporários locais
-- Manter `.gitignore` corretamente configurado para impedir versionamento acidental de segredos.
