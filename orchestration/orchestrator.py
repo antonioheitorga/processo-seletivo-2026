@@ -8,7 +8,11 @@ no flag `fallback_to_web` do retriever_result. Lógica determinística,
 sem LLM.
 """
 
+import json
+import os
 import uuid
+from datetime import datetime, timezone
+from pathlib import Path
 from typing import TypedDict
 
 from langgraph.graph import END, StateGraph
@@ -71,9 +75,31 @@ def run(query_original: str, session_id: str | None = None) -> dict:
     Gera session_id automaticamente se não for fornecido.
     Retorna o estado final com resposta, fonte, low_confidence e trace.
     """
+    sid = session_id or uuid.uuid4().hex
     initial_state: GraphState = {
         "query_original": query_original,
-        "session_id": session_id or uuid.uuid4().hex,
+        "session_id": sid,
         "trace": [],
     }
-    return build_graph().invoke(initial_state)
+    state = build_graph().invoke(initial_state)
+    _export_trace(state, sid)
+    return state
+
+
+def _export_trace(state: GraphState, session_id: str) -> None:
+    """Persiste o trace da execução em traces/{session_id}.json."""
+    traces_dir = Path(os.getenv("TRACES_DIR", "./traces"))
+    traces_dir.mkdir(parents=True, exist_ok=True)
+
+    payload = {
+        "session_id": session_id,
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "query_original": state.get("query_original", ""),
+        "resposta": state.get("resposta", ""),
+        "fonte": state.get("fonte", ""),
+        "low_confidence": state.get("low_confidence", False),
+        "trace": state.get("trace", []),
+    }
+
+    trace_file = traces_dir / f"{session_id}.json"
+    trace_file.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
