@@ -15,24 +15,26 @@ flowchart TD
     REFORM -->|query_reformulada| RET
 
     RET["Retriever\nChromaDB · nomic-embed-text"]
-    RET --> COND{fallback?}
+    RET --> ROUTER["Router/Planner\nDeterminístico"]
 
-    COND -- "false · fonte = corpus" --> GEN
-    COND -- true --> WS
+    ROUTER -->|route_decision=generator| GEN
+    ROUTER -->|route_decision=web_searcher| WS
 
     WS["Web Searcher\nTavily API"]
-    WS --> COND2{encontrou?}
-
-    COND2 -- "true · fonte = web" --> GEN
-    COND2 -- "false · low_confidence = True" --> GEN
+    WS --> GEN
 
     GEN["Gerador\nllama3.1:8b"]
-    GEN -->|resposta| UI(["Streamlit"])
+    GEN --> JUDGE["Judge/Verifier\nDeterminístico"]
+
+    JUDGE -->|approved| UI(["Streamlit"])
+    JUDGE -->|needs_revision=True| UI
 
     style REFORM fill:#dbeafe,stroke:#3b82f6
     style RET    fill:#dcfce7,stroke:#22c55e
+    style ROUTER fill:#ede9fe,stroke:#7c3aed
     style WS     fill:#fef9c3,stroke:#eab308
     style GEN    fill:#fce7f3,stroke:#ec4899
+    style JUDGE  fill:#fee2e2,stroke:#ef4444
 ```
 
 ---
@@ -41,10 +43,10 @@ flowchart TD
 
 | Decisão | Motivo |
 |---|---|
-| Reformulador roda sempre | Garante que o Retriever recebe query em inglês formal, vocabulário do corpus |
-| Retriever decide o `fallback` | Ele é o dono do contexto de busca — encapsula a lógica de relevância |
-| Orquestrador sem LLM | Transições são lógica determinística — reduz latência e facilita debugging |
-| Terceiro caminho `low_confidence` | Usuário é avisado quando a resposta é incerta, em vez de resposta silenciosamente errada |
+| Reformulador roda sempre | Garante query semanticamente otimizada para recuperação |
+| Router/Planner explícito | Separa decisão de roteamento do retriever e evita lógica monolítica implícita |
+| Orquestrador sem LLM | Transições determinísticas, auditáveis e mais baratas |
+| Judge/Verifier no final | Valida suficiência de evidência e sinaliza revisão quando resposta não está bem fundamentada |
 
 ---
 
@@ -55,15 +57,18 @@ flowchart TD
 | `query_original` | `str` | Orquestrador (START) | Reformulador, Gerador |
 | `session_id` | `str` | Orquestrador (START) | Todos (trace) |
 | `query_reformulada` | `str` | Reformulador | Retriever, Web Searcher |
-| `retriever_result` | `dict` | Retriever | Orquestrador, Gerador |
-| `web_result` | `dict\|None` | Web Searcher | Orquestrador, Gerador |
+| `retriever_result` | `dict` | Retriever | Router, Gerador |
+| `route_decision` | `str` | Router | Orquestrador (edge condicional) |
+| `web_result` | `dict\|None` | Web Searcher | Gerador, Judge |
 | `resultados_web` | `list[dict]\|None` | Orquestrador/Web Searcher (compat) | Gerador |
 | `encontrou_web` | `bool\|None` | Orquestrador/Web Searcher (compat) | Gerador |
 | `fonte` | `str` | Orquestrador ou Gerador | Streamlit |
 | `low_confidence` | `bool` | Orquestrador ou Gerador | Streamlit |
 | `confidence_warning` | `str\|None` | Retriever ou Gerador | Streamlit |
-| `resposta` | `str` | Gerador | Orquestrador (END), Streamlit |
-| `generator_result` | `dict` | Gerador | Orquestrador, Streamlit |
+| `resposta` | `str` | Gerador | Judge, Streamlit |
+| `generator_result` | `dict` | Gerador | Judge, Streamlit |
+| `judge_result` | `dict` | Judge | Streamlit |
+| `needs_revision` | `bool` | Judge | Streamlit |
 | `trace` | `list[dict]` | Todos (append) | Streamlit, export JSON |
 
 ### `retriever_result` — shape completo
@@ -106,7 +111,7 @@ flowchart TD
 
 ```python
 {
-    "agente":      str,        # "reformulator" | "retriever" | "web_searcher" | "generator"
+    "agente":      str,        # "reformulator" | "retriever" | "router" | "web_searcher" | "generator" | "judge"
     "entrada":     str | dict,
     "saida":       str | dict,
     "timestamp":   str,        # ISO 8601
@@ -122,9 +127,11 @@ flowchart TD
 |---|---|---|---|---|
 | **Reformulador** | `agents/reformulator.py` | ✅ llama3.1:8b | `query_original` | `query_reformulada`, `trace` |
 | **Retriever** | `agents/retriever.py` | ❌ | `query_reformulada` | `retriever_result`, `trace` |
+| **Router/Planner** | `orchestration/orchestrator.py` (node `router`) | ❌ | `retriever_result` | `route_decision`, `trace` |
 | **Web Searcher** | `agents/web_searcher.py` | ❌ | `query_reformulada` | `web_result`, `trace` |
 | **Gerador** | `agents/generator.py` | ✅ llama3.1:8b | `query_original/query_reformulada`, `retriever_result`, `web_result` (ou `resultados_web`/`encontrou_web`) | `generator_result`, `resposta`, `fonte`, `low_confidence`, `confidence_warning`, `trace` |
-| **Orquestrador** | `orchestration/orchestrator.py` | ❌ | `retriever_result`, `web_result` | `fonte`, `low_confidence` |
+| **Judge/Verifier** | `agents/judge.py` | ❌ | `generator_result`, `retriever_result`, `web_result` | `judge_result`, `needs_revision`, `trace` |
+| **Orquestrador** | `orchestration/orchestrator.py` | ❌ | estado compartilhado | encadeamento dos nós e export de trace |
 
 ---
 

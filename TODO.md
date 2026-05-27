@@ -1,8 +1,10 @@
-# TODO - Ajustes Retriever (score mínimo + fallback web)
+# TODO - Refatoração para Arquitetura Multiagente (nós + decisões)
 
-- [x] Atualizar `agents/retriever.py` com `best_score`, `fallback_to_web`, `confidence_warning`
-- [x] Atualizar `tests/test_retriever.py` para novo contrato
-- [x] Revisar/ajustar `tests/test_retriever_integration.py` para novo contrato
-- [x] Atualizar documentação no `README.md`
-- [x] Executar testes focados do retriever (unit + integration)
-- [x] Consolidar resultado final e preparar commit
+- [x] Mapear e refatorar o orquestrador para incluir nó explícito de decisão (`router/planner`)
+- [x] Criar agente `judge/verifier` para validação pós-geração
+- [x] Atualizar grafo para fluxo multiagente: `reformulator -> retriever -> router -> (web_searcher|generator) -> judge -> END`
+- [x] Expandir `GraphState` com campos de decisão (`route_decision`, `judge_result`, `needs_revision`)
+- [x] Atualizar `tests/test_orchestrator.py` para cobrir roteamento e validação do judge
+- [x] Atualizar documentação em `docs/architecture.md` para refletir a nova arquitetura
+- [ ] Executar testes de caminho crítico (orchestrator + contratos básicos dos agentes)
+- [ ] Consolidar resultado técnico e status de testes

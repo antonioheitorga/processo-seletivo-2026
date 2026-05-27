@@ -66,50 +66,69 @@ def _fake_generate(state):
     }
 
 
+def _fake_judge_approve(state):
+    return {
+        "judge_result": {
+            "approved": True,
+            "decision": "approve",
+            "sources_used": "corpus",
+            "reasons": [],
+        },
+        "needs_revision": False,
+        "trace": state.get("trace", []) + [{"agente": "judge"}],
+    }
+
+
+@patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
 @patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
 @patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web)
 @patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_hit)
 @patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
-def test_fluxo_corpus(mock_ref, mock_ret, mock_web, mock_gen):
+def test_fluxo_corpus(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
     final_state = run("o que é DRS?")
 
     assert mock_ref.called
     assert mock_ret.called
     assert mock_web.called is False
     assert mock_gen.called
+    assert mock_judge.called
 
     agentes = [t["agente"] for t in final_state["trace"]]
-    assert agentes == ["reformulator", "retriever", "generator"]
+    assert agentes == ["reformulator", "retriever", "router", "generator", "judge"]
 
 
+@patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
 @patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
 @patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web)
 @patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_miss)
 @patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
-def test_fluxo_web_fallback(mock_ref, mock_ret, mock_web, mock_gen):
+def test_fluxo_web_fallback(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
     final_state = run("pergunta fora do corpus")
 
     assert mock_web.called
+    assert mock_judge.called
     agentes = [t["agente"] for t in final_state["trace"]]
-    assert agentes == ["reformulator", "retriever", "web_searcher", "generator"]
+    assert agentes == ["reformulator", "retriever", "router", "web_searcher", "generator", "judge"]
 
 
+@patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
 @patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
 @patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web)
 @patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_hit)
 @patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
-def test_run_gera_session_id(mock_ref, mock_ret, mock_web, mock_gen):
+def test_run_gera_session_id(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
     final_state = run("qualquer query")
 
     assert "session_id" in final_state
     assert len(final_state["session_id"]) > 0
 
 
+@patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
 @patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
 @patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web)
 @patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_hit)
 @patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
-def test_state_final_completo(mock_ref, mock_ret, mock_web, mock_gen):
+def test_state_final_completo(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
     final_state = run("qualquer query", session_id="fixed-id")
 
     assert final_state["session_id"] == "fixed-id"
@@ -117,3 +136,5 @@ def test_state_final_completo(mock_ref, mock_ret, mock_web, mock_gen):
     assert final_state["fonte"] == "corpus"
     assert final_state["low_confidence"] is False
     assert "generator_result" in final_state
+    assert "judge_result" in final_state
+    assert final_state["needs_revision"] is False

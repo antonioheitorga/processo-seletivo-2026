@@ -21,6 +21,7 @@ from agents.generator import generate
 from agents.reformulator import reformulate
 from agents.retriever import retrieve
 from agents.web_searcher import search_web
+from agents.judge import judge
 
 
 class GraphState(TypedDict, total=False):
@@ -28,8 +29,11 @@ class GraphState(TypedDict, total=False):
     session_id: str
     query_reformulada: str
     retriever_result: dict
+    route_decision: str
     web_result: dict
     generator_result: dict
+    judge_result: dict
+    needs_revision: bool
     resposta: str
     fonte: str
     low_confidence: bool
@@ -37,14 +41,32 @@ class GraphState(TypedDict, total=False):
     trace: list[dict]
 
 
-def _route_after_retriever(state: GraphState) -> str:
-    """Decide o próximo nó após o retriever.
+def router(state: GraphState) -> GraphState:
+    """Nó de decisão explícito do fluxo multiagente.
 
-    Se o melhor score ficou abaixo do threshold (fallback_to_web=True),
-    chama o web_searcher. Caso contrário, vai direto pro generator.
+    Decide a próxima rota após o retriever, sem usar LLM.
     """
     retriever_result = state.get("retriever_result") or {}
-    return "web_searcher" if retriever_result.get("fallback_to_web", False) else "generator"
+    route_decision = "web_searcher" if retriever_result.get("fallback_to_web", False) else "generator"
+
+    return {
+        "route_decision": route_decision,
+        "trace": state.get("trace", []) + [{
+            "agente": "router",
+            "entrada": {
+                "best_score": retriever_result.get("best_score"),
+                "fallback_to_web": retriever_result.get("fallback_to_web", False),
+            },
+            "saida": route_decision,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "latencia_ms": 0,
+        }],
+    }
+
+
+def _route_after_router(state: GraphState) -> str:
+    """Roteia para o próximo nó usando decisão já registrada no estado."""
+    return state.get("route_decision", "generator")
 
 
 def build_graph():
@@ -53,18 +75,22 @@ def build_graph():
 
     graph.add_node("reformulator", reformulate)
     graph.add_node("retriever", retrieve)
+    graph.add_node("router", router)
     graph.add_node("web_searcher", search_web)
     graph.add_node("generator", generate)
+    graph.add_node("judge", judge)
 
     graph.set_entry_point("reformulator")
     graph.add_edge("reformulator", "retriever")
+    graph.add_edge("retriever", "router")
     graph.add_conditional_edges(
-        "retriever",
-        _route_after_retriever,
+        "router",
+        _route_after_router,
         {"web_searcher": "web_searcher", "generator": "generator"},
     )
     graph.add_edge("web_searcher", "generator")
-    graph.add_edge("generator", END)
+    graph.add_edge("generator", "judge")
+    graph.add_edge("judge", END)
 
     return graph.compile()
 
