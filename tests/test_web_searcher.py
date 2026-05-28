@@ -28,7 +28,10 @@ def test_search_web_com_resultados(mock_client_cls):
     assert result["web_result"]["resultados"][0]["trecho"] == "DRS may be used in..."
     assert result["web_result"]["resultados"][0]["url"] == "https://fia.com/drs"
     assert result["trace"][0]["agente"] == "web_searcher"
-    assert "2 resultados" in result["trace"][0]["saida"]
+    saida = result["trace"][0]["saida"]
+    assert saida["results_count"] == 2
+    assert saida["urls"] == ["https://fia.com/drs", "https://fia.com/aero"]
+    assert saida["erro"] is None
 
 
 @patch.dict(os.environ, {"TAVILY_API_KEY": "fake-key"})
@@ -55,8 +58,9 @@ def test_search_web_erro_api(mock_client_cls):
 
     assert result["web_result"]["encontrou"] is False
     assert result["web_result"]["resultados"] == []
-    assert "ConnectionError" in result["trace"][0]["saida"]
-    assert "network down" in result["trace"][0]["saida"]
+    erro = result["trace"][0]["saida"]["erro"]
+    assert "ConnectionError" in erro
+    assert "network down" in erro
 
 
 @patch.dict(os.environ, {}, clear=True)
@@ -65,7 +69,7 @@ def test_search_web_sem_api_key():
     result = search_web({"query_reformulada": "qualquer query"})
 
     assert result["web_result"]["encontrou"] is False
-    assert "TAVILY_API_KEY" in result["trace"][0]["saida"]
+    assert "TAVILY_API_KEY" in result["trace"][0]["saida"]["erro"]
 
 
 def test_search_web_state_invalido():

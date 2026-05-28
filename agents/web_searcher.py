@@ -53,10 +53,15 @@ def search_web(state: dict) -> dict:
         "encontrou": len(resultados) > 0,
     }
 
-    saida_trace = (
-        f"{len(resultados)} resultados" if erro is None
-        else f"erro: {erro}"
-    )
+    saida_trace = {
+        "results_count": len(resultados),
+        "urls": [r.get("url", "") for r in resultados],
+        "trechos_preview": [
+            (r.get("trecho", "")[:150] + ("..." if len(r.get("trecho", "")) > 150 else ""))
+            for r in resultados
+        ],
+        "erro": erro,
+    }
 
     return {
         "web_result": web_result,

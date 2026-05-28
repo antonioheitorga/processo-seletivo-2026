@@ -76,7 +76,10 @@ def test_retrieve_estrutura_saida(_mock_exists):
     trace = result["trace"][0]
     assert trace["agente"] == "retriever"
     assert trace["entrada"] == "DRS rules"
-    assert "hits acima de" in trace["saida"]
+    assert trace["saida"]["hits_count"] == 2
+    assert trace["saida"]["best_score"] == 0.9
+    assert trace["saida"]["fallback_to_web"] is False
+    assert len(trace["saida"]["top_hits"]) == 2
 
 
 @patch("agents.retriever.Path.exists", return_value=True)

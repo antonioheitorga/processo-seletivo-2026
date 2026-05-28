@@ -1,7 +1,10 @@
-"""Smoke tests do Orquestrador LangGraph.
+"""Smoke tests do Orquestrador LangGraph — arquitetura hub-and-spoke.
 
-Os 4 agentes são mockados — os testes verificam apenas o roteamento
-do grafo, não o comportamento interno de cada agente.
+Os agentes são mockados. Os testes verificam:
+- Que o Orquestrador é o nó central (intercalado entre cada agente)
+- Que o roteamento condicional funciona (corpus vs. web fallback)
+- Que o Orquestrador é quem escreve `fonte`, `low_confidence` e `resposta`
+- Que a anti-alucinação aborta a geração quando não há contexto
 """
 
 from unittest.mock import patch
@@ -40,7 +43,7 @@ def _fake_retrieve_miss(state):
     }
 
 
-def _fake_search_web(state):
+def _fake_search_web_hit(state):
     return {
         "web_result": {
             "resultados": [{"titulo": "T", "trecho": "C", "url": "http://x"}],
@@ -50,18 +53,20 @@ def _fake_search_web(state):
     }
 
 
+def _fake_search_web_miss(state):
+    return {
+        "web_result": {"resultados": [], "encontrou": False},
+        "trace": state.get("trace", []) + [{"agente": "web_searcher"}],
+    }
+
+
 def _fake_generate(state):
     return {
         "generator_result": {
+            "result": "ok",
             "answer": "final answer",
-            "sources_used": "corpus",
-            "low_confidence": False,
-            "confidence_notice": None,
+            "reason": None,
         },
-        "resposta": "final answer",
-        "fonte": "corpus",
-        "low_confidence": False,
-        "confidence_warning": None,
         "trace": state.get("trace", []) + [{"agente": "generator"}],
     }
 
@@ -81,10 +86,11 @@ def _fake_judge_approve(state):
 
 @patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
 @patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
-@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web)
+@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web_hit)
 @patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_hit)
 @patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
-def test_fluxo_corpus(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
+def test_fluxo_corpus_intercala_orchestrator(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
+    """Caminho corpus: orquestrador intercala entre cada agente, nunca chama web."""
     final_state = run("o que é DRS?")
 
     assert mock_ref.called
@@ -94,41 +100,84 @@ def test_fluxo_corpus(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
     assert mock_judge.called
 
     agentes = [t["agente"] for t in final_state["trace"]]
-    assert agentes == ["reformulator", "retriever", "router", "generator", "judge"]
+    # Orquestrador aparece entre cada agente — confirma hub-and-spoke
+    assert agentes == [
+        "orchestrator",
+        "reformulator",
+        "orchestrator",
+        "retriever",
+        "orchestrator",
+        "generator",
+        "orchestrator",
+        "judge",
+        "orchestrator",
+    ]
 
 
 @patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
 @patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
-@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web)
+@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web_hit)
 @patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_miss)
 @patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
 def test_fluxo_web_fallback(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
+    """Caminho web: orquestrador decide chamar web após corpus falhar."""
     final_state = run("pergunta fora do corpus")
 
     assert mock_web.called
     assert mock_judge.called
     agentes = [t["agente"] for t in final_state["trace"]]
-    assert agentes == ["reformulator", "retriever", "router", "web_searcher", "generator", "judge"]
+    assert agentes == [
+        "orchestrator",
+        "reformulator",
+        "orchestrator",
+        "retriever",
+        "orchestrator",
+        "web_searcher",
+        "orchestrator",
+        "generator",
+        "orchestrator",
+        "judge",
+        "orchestrator",
+    ]
+    assert final_state["fonte"] == "web"
 
 
 @patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
 @patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
-@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web)
+@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web_miss)
+@patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_miss)
+@patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
+def test_anti_alucinacao_aborta_geracao(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
+    """Corpus vazio + web vazia: orquestrador NÃO chama generator nem judge."""
+    final_state = run("pergunta sem contexto algum")
+
+    assert mock_web.called
+    assert mock_gen.called is False
+    assert mock_judge.called is False
+
+    assert final_state["fonte"] == "none"
+    assert final_state["low_confidence"] is True
+    assert "Não foi possível encontrar" in final_state["resposta"]
+
+
+@patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
+@patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
+@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web_hit)
 @patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_hit)
 @patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
 def test_run_gera_session_id(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
     final_state = run("qualquer query")
-
     assert "session_id" in final_state
     assert len(final_state["session_id"]) > 0
 
 
 @patch("orchestration.orchestrator.judge", side_effect=_fake_judge_approve)
 @patch("orchestration.orchestrator.generate", side_effect=_fake_generate)
-@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web)
+@patch("orchestration.orchestrator.search_web", side_effect=_fake_search_web_hit)
 @patch("orchestration.orchestrator.retrieve", side_effect=_fake_retrieve_hit)
 @patch("orchestration.orchestrator.reformulate", side_effect=_fake_reformulate)
 def test_state_final_completo(mock_ref, mock_ret, mock_web, mock_gen, mock_judge):
+    """Orquestrador escreve resposta/fonte/low_confidence no estado final."""
     final_state = run("qualquer query", session_id="fixed-id")
 
     assert final_state["session_id"] == "fixed-id"

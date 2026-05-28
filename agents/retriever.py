@@ -104,11 +104,22 @@ def retrieve(state: dict) -> dict:
         "trace": state.get("trace", []) + [{
             "agente": "retriever",
             "entrada": query,
-            "saida": (
-                f"{len(hits)} hits acima de {threshold}; "
-                f"best_score={round(best_score, 4)}; "
-                f"fallback_to_web={fallback_to_web}"
-            ),
+            "saida": {
+                "hits_count": len(hits),
+                "best_score": round(best_score, 4),
+                "threshold": threshold,
+                "fallback_to_web": fallback_to_web,
+                "top_hits": [
+                    {
+                        "score": h["score"],
+                        "content_preview": (
+                            h["content"][:150] + ("..." if len(h["content"]) > 150 else "")
+                        ),
+                        "metadata": h.get("metadata", {}),
+                    }
+                    for h in hits[:3]
+                ],
+            },
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "latencia_ms": int((time.time() - inicio) * 1000),
         }],
