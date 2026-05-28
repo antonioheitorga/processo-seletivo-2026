@@ -20,8 +20,8 @@ def judge(state: dict) -> dict:
     retriever_result = state.get("retriever_result") or {}
     web_result = state.get("web_result") or {}
 
-    sources_used = generator_result.get("sources_used", "none")
-    low_confidence = bool(generator_result.get("low_confidence", False))
+    sources_used = state.get("fonte", "none")
+    low_confidence = bool(state.get("low_confidence", False))
     answer = (generator_result.get("answer") or "").strip()
 
     retriever_hits = retriever_result.get("hits") or []
