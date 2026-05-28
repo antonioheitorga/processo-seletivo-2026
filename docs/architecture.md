@@ -13,26 +13,32 @@ Nenhum agente conhece o próximo.
 
 ```mermaid
 flowchart TD
-    U(["Usuário"]) -->|query_original| ORCH
+    U(["Usuário"])
+    U --->|query_original| ORCH
 
-    ORCH["🎯 Orquestrador<br/>Nó central · determinístico"]
+    ORCH["🎯 Orquestrador\nNó central — decide tudo"]
 
-    ORCH -->|delega| REFORM["Reformulador<br/>llama3.1:8b · temp=0.0"]
+    ORCH --->|1. delega reformulação| REFORM
+    REFORM["Reformulador\nllama3.1:8b"]
     REFORM -->|query_reformulada| ORCH
 
-    ORCH -->|delega| RET["Retriever<br/>ChromaDB · nomic-embed-text"]
+    ORCH --->|2. delega busca vetorial| RET
+    RET["Retriever\nChromaDB · nomic-embed-text"]
     RET -->|retriever_result| ORCH
 
-    ORCH -->|delega se fallback_to_web| WS["Web Searcher<br/>Tavily API"]
+    ORCH --->|3a. fallback? delega busca web| WS
+    WS["Web Searcher\nTavily API"]
     WS -->|web_result| ORCH
 
-    ORCH -->|delega se há contexto| GEN["Gerador<br/>llama3.1:8b"]
+    ORCH --->|3b. contexto pronto? delega geração| GEN
+    GEN["Gerador\nllama3.1:8b"]
     GEN -->|generator_result| ORCH
 
-    ORCH -->|delega| JUDGE["Judge/Verifier<br/>Determinístico"]
+    ORCH --->|4. delega validação| JUDGE
+    JUDGE["Judge/Verifier\nDeterminístico"]
     JUDGE -->|judge_result| ORCH
 
-    ORCH -->|resposta final| UI(["Streamlit"])
+    ORCH ---->|5. monta resposta final| UI(["Streamlit"])
 
     style ORCH   fill:#fbbf24,stroke:#d97706,color:#000
     style REFORM fill:#dbeafe,stroke:#3b82f6
@@ -40,6 +46,20 @@ flowchart TD
     style WS     fill:#fef9c3,stroke:#eab308
     style GEN    fill:#fce7f3,stroke:#ec4899
     style JUDGE  fill:#fee2e2,stroke:#ef4444
+    style U      fill:#1e1e2e,stroke:#888,color:#fff
+    style UI     fill:#1e1e2e,stroke:#888,color:#fff
+
+    Orch -. "persiste a cada etapa" .-> Trace
+
+    classDef ui fill:#FF6B6B,stroke:#C92A2A,color:#fff
+    classDef agent fill:#4A90E2,stroke:#1A4480,color:#fff
+    classDef orchestrator fill:#9B59B6,stroke:#4B0082,color:#fff
+    classDef storage fill:#7B68EE,stroke:#4B0082,color:#fff
+
+    class User,UI,Resposta ui
+    class Ref,Ret,Web,Gen agent
+    class Orch,Class orchestrator
+    class Trace storage
 ```
 
 ---
