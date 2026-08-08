@@ -1,0 +1,173 @@
+{
+  "session_id": "84bececc11c740cfaf412a1304f2f5fd",
+  "timestamp": "2026-08-08T19:12:43.536479+00:00",
+  "query_original": "What team does Lewis Hamilton drive for in the 2026 season?",
+  "query_reformulada": "What is the name of the Formula One constructor that will be fielding a car driven by Lewis Hamilton under the new engine regulations set forth in Article 24.1 of the FIA F1 2026 Technical Regulations?",
+  "resposta": "El equipo de Lewis Hamilton en la temporada 2026 es Ferrari.",
+  "fonte": "hybrid",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7664
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". c. Must be declared on the entry form to the Championship and approved by the FIA. The F1 Team is responsible for the compliance of its Technical Partner with the Regulations. 2026 Formula 1: General Regulatory Provisions 27 February 2026 A5 9 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7664,
+        "fonte": {
+          "char_count": 301,
+          "chunk_id": 505,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". 2026 Formula 1: Operational Regulations 07 May 2026 F6 2026 Fédération Internationale de l’Automobile Issue 08",
+        "score": 0.7635,
+        "fonte": {
+          "char_count": 112,
+          "chunk_id": 25,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". 2026 Formula 1: Operational Regulations 07 May 2026 F5 2026 Fédération Internationale de l’Automobile Issue 08",
+        "score": 0.761,
+        "fonte": {
+          "char_count": 112,
+          "chunk_id": 16,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". 2026 Formula 1: General Regulatory Provisions 27 February 2026 A4 7 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7604,
+        "fonte": {
+          "char_count": 125,
+          "chunk_id": 400,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". 2026 Formula 1 Regulations: Financial Regulations (Power Unit M anufacturers) 07 May 2026 E12 2026 Fédération Internationale de l’Automobile Issue 05",
+        "score": 0.7582,
+        "fonte": {
+          "char_count": 151,
+          "chunk_id": 87,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "Ferrari Logo\n\nFull Name: Scuderia Ferrari  \n Base: Maranello, Italy  \n Team Principal: Frédéric Vasseur  \n Technical Director: Loïc Serra  \n Power Unit: Ferrari (internal)  \n Championships: 16 Constructors’ (1961, 1964, 1975-1977, 1979, 1982-1983, 1999-2008), 15 Drivers’ (1952-1953, 1956, 1958, 1961, 1964, 1975, 1977, 1979, 2000-2004, 2007)  \n First Entry: 1950\n\n2026 Driver Lineup:  \n Charles Leclerc (#16) | Lewis Hamilton (#44)\n\n##### Team History [...] The AMR26 project benefits from Newey’s complete involvement from the concept stage. Unlike his mid-2022 Red Bull arrival, where the RB18 was already designed, Newey has shaped every aspect of Aston Martin’s 2026 car from initial philosophy through detailed design. His philosophy favouring mechanical grip and efficient aerodynamics, may suit the new regulations better than concepts prioritising pure downforce. [...] His first season in red, 2025, provided flashes of brilliance but ultimately fell short of championship glory. Now 41 and entering his second Ferrari season, Hamilton knows time is running out. The 2026 regulations provide a reset, an opportunity for Ferrari to leverage their power unit expertise and chassis prowess to deliver Hamilton the machinery he needs.",
+        "titulo": "Formula 1 teams - 2026 season",
+        "fonte": "https://www.sportmonks.com/formula-one-api/formula-1-2026-teams"
+      },
+      {
+        "trecho": "| Entrant | Constructor | Chassis | Power unit | Race drivers |\n| No. | Driver name | Rounds |\n| France BWT \"BWT (company)\") Alpine F1 Team | Alpine-Mercedes | A526 | Mercedes-AMG F1 M17 | 10 43 | France Pierre Gasly Argentina Franco Colapinto | 1–11 1–11 |\n| United Kingdom Aston Martin Aramco F1 Team | Aston Martin Aramco-Honda | AMR26 | Honda RA626H | 14 18 | Spain Fernando Alonso Canada Lance Stroll | 1–11 1–11 | [...] | Italy Scuderia Ferrari HP | Ferrari | SF-26 | Ferrari 067/6 | 16 44 | Monaco Charles Leclerc United Kingdom Lewis Hamilton | 1–11 1–11 |\n| United States TGR Haas F1 Team | Haas-Ferrari | VF-26 | Ferrari 067/6 | 31 87 | France Esteban Ocon United Kingdom Oliver Bearman | 1–11 1–11 |\n| United Kingdom McLaren Mastercard F1 Team | McLaren-Mercedes | MCL40 | Mercedes-AMG F1 M17 | 1 81 | United Kingdom Lando Norris Australia Oscar Piastri | 1–11 1–11 | [...] Three pre-season tests were held, a significant expansion over previous years' testing programs to account for the new chassis and engine regulations. The first was a private test which took place at the Circuit de Barcelona-Catalunya from 26 to 30 January, with teams allowed to run in a maximum of three of the five days. All teams ran in the private test except Williams. Lewis Hamilton (Ferrari) set the fastest time in the five-day test. The second test was held at the Bahrain International",
+        "titulo": "2026 Formula One World Championship - Wikipedia",
+        "fonte": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+      },
+      {
+        "trecho": "\"When a new era begins everything revolves around development, growth as a team, and moving forward in the same direction.\n\n- Ferrari reveal new-look car for Hamilton, Leclerc   \n- 2026 Mercedes F1 car makes track debut  \n- Brundle on Hamilton engineer: It had to change  \n- Mercedes reveal new F1 car, major Microsoft deal [...] \"It is a challenge we face together as a team, supported by the extraordinary passion of Ferrari's tifosi, which means so much to all of us.\"\n\nHamilton finished a disappointing sixth in the championship last year, while Ferrari were only fourth in the constructors' standings. Hamilton's teammate Charles Leclerc outqualified the seven-time champion 19 times in 24 appearances. [...] Ferrari was the latest to reveal its new car on Friday ahead of the start of preseason testing -- behind closed doors in Barcelona -- on Friday and Hamilton spoke about the regulations, and how he has been involved with the Italian team.\n\n\"The 2026 season represents a huge challenge for everyone, probably the biggest regulation change I have experienced in my career,\" Hamilton said.",
+        "titulo": "Lewis Hamilton: F1 2026 regulation change 'biggest in my career' - ESPN",
+        "fonte": "https://www.espn.com/f1/story/_/id/47703043/lewis-hamilton-f1-2026-change-biggest-career-ferrari-charles-leclerc"
+      },
+      {
+        "trecho": "## New Drivers\n\nSome drivers are changing teams. Some are staying.\n\n Lewis Hamilton will drive for Ferrari in 2026.\n Lando Norris and Oscar Piastri are staying with McLaren.\n Carlos Sainz is moving to Williams.\n New drivers like Gabriel Bortoleto are joining for the first time.\n\nSome drivers might move again, but we will see!\n\n## New Races\n\nIn 2026, some races will change: [...] Confirmed signings: Many driver contracts have been extended to cover 2026. Notably, McLaren kept its championship-winning pairing, with Lando Norris signed “beyond 2025” and Oscar Piastri under multi-year deals through 2026 At Ferrari, Charles Leclerc signed a new multi-year deal (into the new era) and Lewis Hamilton joined Ferrari on a two-year contract (2025–2026) Pierre Gasly extended at Alpine (“multi-year” through 2026). Haas’s 2025 recruitment of Oliver Bearman and Esteban Ocon was also [...] Rumored moves: Motorsport media report several high-profile possibilities. There is talk Verstappen might jump to Aston Martin in 2026 (reuniting with designer Adrian Newey). George Russell is in the final year of his Mercedes deal and has been linked to a big-money move to the Cadillac entry (some speculation also names Lewis Hamilton in that mix). Fernando Alonso’s name has been floated in Red Bull discussions (“could he tick off another team”), which in turn raises questions who would",
+        "titulo": "Major Changes in Formula 1 for 2026",
+        "fonte": "https://www.ticketgrandprix.com/major-changes-in-formula-1-for-2026"
+      },
+      {
+        "trecho": "compression ratio limit than what has been theoretically imposed with the 2026 regulations. While no competitors have been formally identified yet, sources suggest that Mercedes and Red Bull are the manufacturers in the spotlight of the other engine makers. Mercedes is supplying power units to its own work squad as well as McLaren, Alpine, and Williams, while Red Bull is providing engines to itself and Racing Bulls. So, this could be potentially terrible news for any team not supplied by either [...] #f1 #formula1 #formulaone #f12026 #f1engines #f1rules #f1controversy #f1news #f1explained #mercedes #redbull #ferrari #honda #audi #therace",
+        "titulo": "Two F1 manufacturers in 2026 engine loophole controversy",
+        "fonte": "https://www.youtube.com/watch?v=aU0-DPqLKRE"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The context explicitly states that Lewis Hamilton will drive for Ferrari in 2026, as mentioned in multiple sections.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What team does Lewis Hamilton drive for in the 2026 season?",
+      "saida": "What is the name of the Formula One constructor that will be fielding a car driven by Lewis Hamilton under the 2026 FIA Formula One World Championship regulations?",
+      "timestamp": "2026-08-08T19:11:21.228016+00:00",
+      "latencia_ms": 3879
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the name of the Formula One constructor that will be fielding a car driven by Lewis Hamilton under the 2026 FIA Formula One World Championship regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.7616; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:11:21.282160+00:00",
+      "latencia_ms": 52
+    },
+    {
+      "agente": "generator",
+      "entrada": "What team does Lewis Hamilton drive for in the 2026 season?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:11:30.318888+00:00",
+      "latencia_ms": 9035
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What team does Lewis Hamilton drive for in the 2026 season?",
+        "answer": "Unfortunately, I do not have enough information to determine which team Lewis Hamilton will drive for in the 2026 season. The provided context only includes general regulatory provisions and operational regulations, but does not mention specific driver-team pairings."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims that the context does not provide enough information, but it is actually true that there is no mention of Lewis Hamilton's team in the provided context.",
+      "timestamp": "2026-08-08T19:11:42.082196+00:00",
+      "latencia_ms": 11761
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What team does Lewis Hamilton drive for in the 2026 season?",
+      "saida": "What is the name of the Formula One constructor that will be fielding a car driven by Lewis Hamilton under the new engine regulations set forth in Article 24.1 of the FIA F1 2026 Technical Regulations?",
+      "timestamp": "2026-08-08T19:11:47.370596+00:00",
+      "latencia_ms": 5285
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the name of the Formula One constructor that will be fielding a car driven by Lewis Hamilton under the new engine regulations set forth in Article 24.1 of the FIA F1 2026 Technical Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.7664; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:11:47.417158+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What is the name of the Formula One constructor that will be fielding a car driven by Lewis Hamilton under the new engine regulations set forth in Article 24.1 of the FIA F1 2026 Technical Regulations?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:11:50.068251+00:00",
+      "latencia_ms": 2650
+    },
+    {
+      "agente": "generator",
+      "entrada": "What team does Lewis Hamilton drive for in the 2026 season?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:12:14.959515+00:00",
+      "latencia_ms": 24890
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What team does Lewis Hamilton drive for in the 2026 season?",
+        "answer": "El equipo de Lewis Hamilton en la temporada 2026 es Ferrari."
+      },
+      "saida": "grounded=True; will_retry=False; The context explicitly states that Lewis Hamilton will drive for Ferrari in 2026, as mentioned in multiple sections.",
+      "timestamp": "2026-08-08T19:12:43.534243+00:00",
+      "latencia_ms": 28573
+    }
+  ]
+}

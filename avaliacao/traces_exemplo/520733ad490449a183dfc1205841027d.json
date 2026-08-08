@@ -1,0 +1,109 @@
+{
+  "session_id": "520733ad490449a183dfc1205841027d",
+  "timestamp": "2026-08-08T19:09:08.010304+00:00",
+  "query_original": "When is no points awarded to the leader of a Sprint session?",
+  "query_reformulada": "When are zero championship points awarded to the driver leading a Sprint session?",
+  "resposta": "No points will be awarded to the leader of a Sprint session if they have completed less than 50% of the Scheduled Sprint Distance.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.8225
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". In all cases, no points will be awarded unless a minimum of two complete and consecutive laps have been completed by the leader without a Safety Car or Virtual Safety Car procedure.in accordance with the table below: a. If the leader has completed two laps but less than 50% of the Scheduled Sprint Distance, no points will be awarded. b. If the leader has completed 50% or more of the Scheduled Sprint Distance, points will be awarded in accordance with column 1 of the table below. Points Position Col",
+        "score": 0.8225,
+        "fonte": {
+          "char_count": 505,
+          "chunk_id": 64,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "2.2 Points awarded for a Sprint At each Sprint, Points for both the Drivers’ and Constructors’ Championship titles will be awarded at each Alternative Format Competition based on the final Sprint classification, and depending on the number of laps completed by the leader between the start signal and the end-of-session signal of the Sprint",
+        "score": 0.8122,
+        "fonte": {
+          "char_count": 340,
+          "chunk_id": 63,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "2.1 Points awarded for a Race Competition Points for both the Drivers’ Championship and Constructors’ Championship titles will be awarded at each Competition based on the final race classification, and depending on the number of laps distance completed by the leader between the start signal and the end-of-session signal of the Race",
+        "score": 0.773,
+        "fonte": {
+          "char_count": 333,
+          "chunk_id": 57,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". In all cases, no points will be awarded unless a minimum of two complete and consecutive laps have been completed by the leader without a Safety Car or Virtual Safety Car procedure. a. If the leader has completed two laps but less than 25% of the Scheduled Race Distance, points will be awarded in accordance with column 1 of the table below. 2026 Formula 1: General Regulatory Provisions 27 February 2026 A 9 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.772,
+        "fonte": {
+          "char_count": 467,
+          "chunk_id": 58,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "A SECTION A: GENERAL REGULATORY PROVISIONS 6th 3 7th 2 8th 1 No points will be awarded if either of the following apply: a. if the leader has not completed at least two laps without a Safety Car or Virtual Safety Car intervention; or b. if the leader has completed less than 50% of the scheduled sprint session distance. If the formation lap is started behind the Safety Car (see Article B5.10), the original Sprint session distance will be deemed to be the distance calculated in accordance with Article B2.",
+        "score": 0.7335,
+        "fonte": {
+          "char_count": 508,
+          "chunk_id": 67,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer accurately states that no points will be awarded if the leader has completed less than 50% of the Scheduled Sprint Distance, which is explicitly mentioned in the context.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "When is no points awarded to the leader of a Sprint session?",
+      "saida": "When are zero championship points awarded to the driver leading a Sprint session?",
+      "timestamp": "2026-08-08T19:08:43.477574+00:00",
+      "latencia_ms": 1906
+    },
+    {
+      "agente": "retriever",
+      "entrada": "When are zero championship points awarded to the driver leading a Sprint session?",
+      "saida": "5 hits acima de 0.7; best_score=0.8225; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:08:43.519319+00:00",
+      "latencia_ms": 39
+    },
+    {
+      "agente": "generator",
+      "entrada": "When is no points awarded to the leader of a Sprint session?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:08:53.519009+00:00",
+      "latencia_ms": 9998
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "When is no points awarded to the leader of a Sprint session?",
+        "answer": "No points will be awarded to the leader of a Sprint session if they have completed less than 50% of the Scheduled Sprint Distance."
+      },
+      "saida": "grounded=True; will_retry=False; The answer accurately states that no points will be awarded if the leader has completed less than 50% of the Scheduled Sprint Distance, which is explicitly mentioned in the context.",
+      "timestamp": "2026-08-08T19:09:08.007498+00:00",
+      "latencia_ms": 14485
+    }
+  ]
+}

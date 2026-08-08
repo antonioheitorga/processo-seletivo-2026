@@ -1,0 +1,173 @@
+{
+  "session_id": "406974db044b4b1b8b685c00158fdc5b",
+  "timestamp": "2026-08-08T19:21:17.742994+00:00",
+  "query_original": "What is the ticket price for the 2026 Monaco Grand Prix?",
+  "query_reformulada": "What are the official spectator admission prices and ticketing policies for the 2026 Formula One Monaco Grand Prix event, as specified in the FIA F1 2026 technical regulations?",
+  "resposta": "La información sobre los precios de las entradas para el Gran Premio de Mónaco 2026 no se encuentra en la documentación proporcionada. Sin embargo, según la información disponible en línea, los precios varían dependiendo del tipo de experiencia elegida y pueden oscilar entre €500 y €5.500.",
+  "fonte": "hybrid",
+  "low_confidence": true,
+  "confidence_warning": "Verificador não conseguiu confirmar que a resposta está fundamentada no contexto recuperado após 2 tentativa(s). The answer claims that ticket prices vary between €500 and €5,500, but the context only mentions this information as a general statement about the Monaco Grand Prix 2026 experience, without providing any specific details or sources for these price ranges.",
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7395
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". Health and Safety Costs; and m. Provision of catering services at the site of a Competition or Testing of Current Cars, and at the F1 Team’s premises for guests and F1 Activities Personnel such cost shall be an Excluded Cost. D6.1 Adjustments 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D60 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7395,
+        "fonte": {
+          "char_count": 367,
+          "chunk_id": 464,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "2.2, the FIA may at any time make public its decision to conduct an 2026 Formula 1: General Regulatory Provisions 27 February 2026 A2 7 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7209,
+        "fonte": {
+          "char_count": 191,
+          "chunk_id": 217,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". The Promoter must comply with all requirements set out in the FIA Rules and Regulations. The Promoter of a Competition must procure that all Competitors, their personnel and drivers are covered by third party insurance in accordance with the FIA requirements. The following conditions apply: 2026 Formula 1: General Regulatory Provisions 27 February 2026 A2 0 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7178,
+        "fonte": {
+          "char_count": 417,
+          "chunk_id": 153,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "2.6 Third parties may only attend the hearing with the permission of the President of the Hearing, which he may grant or deny in his sole discretion. If permission is granted, the third party shall attend the 2026 Formula 1 Regulations: Financial Regulations (Power Unit M anufacturers) 07 May 2026 E29 2026 Fédération Internationale de l’Automobile Issue 05",
+        "score": 0.7121,
+        "fonte": {
+          "char_count": 358,
+          "chunk_id": 249,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". the undertaking of Marketing Services; 2026 Formula 1 Regulations: Financial Regulations (Power Unit M anufacturers) 07 May 2026 E48 2026 Fédération Internationale de l’Automobile Issue 05",
+        "score": 0.7026,
+        "fonte": {
+          "char_count": 190,
+          "chunk_id": 409,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "The cost varies depending on the experience you choose. Yacht hospitality packages typically start around €3,500, premium terraces range from €3,500 to €5,500, and grandstand seating is available from approximately €500 upwards. We offer competitive pricing and exceptional value for your Monaco Grand Prix 2026 experience.\n\n+ Why book tickets early for the Monaco Grand Prix 2026? [...] The official Monaco Grand Prix 2026 schedule will include Friday’s practice sessions, Saturday’s qualifying rounds, and the main Formula 1 race on Sunday, June 7. Additional support races like Formula 2, Formula 3, and Porsche Supercup are also expected throughout the weekend.\n\nMonaco grand prix 2026\n\n## Monaco GP 2026: New Rules, New Dates, New Era\n\n### ⚙️ New Technical Era with Hybrid Engines & Active Aerodynamics [...] The Monaco Grand Prix 2026 also marks a major turning point in Formula 1 technology. Teams will debut cars featuring significantly upgraded hybrid power units, with an equal power distribution between electric and combustion engines. Additionally, active aerodynamics—allowing drivers to dynamically adjust aerodynamic configurations mid-race—will be introduced, promising unprecedented car performance and spectacular racing action on the streets of Monte Carlo.",
+        "titulo": "Monaco grand prix 2026 - F1 Monaco Grand Prix 2027",
+        "fonte": "https://www.ticketgrandprix.com/monaco-grand-prix-2026"
+      },
+      {
+        "trecho": "Tickets\n  + Book your tickets\n  + Pack 2 days\n  + Pack 3 days\n Hospitalities\n  + VIP Loges\n  + Belvedere\n Event\n  + Presentation\n  + Monaco Circuit\n  + Program\n  + 2026 Prices\n  + Fanzone\n  + Useful info\n  + PMR Access\n\n0\n\n French\n English\n Italian\n\nAutomobile Club de Monaco\n\n# Official Ticketing\n\n## Formula 1 Louis Vuitton Grand Prix de Monaco 2026\n\nExperience a unique moment during a special event.\n\nEvent completed\n\nAll results on:\n\nwww.acm.mc\n\nSee you next year! [...] See you next year!\n\nThe official ticketing for the Formula 1 Grand Prix de Monaco 2027 is not yet open. To be notified when it opens, register at the link below:\n\nI want to be notified\n\nThe Formula 1 Louis Vuitton Grand Prix de Monaco 2026 is ​​over! See you next year\n\nHospitalities\n\nCome and watch the Formula 1 Louis Vuitton Grand Prix de Monaco 2026 in exceptional conditions\n\nView more\n\nOfficial app\n\nDiscover the app\n\nProgram\n\nLearn more\n\nUseful info\n\nLearn more [...] Tickets\n  + Book your tickets\n  + Pack 2 days\n  + Pack 3 days\n Hospitalities\n  + VIP Loges\n  + Belvedere\n Event\n  + Presentation\n  + Monaco Circuit\n  + Program\n  + 2026 Prices\n  + Fanzone\n  + Useful info\n  + PMR Access\n\n French\n English\n Italian\n\nLogo Automobile Club de Monaco\n\nLogo Monaco Circuit\n\n Formula 1 Grand Prix de Monaco\n Grand Prix de Monaco Historique",
+        "titulo": "Official Ticketing - Formula 1 Grand Prix de Monaco",
+        "fonte": "https://monaco-grandprix.com/en/edition/formula-1-grand-prix-de-monaco-2026"
+      },
+      {
+        "trecho": "Grand Prix de Monaco ™\n\n# Ticket sales open for the 2026 Monaco Grand Prix\n\nThe ticket office for the Monaco Grand Prix 2026 officially opened on September 22, 2025. Formula 1 fans can now book their seats for one of the most prestigious events on the F1 calendar.\n\nThe Monaco GP 2026 will once again take place on the legendary streets of Monte Carlo. With tight corners, unique scenery and a glamorous atmosphere, this race is considered one of the most spectacular in Formula 1. [...] Whether you are a speed enthusiast, a luxury lover or simply curious, attending the Monaco Grand Prix is an unforgettable experience. Seats are limited and demand is extremely high every year: it is best to book early to secure the best grandstands.\n\n### Available ticket categories\n\nThe ticket office offers different types of tickets to suit every spectator:",
+        "titulo": "Ticket sales open for the 2026 Monaco Grand Prix",
+        "fonte": "https://www.monacograndprixticket.com/formula1monaco/news/152-Ticket-sales-open-for-the-2026-Monaco-Grand-Prix"
+      },
+      {
+        "trecho": "ticket gp logo\n\n2026 © F1MONACO.COM   \n Terms and Conditions  \n Privacy policy\n\n###### Information\n\nFree DeliveryFree Delivery\n\nSafe and Secure PaymentsSafe and Secure Payments\n\nGift vouchersGift vouchers\n\nPrint@home ticketPrint@home ticket\n\n###### Payment\n\nPaypal\n\nVisa\n\nMasterCard\n\nAdyen\n\nComgate\n\nStripe\n\nGoPay\n\nApple Pay\n\nGoogle Pay\n\nBitcoin\n\nEthereum\n\nTether\n\n###### Contact\n\n+420510015347 EN only EN only\n\nWhatsApp EN only EN only\n\nContact us\n\n(Mon-Fri, 9:00 - 16:00) [...] F1 GP Monaco -\n\nSearch\n\n##### frequently searched:\n\nTIME SCHEDULE ENTERING THE CIRCUIT\n\nRACE RESULTS 2026 \n\n###### RACE RESULTS 2026\n\nen lang flag EN \n\n it lang flag it   de lang flag de   fr lang flag fr   es lang flag es   nl lang flag nl\n\n# RULES FOR VISITORS\n\nAs with other F1 events, the Monaco Grand Prix, visitors must abide by the rules set by the organisers. Below you will find a basic overview of them.\n\n### WHAT CAN'T YOU TAKE WITH YOU? [...] Items that can be used to damage or deface property - or any part of the circuit and its surroundings - as well as obstructions, hindrances or interruptions to the race, affecting public safety, as well as any merchandise or tickets for commercial distribution and any dangerous items, are prohibited by law.\n\nAnyone entering the entertainment area will be subject to a check/search.",
+        "titulo": "Formula 1 Rules for visitors | f1monaco.com",
+        "fonte": "https://www.f1monaco.com/en/rules-for-visitors-31"
+      },
+      {
+        "trecho": "in an official FIA Press Conference (as designated by the Media Delegate) must take part in a separate written media and broadcast session organised by their team. ii. These separate media sessions will take place in time slots deﬁned by the Media Delegate and must not be held at the same time as any official FIA Press Conference. b. Within a one (1) hour period commencing 20 hours and 30 minutes prior to the scheduled start of FP1, six (6) drivers must be available for fan engagement [...] was designed and constructed in order to comply with the regulations of any of the 2022 - 2025 Championships. No Competitor may sell or make available any such Previous Car to any third party without the prior authorisation of the FIA. “Promotional Event” (or “PE”) shall be deﬁned as an event in which a Competitor participates purely for marketing or promotional purposes using a Current Car. “Restricted Period” (or “RP”) is deﬁned as a period of time during which, with the exception of the [...] No DE using a Current Car may exceed 15km throughout the duration of the event. B11.7.3 No DE using a Previous Car may exceed 50km throughout the duration of the event. B11.7.4 During any DE, cars must be ﬁtted with the FIA ECU required by Article C8.2. B11.7.5 During any DE, only tyres manufactured speciﬁcally for this purpose by the Tyre Supplier may be used. B11.8 Safety Requirements, Technical Requirements & Car Limitations B11.8.1 Safety Requirements Competitors may only participate in",
+        "titulo": "[PDF] FIA 2026 F1 Regulations - Section B [Sporting]",
+        "fonte": "https://www.statsf1.com/reglement/sportif.pdf"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": false,
+    "justificativa": "The answer claims that ticket prices vary between €500 and €5,500, but the context only mentions this information as a general statement about the Monaco Grand Prix 2026 experience, without providing any specific details or sources for these price ranges.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What is the ticket price for the 2026 Monaco Grand Prix?",
+      "saida": "What are the official admission prices for spectators attending the Formula One World Championship event scheduled to take place at Circuit de Monaco in 2026?",
+      "timestamp": "2026-08-08T19:19:49.506519+00:00",
+      "latencia_ms": 2942
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the official admission prices for spectators attending the Formula One World Championship event scheduled to take place at Circuit de Monaco in 2026?",
+      "saida": "3 hits acima de 0.7; best_score=0.7387; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:19:49.557429+00:00",
+      "latencia_ms": 49
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is the ticket price for the 2026 Monaco Grand Prix?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:19:58.182860+00:00",
+      "latencia_ms": 8625
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is the ticket price for the 2026 Monaco Grand Prix?",
+        "answer": "The ticket price for the 2026 Monaco Grand Prix is not specified in the provided context. The context only mentions financial regulations and excluded costs related to F1 activities, but does not provide information on admission prices or ticket sales. Therefore, the answer may be uncertain."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims that the context does not specify the ticket price, but also states \"the answer may be uncertain\", which is a hedge indicating that the question was not fully addressed.",
+      "timestamp": "2026-08-08T19:20:08.634233+00:00",
+      "latencia_ms": 10448
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What is the ticket price for the 2026 Monaco Grand Prix?",
+      "saida": "What are the official spectator admission prices and ticketing policies for the 2026 Formula One Monaco Grand Prix event, as specified in the FIA F1 2026 technical regulations?",
+      "timestamp": "2026-08-08T19:20:12.800468+00:00",
+      "latencia_ms": 4162
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the official spectator admission prices and ticketing policies for the 2026 Formula One Monaco Grand Prix event, as specified in the FIA F1 2026 technical regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.7395; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:20:12.848347+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the official spectator admission prices and ticketing policies for the 2026 Formula One Monaco Grand Prix event, as specified in the FIA F1 2026 technical regulations?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:20:15.210758+00:00",
+      "latencia_ms": 2361
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is the ticket price for the 2026 Monaco Grand Prix?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:20:47.050040+00:00",
+      "latencia_ms": 31838
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is the ticket price for the 2026 Monaco Grand Prix?",
+        "answer": "La información sobre los precios de las entradas para el Gran Premio de Mónaco 2026 no se encuentra en la documentación proporcionada. Sin embargo, según la información disponible en línea, los precios varían dependiendo del tipo de experiencia elegida y pueden oscilar entre €500 y €5.500."
+      },
+      "saida": "grounded=False; will_retry=False; The answer claims that ticket prices vary between €500 and €5,500, but the context only mentions this information as a general statement about the Monaco Grand Prix 2026 experience, without providing any specific details or sources for these price ranges.",
+      "timestamp": "2026-08-08T19:21:17.740028+00:00",
+      "latencia_ms": 30685
+    }
+  ]
+}

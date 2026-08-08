@@ -1,0 +1,109 @@
+{
+  "session_id": "081d728596b3474fa5750412b801c838",
+  "timestamp": "2026-08-08T19:04:00.964360+00:00",
+  "query_original": "What does the Cost Cap in the Financial Regulations for F1 Teams limit?",
+  "query_reformulada": "What are the specific limits imposed by the Cost Cap within the Financial Regulations on Formula 1 teams regarding their annual expenditure?",
+  "resposta": "The Cost Cap in the Financial Regulations for F1 Teams limits certain costs that may be incurred by or on behalf of an F1 Team in each Full Year Financial Regulations Reporting Period, including costs related to developing, manufacturing, testing, and racing F1 Cars.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.8848
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "2.1 These Financial Regulations define a Cost Cap that limits certain costs that may be incurred by or on behalf of an F1 Team in each Full Year Financial Regulations Reporting Period relating to the operation of an F1 Team, including costs incurred to develop, manufacture, test, and race F1 Cars in the Championship, while leaving that F1 Team free to decide how to allocate resources within that Cost Cap. D1.",
+        "score": 0.8848,
+        "fonte": {
+          "char_count": 412,
+          "chunk_id": 14,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". require the Individual F1 Team Member to bear the reasonable costs incurred by the Cost Cap Administration in connection with any investigations into the Individual F1 Team Member’s compliance with these Financial Regulations and/or the preparation of the ABA. 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D24 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.854,
+        "fonte": {
+          "char_count": 385,
+          "chunk_id": 183,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "[Página 34]\nD SECTION D: FINANCIAL REGULATIONS (F1 TEAMS) 0 b. following the review of an F1 Team’s Full Year Reporting Documentation (including, where applicable, the conclusion of any investigation undertaken by or on behalf of the Cost Cap Administration), the F1 Team’s Relevant Costs have been determined to exceed the Cost Cap by less than 2%. D10.",
+        "score": 0.8433,
+        "fonte": {
+          "char_count": 354,
+          "chunk_id": 253,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". n. Unused Cost Cap Amount: From the Full Year Financial Regulations Reporting Period starting 1 January 2027 onwards, the F1 Team may choose to make a downward adjustment in the calculation of Relevant Costs for the Full Year Financial Regulations Reporting Period, equal to the Unused Cost Cap Amount subject to a maximum amount of US Dollars 2,000,000, adjusted for Indexation. o",
+        "score": 0.8411,
+        "fonte": {
+          "char_count": 383,
+          "chunk_id": 134,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "2.3 Where the Cost Cap Administration refers a case to the Cost Cap Adjudication Panel, FIA Legal shall take over conduct of the matter on behalf of the FIA, assisted as necessary by the Cost Cap Administration. D9.3 Limitation period D9.\n3.1 [Replaced by Art.A7.9] 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D26 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.8293,
+        "fonte": {
+          "char_count": 388,
+          "chunk_id": 196,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "Every claim in the answer is supported by the context, specifically referencing sections 2.1 and D10.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What does the Cost Cap in the Financial Regulations for F1 Teams limit?",
+      "saida": "What are the specific limits imposed by the Cost Cap within the Financial Regulations on Formula 1 teams regarding their annual expenditure?",
+      "timestamp": "2026-08-08T19:03:38.958254+00:00",
+      "latencia_ms": 2156
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the specific limits imposed by the Cost Cap within the Financial Regulations on Formula 1 teams regarding their annual expenditure?",
+      "saida": "5 hits acima de 0.7; best_score=0.8848; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:03:39.001903+00:00",
+      "latencia_ms": 40
+    },
+    {
+      "agente": "generator",
+      "entrada": "What does the Cost Cap in the Financial Regulations for F1 Teams limit?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:03:48.769783+00:00",
+      "latencia_ms": 9766
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What does the Cost Cap in the Financial Regulations for F1 Teams limit?",
+        "answer": "The Cost Cap in the Financial Regulations for F1 Teams limits certain costs that may be incurred by or on behalf of an F1 Team in each Full Year Financial Regulations Reporting Period, including costs related to developing, manufacturing, testing, and racing F1 Cars."
+      },
+      "saida": "grounded=True; will_retry=False; Every claim in the answer is supported by the context, specifically referencing sections 2.1 and D10.",
+      "timestamp": "2026-08-08T19:04:00.959485+00:00",
+      "latencia_ms": 12187
+    }
+  ]
+}

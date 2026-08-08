@@ -1,0 +1,109 @@
+{
+  "session_id": "97e43c18515647e0a9bcc9181ed3eff0",
+  "timestamp": "2026-08-08T19:03:33.257281+00:00",
+  "query_original": "What is the minimum mass of an F1 car during Qualifying and Sprint Qualifying sessions in the 2026 Technical Regulations?",
+  "query_reformulada": "What is the minimum vehicle weight for a Formula One car during qualifying and sprint qualifying sessions as per Article 28.3 of the 2026 FIA Formula One World Championship technical regulations?",
+  "resposta": "The minimum mass of an F1 car during Qualifying and Sprint Qualifying sessions in the 2026 Technical Regulations is 726kg plus the Nominal Tyre Mass.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.8559
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "C SECTION C: TECHNICAL REGULATIONS ARTICLE C4: MASS Advisory Committee: TAC Governance: F1 Commission / WMSC C4.1 Minimum mass During the Sprint Qualifying and Qualifying sessions, The Minimum Mass is 726kg plus the Nominal Tyre Mass. In all other sessions, the Minimum Mass is 724kg plus the Nominal Tyre Mass. At all times during the Competition, Car Mass must not be less than the Minimum Mass. When a Heat Hazard is declared, the Minimum Mass will be increased by the Heat Hazard Mass Increase",
+        "score": 0.8559,
+        "fonte": {
+          "char_count": 497,
+          "chunk_id": 398,
+          "section": "technical",
+          "source_file": "fia_2026_f1_regulations_-_section_c_technical_-_iss_18_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". c. Each driver must be weighed by the Technical Delegate at the end of the last period of the Qualifying or Sprint Qualifying session in which they participated. d. At the end of Qualifying or Sprint Qualifying all F1 Cars which took part in Q3 (or SQ3) will be weighed. If a driver wishes to leave their F1 Car before it is weighed, they must ask the Technical Delegate to weigh them in order that this weight may be added to that of the F1 Car. e",
+        "score": 0.8302,
+        "fonte": {
+          "char_count": 450,
+          "chunk_id": 216,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". If, when required for checking, a car is not already fitted with dry weather tyres, its mass will be determined using a set of dry weather tyres selected by the FIA technical delegate. C4.2 Mass distribution At all times during the Qualifying and Sprint Qualifying Sessions, with the car resting on a horizontal plane: i. the mass measured at the front axle must not be less than the Minimum Mass specified in Article C4.1 factored by 0.44. ii",
+        "score": 0.8145,
+        "fonte": {
+          "char_count": 445,
+          "chunk_id": 399,
+          "section": "technical",
+          "source_file": "fia_2026_f1_regulations_-_section_c_technical_-_iss_18_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "C4.1 Minimum mass 60 C4.2 Mass distribution 60 C4.3 Ballast 60 C4.4 Adding during the Race or Sprint Session 61 C4.5 Reference Mass of the driver and Driver Ballast 61 C4.6 Heat Hazard Mass Increase 61 C4.7 Determination of Nominal Tyre Mass 61 ARTICLE C5: POWER UNIT 62 C5.1 Engine specification 62 C5.2 Power Unit Energy Flow 63 C5.3 Turbo Charger 68 C5.4 Power unit geometrical constraints and dimensions 69 C5.5 Mass and centre of gravity 71 C5.6 Engine intake air 72 C5.7 Variable geometry systems 73 C5.8",
+        "score": 0.7984,
+        "fonte": {
+          "char_count": 510,
+          "chunk_id": 7,
+          "section": "technical",
+          "source_file": "fia_2026_f1_regulations_-_section_c_technical_-_iss_18_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "2.2 Sprint Qualifying Format The Sprint Qualifying will be run as follows: a. For the first twelve (12) minutes of the session (“Sprint Qualifying 1” or “SQ1”) all F1 Cars will be permitted on the track and at the end of this period the slowest six (6) F1 Cars will be prohibited from taking any further part in the session. Lap times achieved by the sixteen (16) remaining F1 Cars will then be deleted. b",
+        "score": 0.798,
+        "fonte": {
+          "char_count": 405,
+          "chunk_id": 134,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer directly quotes Article C4.1 of the context, which specifies that during Qualifying and Sprint Qualifying sessions, the minimum mass is 726kg plus the Nominal Tyre Mass.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What is the minimum mass of an F1 car during Qualifying and Sprint Qualifying sessions in the 2026 Technical Regulations?",
+      "saida": "What is the minimum vehicle weight for a Formula One car during qualifying and sprint qualifying sessions as per Article 28.3 of the 2026 FIA Formula One World Championship technical regulations?",
+      "timestamp": "2026-08-08T19:03:11.637864+00:00",
+      "latencia_ms": 2885
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the minimum vehicle weight for a Formula One car during qualifying and sprint qualifying sessions as per Article 28.3 of the 2026 FIA Formula One World Championship technical regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.8559; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:03:11.683173+00:00",
+      "latencia_ms": 42
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is the minimum mass of an F1 car during Qualifying and Sprint Qualifying sessions in the 2026 Technical Regulations?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:03:20.652825+00:00",
+      "latencia_ms": 8968
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is the minimum mass of an F1 car during Qualifying and Sprint Qualifying sessions in the 2026 Technical Regulations?",
+        "answer": "The minimum mass of an F1 car during Qualifying and Sprint Qualifying sessions in the 2026 Technical Regulations is 726kg plus the Nominal Tyre Mass."
+      },
+      "saida": "grounded=True; will_retry=False; The answer directly quotes Article C4.1 of the context, which specifies that during Qualifying and Sprint Qualifying sessions, the minimum mass is 726kg plus the Nominal Tyre Mass.",
+      "timestamp": "2026-08-08T19:03:33.253693+00:00",
+      "latencia_ms": 12597
+    }
+  ]
+}

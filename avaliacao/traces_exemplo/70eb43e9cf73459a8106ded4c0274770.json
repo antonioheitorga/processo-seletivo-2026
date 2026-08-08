@@ -1,0 +1,173 @@
+{
+  "session_id": "70eb43e9cf73459a8106ded4c0274770",
+  "timestamp": "2026-08-08T19:07:23.754816+00:00",
+  "query_original": "What is the Full Year Reporting Deadline under the F1 Teams Financial Regulations?",
+  "query_reformulada": "What are the submission deadlines for the annual financial reports as per Article 26 of the FIA Formula One World Championship Financial Regulations?",
+  "resposta": "O prazo para a entrega dos relatórios financeiros anuais é 19h00 CET em 31 de março, ou no primeiro dia útil seguinte, relativamente ao período de relatório financeiro que termina em 31 de dezembro do ano anterior.",
+  "fonte": "hybrid",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.8519
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". \"Full Year Reporting Deadline\" means the deadline for submission of the Full Year Reporting Documentation, which is 19.00 CET on 31 March, or if such day is not a business day on the next business day, in respect of the Full Year Financial Regulations Reporting Period ending on 31 December in the previous calendar year, unless any later time or date is otherwise communicated to the F1 Teams by the Cost Cap Administration via a Determination",
+        "score": 0.8519,
+        "fonte": {
+          "char_count": 446,
+          "chunk_id": 351,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". \"Interim Reporting Deadline\" means the deadline for submission of the Interim Reporting Documentation, which is 19.00 CET on 30 June or if such day is not a business day on the next business day, in respect of the Interim Financial Regulations Reporting Period ending on 30 April in the same calendar year, unless any later time or date is otherwise communicated to the F1 Teams by the Cost Cap Administration via a Determination. \"Interim Reporting Documentation\" has the meaning set out in Article D7.",
+        "score": 0.8227,
+        "fonte": {
+          "char_count": 505,
+          "chunk_id": 372,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "2.1 By the Interim Reporting Deadline, an F1 Team must submit the following to the Cost Cap Administration (the \"Interim Reporting Documentation\"): a. the Reporting Group Documentation; b. the Interim Financial Reporting Documentation; and c the Declarations. 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D19 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.8121,
+        "fonte": {
+          "char_count": 382,
+          "chunk_id": 142,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "2.1. \"Interim Financial Regulations Reporting Period\" means a four-month financial reporting period commencing on 1 January and ending on 30 April in any given year. \"International Sporting Code\" means the International Sporting Code of the FIA and its appendices, as amended from time to time. 2026 Formula 1 Regulations: Financial Regulations (Power Unit M anufacturers) 07 May 2026 E47 2026 Fédération Internationale de l’Automobile Issue 05",
+        "score": 0.8036,
+        "fonte": {
+          "char_count": 444,
+          "chunk_id": 401,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "2.2. \"Financial Regulations Reporting Period\" means the Interim Financial Regulations Reporting Period and/or the Full Year Financial Regulations Reporting Period, as the context so requires. \"Flyaway Event\" means a Competition or Testing of Current Cars held in any country outside the European Union or United Kingdom. 2026 Formula 1 Regulations: Financial Regulations (Power Unit M anufacturers) 07 May 2026 E43 2026 Fédération Internationale de l’Automobile Issue 05",
+        "score": 0.7975,
+        "fonte": {
+          "char_count": 470,
+          "chunk_id": 364,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "For purposes of the Financial Regulations, the total annual gross salary and the total average number of full-time employees of the F1 Team’s Reporting Group Entities is not considered Conﬁdential Information and may be disclosed not earlier than the 30 September of the subsequent Full Year Reporting Period by the Cost Cap Administration to all F1 Teams or PU Manufacturers. “Constructor” means the person or any corporate or unincorporated body that designs the Listed Team Components (LTCs) (as [...] (Year N+1); e. the submission of Reporting Documentation in the year following the calendar year in question (Year N+1); and f. the requirement to comply with speciﬁc sections of the FIA F1 Regulations for a certain period before the ﬁrst entry into the Championship or the ﬁrst homologation of a Power Unit as speciﬁed in the relevant Sections of the FIA F1 Regulations (including Articles A3.5.2 and A3.6.5). A9.2 Efective period of FIA F1 Documents A9.2.1 The FIA will specify the egective date [...] RESPONSIBILITIES OF KEY STAKEHOLDERS 19 A5.1 General obligations applicable to all 19 A5.2 FIA 20 A5.3 Promoters and Organisers 20 A5.4 ASNs 21 A5.5 Circuit Operators 22 A5.6 OUicials 22 A5.7 F1 Teams and PU Manufacturers 22 A5.8 F1 Drivers and Other Racing Drivers 25 A5.9 Other Covered Persons 25 ARTICLE A6: INVESTIGATIONS, RIGHT OF INQUIRY, AND NOTIFICATION OF BREACHES 26 A6.1 Investigations 26 A6.2 FIA Ethics and Compliance Hotline 28 A6.3 FIA requests for information/access and Demands 28",
+        "titulo": "[PDF] FIA 2026 F1 Regulations - Section A [General Provisions] - Iss 02",
+        "fonte": "https://www.statsf1.com/reglement/general.pdf"
+      },
+      {
+        "trecho": "Published on 05.08.26](\n [FIA 2026 F1 Regulations - Section C [Technical] - Iss 20 - 2026-08-05\n\n  Published on 05.08.26](\n [FIA 2026 F1 Regulations - Section D [Financial - F1 Teams] - Iss 07 - 2026-06-25\n\n  Published on 05.08.26](\n [FIA 2026 F1 Regulations - Section E [Financial – PU Manufacturers] - Iss 06 - 2026-06-25\n\n  Published on 05.08.26](\n [FIA 2026 F1 Regulations - Section F [Operational] - Iss 10 - 2026-08-05\n\n  Published on 05.08.26](\n\nSection C [...] Published on 05.08.26](/system/files/documents/fia_2026_f1_regulations_-_section_c_technical_-_iss_20_-_2026-08-05.pdf)\n\n[2026 Regulations\n\nFIA 2026 F1 Regulations - Section D [Financial - F1 Teams] - Iss 07 - 2026-06-25\n\nPublished on 05.08.26](/system/files/documents/fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_07_-_2026-06-25.pdf)\n\n[2026 Regulations\n\nFIA 2026 F1 Regulations - Section E [Financial – PU Manufacturers] - Iss 06 - 2026-06-25 [...] Published on 07.05.26](\n- [FIA 2026 F1 Regulations - Section E [Financial - PU Manufacturers] - Iss 04 - 2026-04-28\n\n  Published on 28.04.26](\n- [FIA 2026 F1 Regulations - Section E [Financial - Power Unit Manufacturers] - Iss 03 - 2025-12-10\n\n  Published on 10.12.25](\n- [FIA 2026 F1 Regulations - Section E [Financial Regulations - Power Unit Manufacturers] - Iss 2 - 2025-10-16",
+        "titulo": "Regulations",
+        "fonte": "https://api.fia.com/regulation/category/110"
+      },
+      {
+        "trecho": "The document outlines the Financial Regulations for Power Unit Manufacturers in Formula 1, effective from January 1, 2026. It establishes a Power Unit Cost Cap to limit costs incurred by manufacturers, ensuring competitive balance and financial stability in the sport. The regulations include obligations for manufacturers, reporting requirements, exclusions, and procedures for compliance and adjudication of breaches.\n\n# 2026 F1 Power Unit Financial Regulations",
+        "titulo": "2026 F1 Power Unit Financial Regulations | PDF | Depreciation | Cost",
+        "fonte": "https://www.scribd.com/document/958426509/FIA-2026-F1-Regulations-Section-E-Financial-Regulations-Power-Unit-Manufacturers-Iss-2-2025-10-16"
+      },
+      {
+        "trecho": "Fédération Internationale de l’Automobile (FIA). Formula One Financial Regulations — 2026, Section E (Power Unit Manufacturers). FIA, latest issue.\n\nFédération Internationale de l’Automobile (FIA). Formula One Operational Regulations — 2026, Section F. FIA, latest issue.\n\nFédération Internationale de l’Automobile (FIA). General Regulatory Provisions — Formula One World Championship 2026, Section A. FIA. [...] Teams are required to submit detailed interim and annual financial reports, with breaches categorised as procedural, minor overspends, or material overspends. Sanctions range from fines and development restrictions to championship penalties, reinforcing the seriousness of financial compliance. [...] References\n\nFédération Internationale de l’Automobile (FIA). Formula One Technical Regulations — 2026, Section C. FIA, latest issue.\n\nFédération Internationale de l’Automobile (FIA). Formula One Sporting Regulations — 2026, Section B. FIA, latest issue.\n\nFédération Internationale de l’Automobile (FIA). Formula One Financial Regulations — 2026, Section D (F1 Teams). FIA, latest issue.",
+        "titulo": "Medium",
+        "fonte": "https://medium.com/@olivearul2008/formula-1-2026-regulations-a-complete-technical-sporting-operational-and-financial-breakdown-1c22dba0fe06"
+      },
+      {
+        "trecho": "## This is Formula 1's Post\n\n### This is Formula 1\n\nApril 10  ·\n\nFIA has set deadline to TWEAK the 2026 regulations.\n\n#formula1 #f12026\n\n#fia\n\nVIA: [gpfans]\n\nNo photo description available. [...] '/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint1_radial_15251_63610)'/%3E%3Cpath d='M16.0001 7.9996c0 4.418-3.5815 7.9996-7.9995 7.9996S.001 12.4176.001 7.9996 3.5825 0 8.0006 0C12.4186 0 16 3.5815 16 7.9996Z' fill='url(%23paint2_radial_15251_63610)' fill-opacity='.5'/%3E%3Cpath d='M7.3014 3.8662a.6974.6974 0 0 1 .6974-.6977c.6742 0 1.2207.5465 1.2207 1.2206v1.7464a.101.101 0 0 0 [...] All reactions:\n\n4\n\n1 comment\n\nLike\n\nComment\n\nMost relevant\n\n﻿\n\nEamonn McCann\n\nmeeting results.... pull out the V8s and V10s go back to basics and don't fuc7 with electricity it's very dangerous",
+        "titulo": "FIA has set deadline to TWEAK the 2026 regulations. ...",
+        "fonte": "https://www.facebook.com/ThisIsFormula1/posts/fia-has-set-deadline-to-tweak-the-2026-regulationsformula1-f12026-fiavia-gpfans/1470488724873380"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer accurately states that the Full Year Reporting Deadline is 19h00 CET on 31 March, which is supported by the context.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What is the Full Year Reporting Deadline under the F1 Teams Financial Regulations?",
+      "saida": "What are the specific dates for submission of the annual financial reports by Formula 1 teams in accordance with Article 26.2 of the FIA International Sporting Code and the relevant provisions of the F1 Teams' Financial Regulations?",
+      "timestamp": "2026-08-08T19:05:31.202504+00:00",
+      "latencia_ms": 4822
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the specific dates for submission of the annual financial reports by Formula 1 teams in accordance with Article 26.2 of the FIA International Sporting Code and the relevant provisions of the F1 Teams' Financial Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.8382; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:05:31.252584+00:00",
+      "latencia_ms": 47
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is the Full Year Reporting Deadline under the F1 Teams Financial Regulations?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:05:46.365694+00:00",
+      "latencia_ms": 15112
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is the Full Year Reporting Deadline under the F1 Teams Financial Regulations?",
+        "answer": "The Full Year Reporting Deadline under the F1 Teams Financial Regulations is not explicitly stated in the provided context. However, Article D26 of the 2026 Formula 1: Financial Regulations (F1 Teams) states that an F1 Team must submit its annual financial report by a deadline specified in the regulations. Unfortunately, this specific deadline is not mentioned in the available context."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims that the Full Year Reporting Deadline is \"not explicitly stated\" and also mentions a specific article (D26) that is not present in the provided context.",
+      "timestamp": "2026-08-08T19:06:01.567207+00:00",
+      "latencia_ms": 15199
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What is the Full Year Reporting Deadline under the F1 Teams Financial Regulations?",
+      "saida": "What are the submission deadlines for the annual financial reports as per Article 26 of the FIA Formula One World Championship Financial Regulations?",
+      "timestamp": "2026-08-08T19:06:05.739189+00:00",
+      "latencia_ms": 4169
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the submission deadlines for the annual financial reports as per Article 26 of the FIA Formula One World Championship Financial Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.8519; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:06:05.786066+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the submission deadlines for the annual financial reports as per Article 26 of the FIA Formula One World Championship Financial Regulations?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:06:09.041347+00:00",
+      "latencia_ms": 3254
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is the Full Year Reporting Deadline under the F1 Teams Financial Regulations?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:06:46.149302+00:00",
+      "latencia_ms": 37106
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is the Full Year Reporting Deadline under the F1 Teams Financial Regulations?",
+        "answer": "O prazo para a entrega dos relatórios financeiros anuais é 19h00 CET em 31 de março, ou no primeiro dia útil seguinte, relativamente ao período de relatório financeiro que termina em 31 de dezembro do ano anterior."
+      },
+      "saida": "grounded=True; will_retry=False; The answer accurately states that the Full Year Reporting Deadline is 19h00 CET on 31 March, which is supported by the context.",
+      "timestamp": "2026-08-08T19:07:23.750975+00:00",
+      "latencia_ms": 37598
+    }
+  ]
+}

@@ -58,6 +58,36 @@ def test_reformulate_appenda_trace_existente(mock_prompt_cls, _mock_llm_cls):
     assert result["trace"][1]["agente"] == "reformulator"
 
 
+@patch("agents.reformulator.ChatOllama")
+@patch("agents.reformulator.ChatPromptTemplate")
+def test_reformulate_inclui_feedback_do_verifier_em_retentativa(mock_prompt_cls, _mock_llm_cls):
+    """Quando o verifier sinaliza will_retry, o prompt recebe uma nota de retentativa."""
+    chain = mock_prompt_cls.from_template.return_value.__or__.return_value
+    chain.invoke.return_value.content = "broader query"
+
+    state = {
+        "query_original": "qual o limite de DRS?",
+        "verifier_result": {"grounded": False, "justification": "faltou contexto", "will_retry": True},
+    }
+
+    reformulate(state)
+
+    invoke_args = chain.invoke.call_args[0][0]
+    assert "faltou contexto" in invoke_args["retry_note"]
+
+
+@patch("agents.reformulator.ChatOllama")
+@patch("agents.reformulator.ChatPromptTemplate")
+def test_reformulate_sem_retry_note_na_primeira_tentativa(mock_prompt_cls, _mock_llm_cls):
+    chain = mock_prompt_cls.from_template.return_value.__or__.return_value
+    chain.invoke.return_value.content = "query"
+
+    reformulate({"query_original": "teste"})
+
+    invoke_args = chain.invoke.call_args[0][0]
+    assert invoke_args["retry_note"] == ""
+
+
 @pytest.mark.integration
 def test_reformulate_integracao_ollama():
     """Requer Ollama rodando com llama3.1:8b. Rode com: pytest -m integration"""

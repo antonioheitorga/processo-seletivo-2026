@@ -1,0 +1,173 @@
+{
+  "session_id": "ea983b9a732341a99832ed92a5195f94",
+  "timestamp": "2026-08-08T19:26:56.456865+00:00",
+  "query_original": "What is the fastest lap ever recorded at Monza?",
+  "query_reformulada": "What are the highest recorded lap times for the Autodromo Nazionale di Monza under the 2026 FIA Formula One World Championship technical regulations, specifically in relation to the fastest qualifying lap and the fastest race lap?",
+  "resposta": "A resposta pode ser incerta devido à falta de informações específicas sobre a temporada 2026. No entanto, podemos consultar os dados disponíveis até abril de 2026.\n\nDe acordo com o contexto fornecido, o recorde de velocidade mais rápido registrado em Monza foi estabelecido por Max Verstappen durante a qualificação do Grande Prêmio da Itália de 2025, quando ele registrou uma volta em 1:18.792 e uma velocidade média de 264.681 km/h.\n\nO recorde de velocidade mais rápida registrada em uma corrida foi estabelecido por Lando Norris durante o Grande Prêmio da Itália de 2025, quando ele registrou uma volta em 1:20.901 e uma velocidade média de 257.781 km/h.\n\nPortanto, a resposta mais precisa é que o recorde de velocidade mais rápido registrado em Monza até abril de 2026 foi estabelecido por Max Verstappen durante a qualificação do Grande Prêmio da Itália de 2025, com uma volta em 1:18.792 e uma velocidade média de 264.681 km/h.",
+  "fonte": "hybrid",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7474
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". If they got eliminated in SQ1 and their best lap in SQ1 exceeded 107% of the fastest lap time set during SQ1, unless the track was declared wet by the Race Director. 2026 Form ula 1: Sporting Regulations 28 April 2026 B1 8 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7474,
+        "fonte": {
+          "char_count": 280,
+          "chunk_id": 141,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". In all cases, no points will be awarded unless a minimum of two complete and consecutive laps have been completed by the leader without a Safety Car or Virtual Safety Car procedure. a. If the leader has completed two laps but less than 25% of the Scheduled Race Distance, points will be awarded in accordance with column 1 of the table below. 2026 Formula 1: General Regulatory Provisions 27 February 2026 A 9 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7203,
+        "fonte": {
+          "char_count": 467,
+          "chunk_id": 58,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". (For example, if a F1 Team carries out 325 restricted wind tunnel runs against a maximum of 320 in an ATP, that F1 Team shall only be permitted to make 270 restricted wind tunnel runs during the next ATP). 2026 Formula 1: Operational Regulations 07 May 2026 F1 8 2026 Fédération Internationale de l’Automobile Issue 08",
+        "score": 0.7188,
+        "fonte": {
+          "char_count": 320,
+          "chunk_id": 145,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". b. After a seven (7) minute break the session will resume for fifteen (15) minutes (“Qualifying 2” or “Q2”), and the sixteen (16) remaining F1 Cars will be permitted on the track. At the end of this period the slowest six (6) F1 Cars will be prohibited from taking any further part in the session. Lap times achieved by the ten (10) remaining F1 Cars will then be deleted. c",
+        "score": 0.7185,
+        "fonte": {
+          "char_count": 376,
+          "chunk_id": 169,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". If two (2) or more drivers set identical lap times during a Free Practice session, those drivers’ relative positions will be determined by the chronological order in which their lap times where set, the driver who set the lap time first having the highest relative classification, followed by the driver who set the lap time second, and so on and so forth. B2.2 Sprint Qualifying Session B2.",
+        "score": 0.7163,
+        "fonte": {
+          "char_count": 393,
+          "chunk_id": 131,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "a race for a World Championship event. As of August 2026, the fastest official race lap records of Autodromo Nazionale di Monza are listed as: [...] Max Verstappen recorded the fastest pole position lap at Monza during the 2025 Italian Grand Prix, when he lapped in 1:18.792 at an average speed of 264.681 km/h (164.465 mph) – the fastest average lap speed recorded in qualifying for a World Championship event. The official race lap record for the current circuit layout is 1:20.901, set by Lando Norris during the same Grand Prix at an average speed of 257.781 km/h (160.178 mph) – the fastest average lap speed recorded in a race for a World [...] The maximum speed recorded in a 2025 Formula One car was 364.1 km/h (226.2 mph), established at the end of the start/finish straight. They experience a maximum g-force of 4.50 during deceleration, and the track has many dramatic high to low speed transitions.\n\n## Lap records\n\n[edit]",
+        "titulo": "Monza Circuit - Wikipedia",
+        "fonte": "https://en.wikipedia.org/wiki/Monza_Circuit"
+      },
+      {
+        "trecho": "The fastest ever lap of the Monza circuit by an F2 car is 1:30.982 set by Nobuharu Matsushita driving for ART Grand Prix during qualifying in 2017.\n\nThe fastest lap during a race, so the official lap record, is 1:32.717 set by Kush Maini in 2024 driving for Invicta Racing.\n\n## F3 lap records at Monza\n\nThe fastest ever lap F3 of the Monza circuit is 1:37.559 set by Alexander Smolyar during qualifying in 2022. [...] But the fastest ever speed recorded at Monza was set a number of years ago. At the 2005 Italian Grand Prix Juan Pablo Montoya clocked 372.6kph / 231.5mph in his McLaren-Mercedes. An incredible speed that’s not only the fastest ever recorded in a race at Monza, but also the fastest speed ever clocked during a Grand Prix, and it still stands in the Guiness Book of Records.\n\nMonza Circuit Grand Prix track layout\n\n## F2 lap records at Monza [...] April 7, 2026\n\nItalian GP Grandstand\n\nMonza F1 Dress Code: What to wear to the Italian GP\n\nApril 1, 2026\n\nMonza temple of speed entrance gate\n\nMonza Entrances, Gates & Bag Policy- Italian Grand Prix\n\nApril 8, 2026\n\nmonza f1 car top speed\n\nMonza Lap Records & Top Speeds – F1, F2, GT3, LMH\n\nMarch 27, 2026\n\nItalian Formula 1 fans walking to the Monza circuit from the train station\n\nHow to get to Monza – Italian GP Train, Bus & Shuttle tips\n\nApril 8, 2026\n\nMonza F1 parking",
+        "titulo": "Monza Lap Records & Top Speeds - F1, F2, GT3, LMH",
+        "fonte": "https://oversteer48.com/monza-lap-records"
+      },
+      {
+        "trecho": "## Monza Circuit lap record\n\nThe official lap record for the current F1 Grand Prix circuit layout is 1:10.540, set by Rubens Barrichello during the 2004 Italian Grand Prix driving for Ferrari.\n\nMax Verstappen recorded the fastest pole position lap at Monza driving for Red Bull Racing in 2025 when he lapped in 1m 18.792s during qualifying of the 2025 Italian Grand Prix.\n\nFormula One History Subscribe\n\n## Autodromo Nazionale di Monza updates [...] ## See also…\n\nItalian Grand Prix 2023 Monza\n\nEvery Italian Grand Prix F1 Winner\n\nLewis Hamilton 2025 Italian GP FP1\n\nItalian Grand Prix: Monza F1 Fan Travel Guide\n\n## Monza Circuit\n\n|  |  |\n --- |\n| First Grand Prix | 1950 Italian Grand Prix |\n| Number of Laps | 53 |\n| Circuit Length | 5.793km |\n| Race Distance | 306.72 km |\n| Lap Record | 1m 18.792s Max Verstappen (2025) |\n\n## Circuit\n\n### When was the Monza Circuit built? [...] 2026 Bahrain Grand Prix in Malaysia\n\n02 – 04 Oct\n\nSepang\n\nSingapore Circle Flag \nRound 17: Singapore\n\nSingapore Circle Flag\n\n2026 Singapore Grand Prix\n\n09 – 11 Oct\n\nSingapore\n\nUnited-states_flag_icon_round \nRound 18: United States\n\nUnited-states_flag_icon_round\n\n2026 United States Grand Prix\n\n09 – 11 Oct\n\nCOTA\n\nMexican Circle Flag \nRound 19: Mexico City\n\nMexican Circle Flag\n\n2026 Mexico City Grand Prix\n\n30 Oct – 01 Nov\n\nMexico\n\n \nRound 20: Brazil\n\n2026 Sao Paulo Grand Prix\n\n06 – 08 Nov\n\nBrazil",
+        "titulo": "Autodromo Nazionale di Monza | F1 Circuits | F1 History",
+        "fonte": "https://www.formulaonehistory.com/circuits/autodromo-nazionale-di-monza"
+      },
+      {
+        "trecho": "| Hungary | Charles LeclercLEC | 1:22.000 | [...] | Grand Prix | Winner | Time |\n --- \n| Australia | Max VerstappenVER | 1:22.091 |\n| China | Kimi AntonelliANT | 1:35.275 |\n| Japan | Kimi AntonelliANT | 1:32.432 |\n| Miami | Lando NorrisNOR | 1:31.869 |\n| Canada | Kimi AntonelliANT | 1:14.210 |\n| Monaco | Kimi AntonelliANT | 1:13.481 |\n| Barcelona-Catalunya | Lewis HamiltonHAM | 1:20.122 |\n| Austria | Kimi AntonelliANT | 1:10.374 |\n| Great Britain | Kimi AntonelliANT | 1:31.777 |\n| Belgium | Lando NorrisNOR | 1:48.890 |",
+        "titulo": "2026 DHL Fastest Lap AWARD",
+        "fonte": "https://www.formula1.com/en/results/2026/awards/fastest-laps"
+      },
+      {
+        "trecho": "But neither Leclerc nor Lewis Hamilton was able to improve their laps, while Norris came storming back to qualify second. This pushed Piastri down to third, and he will start on the second row next to Leclerc. Norris’ time had been good enough to claim provisional pole, but there was no stopping Verstappen, who put in a 1:18.792-second lap to nip back ahead. This eclipses Hamilton’s previous track record at Monza — a 1:18.887 set when he raced for Mercedes in 2020 — and gives Verstappen the [...] Throughout practice at Monza, Hadjar had been steadily in the P8-P11 range, enough to seem safe for Q2. But he found himself in the drop zone late in Q1 and was unable to escape, qualifying in a provisional P16. With the margins razor-thin, Hadjar’s time was less than a tenth of a second slower than Albon’s (who had the 15th-fastest time in Q1 to progress). The result gave Hadjar his first career F1 exit in Q1, with Racing Bulls swiftly revealing afterwards that he’d suffered a power unit [...] just 0.084 seconds. Norris, though, had to make up half a second as he sat down in a provisional P7.",
+        "titulo": "Max Verstappen sets fastest lap in F1 history to claim Italian GP pole - The Athletic",
+        "fonte": "https://www.nytimes.com/athletic/6605531/2025/09/06/italian-gp-qualifying-results-max-verstappen"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer is supported by the context, which states that Max Verstappen recorded the fastest pole position lap at Monza during the 2025 Italian Grand Prix with a time of 1:18.792.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What is the fastest lap ever recorded at Monza?",
+      "saida": "What are the specifications for the fastest lap time achieved by a Formula One vehicle under Article 27.2 of the FIA F1 2026 Technical Regulations at the Autodromo Nazionale di Monza?",
+      "timestamp": "2026-08-08T19:25:02.565943+00:00",
+      "latencia_ms": 4066
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the specifications for the fastest lap time achieved by a Formula One vehicle under Article 27.2 of the FIA F1 2026 Technical Regulations at the Autodromo Nazionale di Monza?",
+      "saida": "5 hits acima de 0.7; best_score=0.7646; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:25:02.640396+00:00",
+      "latencia_ms": 71
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is the fastest lap ever recorded at Monza?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:25:14.990973+00:00",
+      "latencia_ms": 12350
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is the fastest lap ever recorded at Monza?",
+        "answer": "The fastest lap ever recorded at Monza is not specified in the provided context. However, Article 27.2 of the FIA F1 2026 Technical Regulations does mention requirements for the fastest lap time, but it does not provide a specific value for Monza. Therefore, I must say that the answer may be uncertain based on the available information."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims uncertainty based on the available information, but it does not provide any specific information about the fastest lap ever recorded at Monza.",
+      "timestamp": "2026-08-08T19:25:27.336293+00:00",
+      "latencia_ms": 12342
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What is the fastest lap ever recorded at Monza?",
+      "saida": "What are the highest recorded lap times for the Autodromo Nazionale di Monza under the 2026 FIA Formula One World Championship technical regulations, specifically in relation to the fastest qualifying lap and the fastest race lap?",
+      "timestamp": "2026-08-08T19:25:32.481892+00:00",
+      "latencia_ms": 5143
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the highest recorded lap times for the Autodromo Nazionale di Monza under the 2026 FIA Formula One World Championship technical regulations, specifically in relation to the fastest qualifying lap and the fastest race lap?",
+      "saida": "5 hits acima de 0.7; best_score=0.7474; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:25:32.529853+00:00",
+      "latencia_ms": 45
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the highest recorded lap times for the Autodromo Nazionale di Monza under the 2026 FIA Formula One World Championship technical regulations, specifically in relation to the fastest qualifying lap and the fastest race lap?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:25:35.123978+00:00",
+      "latencia_ms": 2593
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is the fastest lap ever recorded at Monza?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:26:23.840971+00:00",
+      "latencia_ms": 48716
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is the fastest lap ever recorded at Monza?",
+        "answer": "A resposta pode ser incerta devido à falta de informações específicas sobre a temporada 2026. No entanto, podemos consultar os dados disponíveis até abril de 2026.\n\nDe acordo com o contexto fornecido, o recorde de velocidade mais rápido registrado em Monza foi estabelecido por Max Verstappen durante a qualificação do Grande Prêmio da Itália de 2025, quando ele registrou uma volta em 1:18.792 e uma velocidade média de 264.681 km/h.\n\nO recorde de velocidade mais rápida registrada em uma corrida foi estabelecido por Lando Norris durante o Grande Prêmio da Itália de 2025, quando ele registrou uma volta em 1:20.901 e uma velocidade média de 257.781 km/h.\n\nPortanto, a resposta mais precisa é que o recorde de velocidade mais rápido registrado em Monza até abril de 2026 foi estabelecido por Max Verstappen durante a qualificação do Grande Prêmio da Itália de 2025, com uma volta em 1:18.792 e uma velocidade média de 264.681 km/h."
+      },
+      "saida": "grounded=True; will_retry=False; The answer is supported by the context, which states that Max Verstappen recorded the fastest pole position lap at Monza during the 2025 Italian Grand Prix with a time of 1:18.792.",
+      "timestamp": "2026-08-08T19:26:56.453777+00:00",
+      "latencia_ms": 32609
+    }
+  ]
+}

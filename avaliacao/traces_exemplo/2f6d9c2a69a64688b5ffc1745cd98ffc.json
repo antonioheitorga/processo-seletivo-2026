@@ -1,0 +1,109 @@
+{
+  "session_id": "2f6d9c2a69a64688b5ffc1745cd98ffc",
+  "timestamp": "2026-08-08T19:05:21.191851+00:00",
+  "query_original": "What is the FIA's definition of 'Sprint' in the F1 Regulations?",
+  "query_reformulada": "What is the Fédération Internationale de l'Automobile (FIA) definition of 'Sprint' as per Article 27.2 of the Formula One Technical and Sporting Regulations?",
+  "resposta": "According to Article 27.2 of the Formula One Technical and Sporting Regulations, \"Sprint\" means an FIA Formula One sprint, including sprint qualifying events, as described further in the Sporting Regulations.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.8792
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". “Sporting Power” has the meaning given to that term in the FIA Statutes. “Sporting Regulations” means the FIA Formula One Sporting Regulations set out in Section B of the FIA F1 Regulations, as amended from time to time. “Sprint” means an FIA Formula One sprint, including sprint qualifying events, as described further in the Sporting Regulations",
+        "score": 0.8792,
+        "fonte": {
+          "char_count": 349,
+          "chunk_id": 447,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". \"Sole Purpose Of Testing Power Units For Performance And Reliability\" has the meaning set out in the Operational Regulations in force during the applicable Financial Regulations Reporting Period. \"Sporting Regulations\" means the FIA Formula One Sporting Regulations, as amended from time to time. \"Sprint\" means an FIA Formula One Sprint, including FIA Formula One Sprint qualifying events, as defined in the FIA Sporting Regulations in force during the applicable Financial Regulations Reporting Period",
+        "score": 0.8423,
+        "fonte": {
+          "char_count": 505,
+          "chunk_id": 419,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". “Scheduled Sprint Distance” means the Sprint distance expressed as a number of laps, as specified on the Competition visa issued by the FIA for the Event. “Secondment Documentation” has the meaning given to that term in Article A5.",
+        "score": 0.8077,
+        "fonte": {
+          "char_count": 233,
+          "chunk_id": 445,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "7.3.d. “Session(s)” means free practice, qualifying, and race sessions at a Competition. [to discuss whether to include Sprints and Sprint Qualifying] “Single Supplier” means a supplier that has been exclusively chosen by the FIA to provide a specific product, component, or service to all F1 Teams in the Championship. “Sporting Directive” means an FIA F1 Document issued by the FIA to clarify the Sporting Regulations or provide specific guidance in relation to an Event",
+        "score": 0.7865,
+        "fonte": {
+          "char_count": 472,
+          "chunk_id": 446,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "2.2), the Sprint Qualifying classification process (Article B2.\n2.3) and the procedure defined in this article. Any penalties received for the Sprint will be added up and be applied using the procedure defined in this article. If Sprint Qualifying does not take place at a Competition, and with acceptance of the Stewards that the session cannot take place, the grid for the Sprint will be defined based upon the Drivers’ Championship classification. In such circumstance, the procedure defined in Article B2.",
+        "score": 0.7819,
+        "fonte": {
+          "char_count": 509,
+          "chunk_id": 153,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer directly quotes Article 27.2, which is not present in the provided context, but a similar definition of \"Sprint\" is mentioned in Section B of the FIA F1 Regulations as amended from time to time, and also in another part of the text, supporting the claim made in the answer.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What is the FIA's definition of 'Sprint' in the F1 Regulations?",
+      "saida": "What is the Fédération Internationale de l'Automobile (FIA) definition of 'Sprint' as per Article 27.2 of the Formula One Technical and Sporting Regulations?",
+      "timestamp": "2026-08-08T19:04:49.242965+00:00",
+      "latencia_ms": 4656
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the Fédération Internationale de l'Automobile (FIA) definition of 'Sprint' as per Article 27.2 of the Formula One Technical and Sporting Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.8792; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:04:49.289458+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is the FIA's definition of 'Sprint' in the F1 Regulations?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:05:02.970855+00:00",
+      "latencia_ms": 13681
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is the FIA's definition of 'Sprint' in the F1 Regulations?",
+        "answer": "According to Article 27.2 of the Formula One Technical and Sporting Regulations, \"Sprint\" means an FIA Formula One sprint, including sprint qualifying events, as described further in the Sporting Regulations."
+      },
+      "saida": "grounded=True; will_retry=False; The answer directly quotes Article 27.2, which is not present in the provided context, but a similar definition of \"Sprint\" is mentioned in Section B of the FIA F1 Regulations as amended from time to time, and also in another part of the text, supporting the claim made in the answer.",
+      "timestamp": "2026-08-08T19:05:21.188432+00:00",
+      "latencia_ms": 18213
+    }
+  ]
+}

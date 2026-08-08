@@ -1,0 +1,173 @@
+{
+  "session_id": "7d8a959d290549cda4c1cf1cf9714862",
+  "timestamp": "2026-08-08T19:11:07.178231+00:00",
+  "query_original": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?",
+  "query_reformulada": "What is the Material Sporting Penalty applicable when a driver utilises an unauthorised Internal Combustion Engine Component, exceeding the permitted allocation of such components as specified in Article 24.1 of the FIA Formula One Technical Regulations?",
+  "resposta": "La respuesta a la pregunta es que el Material Sporting Penalty aplicable cuando un conductor utiliza un componente de motor interno no autorizado, excediendo la asignación permitida de dichos componentes según lo especificado en el artículo 24.1 de las Regulaciones Técnicas FIA de Fórmula 1, es una deducción de puntos en el Campeonato de Conductores y/o Constructores para el equipo titular del fabricante de motores involucrado en la infracción que se produjo durante el período de informe financiero correspondiente a la temporada.",
+  "fonte": "hybrid",
+  "low_confidence": true,
+  "confidence_warning": "Verificador não conseguiu confirmar que a resposta está fundamentada no contexto recuperado após 2 tentativa(s). The answer mentions a \"Material Sporting Penalty\" and a deduction of points, but the context does not specify that using an additional Power Unit element beyond the prescribed number is subject to this penalty.",
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.8196
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "1.1.b.iii. cannot be applied prior to 1 January of the Power Unit Manufacturer’s Inaugural Season. c. A \"Material Sporting Penalty\", meaning one or more of the following: i. deduction of Drivers’ Championship and/or Constructors’ Championship points awarded to the Nominated Team of the relevant Power Unit Manufacturer for the Championship that took place within the Financial Regulations Reporting Period of the breach; ii",
+        "score": 0.8196,
+        "fonte": {
+          "char_count": 424,
+          "chunk_id": 294,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "1.1 The following sanctions may be imposed on F1 Teams for breach of these Financial Regulations as set out in Article D10: a. A \"Financial Penalty\", meaning a fine in an amount to be determined on a case by case basis. b. A \"Minor Sporting Penalty\", meaning one or more of the following: i. public reprimand; ii. deduction of Constructors' Championship points awarded for the Championship that took place within the Financial Regulations Reporting Period of the breach; iii",
+        "score": 0.7947,
+        "fonte": {
+          "char_count": 474,
+          "chunk_id": 260,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "[Página 67]\nB SECTION B: SPORTING REGULATIONS Any of the elements listed in this Article B8.2 will be deemed to have been used once the F1 Car’s timing transponder has shown that it has left the Pit Lane. During any single Competition, if a driver introduces more than one of the same Power Unit element, which is subject to penalties, only the last element fitted may be used at subsequent Competitions without further penalty. B8.",
+        "score": 0.7933,
+        "fonte": {
+          "char_count": 432,
+          "chunk_id": 580,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". The participation of unclassified drivers in the remainder of the Competition will be determined in each case by the Stewards, who may exceptionally consider parameters such as a suitable lap time being set in another practice session, the general performance of the driver in previous Competitions of the Championship, or the gravity of the offence which caused the driver’s disqualification 2026 Form ula 1: Sporting Regulations 28 April 2026 B2 2 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7894,
+        "fonte": {
+          "char_count": 507,
+          "chunk_id": 178,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "4.2, and for the avoidance of doubt, no Financial Penalty will be imposed to an individual, unless this individual is: a. a Driver; or b. a Key Individual of an F1 Team or PU Manufacturer, for breaches that relate to their personal conduct, in relation to the provisions of this Section A, and of the ISC fall outside the scope of Sections B, C, D, E and F",
+        "score": 0.7837,
+        "fonte": {
+          "char_count": 356,
+          "chunk_id": 48,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "In 2026, each driver may use up to four ICEs, Turbochargers, and Exhaust sets, and up to three MGU-Ks, Energy Stores, and Control Electronics throughout the season; however, from 2027 onward, this allocation will decrease to only three and two respectively, unless it is the manufacturer's first year supplying power units since the onset of the 2026 regulations. A grid place penalty will be enforced upon drivers who exceed these allocation limits, once for each additional component at the first [...] From 2014 to 2025, there was a seventh component called the MGU-H (Motor Generator Unit-Heat), which collected energy in the form of heat as it was expelled through the exhaust, but it was removed from the 2026 regulations due to being overly costly and complex for new teams to develop. [...] The engines, now commonly referred to as power units, are divided into 6 components: the internal combustion engine (ICE); turbocharger (TC); Motor Generator Unit-Kinetic (MGU-K), which harvests energy that would normally be wasted under braking; Energy Store (ES), which functions as a battery, storing the energy gathered by the MGU-K; Control Electronics (CE), which includes the Electronic Control Unit and software used to manage the entire power unit; and Exhaust (EX). From 2014 to 2025,",
+        "titulo": "Formula One regulations - Wikipedia",
+        "fonte": "https://en.wikipedia.org/wiki/Formula_One_regulations"
+      },
+      {
+        "trecho": "in the sealed perimeters deﬁned in Article B8.2.2 may be transferred between sealed elements of each driver without incurring a penalty. Details regarding the means of sealing these components or, if this is deemed not feasible, the means of identifying them, must be provided in the PU Homologation Dossier (Appendix C5) and must be approved by the FIA. B8.2.5 The FIA may authorise or mandate the replacement of a SSPUC component included within the perimeter of one of the elements deﬁned in [...] Spark plugs may be removed in order to carry out an internal engine inspection and cylinder compression checks. 8.3 The air intake filter upstream of the compressor may be inspected and cleaned. 8.4 Inspection bungs may be removed in order to carry out an internal gearbox inspection (borescope). The gearbox must not be disassembled from the car to carry out this inspection. 8.5 The exhaust system may be inspected, including the use of NDT methods. 9. TYRES 9.1 Wheels, wheel fasteners and tyres [...] are necessary for the correct evaluation of the test items or to complete the test programme and must be approved by the FIA. A replacement component may be approved in cases such as damage to the original and should be of the same speciﬁcation. Exceptionally, if a same speciﬁcation component is unavailable, a component of a different speciﬁcation which has been previously used at a Competition or TCC or TPC may be approved. For the avoidance of doubt, components permitted under Article B3.5.3c",
+        "titulo": "[PDF] FIA 2026 F1 Regulations - Section B [Sporting]",
+        "fonte": "https://www.statsf1.com/reglement/sportif.pdf"
+      },
+      {
+        "trecho": "Ahead of the complex new engine regulations, Article B8.2.2 of the sporting regulations was suffixed with Article B8.2.3 which states that one extra example of each power unit component would be made available to each driver for use during the 2026 season.\n\nThis covers the Internal Combustion Engine (ICE), turbocharger, MGU-K, energy store, PU-CE (Power Unit-Control Electronics) and PU-ANC (Power Unit-Auxiliary Components). [...] Initially, drivers were allocated three examples of the ICE, the turbocharger, and two each of the MGU-Ks, energy stores, PU-CEs.\n\nThe number of PU-ANCs available was five.\n\nFollowing the addition of B8.2.3, drivers were allowed four ICEs, turbochargers, and three of the remaining components, plus six PU-ANCs.\n\nDrivers are allowed four exhaust systems for the season. [...] If a driver does exceed their allocation, they receive a 10-place grid penalty per component, with a further five places issued for any subsequent component taken beyond this.\n\nCheck out the overview of the number of engine components allowed below!\n\n## Number of engine components allowed\n\nFIA confirm future F1 engine penalty rules after 2026 change",
+        "titulo": "FIA confirm future F1 engine penalty rules after 2026 change | RacingNews365",
+        "fonte": "https://racingnews365.com/fia-confirm-future-f1-engine-penalty-rules-after-2026-change"
+      },
+      {
+        "trecho": "The document outlines the 2026 Formula 1 Power Unit Technical Regulations. It defines key terms and concepts related to power units and sets technical requirements for power unit components. The regulations cover areas like the internal combustion engine, energy recovery systems, fuel systems, materials, and classification of components.\n\n# 2026 F1 Power Unit Regulations Overview\n\n2026 F1 Power Unit Regulations Overview\n\n## Uploaded by\n\nAI-enhanced title and description\n\n## Share this document",
+        "titulo": "2026 F1 Power Unit Regulations Overview | PDF | Turbocharger | Formula Racing",
+        "fonte": "https://www.scribd.com/document/720569466/fia-2026-formula-1-technical-regulations-pu-issue-6-2024-03-291"
+      },
+      {
+        "trecho": "carried out on PU components as a consequence of changes made to another PU component with a different upgrade schedule. Such modifications are subject to the approval process outlined in Article 3.10.a of this Appendix. 4 Additional Development and Upgrade Opportunities Over the first five During the entire season's Competitions of each Championship Season in the 2026-2030 period, the FIA will monitor the performance of Internal Combustion Engine (ICE) part of all the Power Units supplied by [...] C: TECHNICAL REGULATIONS C196 2026 Formula 1 Regulations: Technical Regulations ©2025 Fédération Internationale de l’Automobile 10 June 2025 Issue 12 0 C “Cell Tabs”: Cell connection terminals which connect the cathode and anode electrodes to the external circuit. “Combustion chamber”: An enclosed space in the engine cylinder controlled by the opening and closing of the poppet valves in which combustion takes place. “Compressor Inlet”: A component containing a duct of closed cross section [...] of these Inserts can be exposed to the Combustion Chamber. C5.1.8 Unless specified otherwise, the total volume of Inserts within ICE components related to items 1 and 4 of the Appendix C4 table1 cannot be more than 10% of the total volume (including all inserts) of the component. Inserts in other components are not restricted. C5.1.9 Dismountable components assembled to the Cylinder Head exposed to the combustion chamber must be approved by the FIA Technical Department and are confined to:",
+        "titulo": "SECTION C: TECHNICAL REGULATIONS",
+        "fonte": "https://api.fia.com/system/files/documents/fia_2026_f1_regulations_-_section_c_technical_-_iss_12_-_2025-06-10.pdf"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": false,
+    "justificativa": "The answer mentions a \"Material Sporting Penalty\" and a deduction of points, but the context does not specify that using an additional Power Unit element beyond the prescribed number is subject to this penalty.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?",
+      "saida": "What is the penalty applicable to a driver upon the first utilisation of an additional Power Unit component exceeding the stipulated limit as per Article 29.1 of the FIA Formula One Technical Regulations?",
+      "timestamp": "2026-08-08T19:09:17.196375+00:00",
+      "latencia_ms": 4310
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the penalty applicable to a driver upon the first utilisation of an additional Power Unit component exceeding the stipulated limit as per Article 29.1 of the FIA Formula One Technical Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.807; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:09:17.251957+00:00",
+      "latencia_ms": 53
+    },
+    {
+      "agente": "generator",
+      "entrada": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:09:37.652696+00:00",
+      "latencia_ms": 20399
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?",
+        "answer": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?\n\nThe penalty applicable to a driver upon the first utilisation of an additional Power Unit component exceeding the stipulated limit as per Article 29.1 is not explicitly stated in the provided context. However, based on the general framework outlined in the Financial Regulations (Power Unit Manufacturers), it appears that a \"Material Sporting Penalty\" may be applicable, which could include deductions from Drivers' Championship and/or Constructors' Championship points awarded to the Nominated Team of the relevant Power Unit Manufacturer for the Championship that took place within the Financial Regulations Reporting Period of the breach."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims that a \"Material Sporting Penalty\" may be applicable, but the context does not explicitly state what penalty applies to a driver for using an additional Power Unit element beyond the number prescribed for the Championship.",
+      "timestamp": "2026-08-08T19:09:48.054116+00:00",
+      "latencia_ms": 10397
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?",
+      "saida": "What is the Material Sporting Penalty applicable when a driver utilises an unauthorised Internal Combustion Engine Component, exceeding the permitted allocation of such components as specified in Article 24.1 of the FIA Formula One Technical Regulations?",
+      "timestamp": "2026-08-08T19:09:54.236914+00:00",
+      "latencia_ms": 6180
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the Material Sporting Penalty applicable when a driver utilises an unauthorised Internal Combustion Engine Component, exceeding the permitted allocation of such components as specified in Article 24.1 of the FIA Formula One Technical Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.8196; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:09:54.287209+00:00",
+      "latencia_ms": 47
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What is the Material Sporting Penalty applicable when a driver utilises an unauthorised Internal Combustion Engine Component, exceeding the permitted allocation of such components as specified in Article 24.1 of the FIA Formula One Technical Regulations?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:09:57.323521+00:00",
+      "latencia_ms": 3035
+    },
+    {
+      "agente": "generator",
+      "entrada": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:10:33.686772+00:00",
+      "latencia_ms": 36362
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?",
+        "answer": "La respuesta a la pregunta es que el Material Sporting Penalty aplicable cuando un conductor utiliza un componente de motor interno no autorizado, excediendo la asignación permitida de dichos componentes según lo especificado en el artículo 24.1 de las Regulaciones Técnicas FIA de Fórmula 1, es una deducción de puntos en el Campeonato de Conductores y/o Constructores para el equipo titular del fabricante de motores involucrado en la infracción que se produjo durante el período de informe financiero correspondiente a la temporada."
+      },
+      "saida": "grounded=False; will_retry=False; The answer mentions a \"Material Sporting Penalty\" and a deduction of points, but the context does not specify that using an additional Power Unit element beyond the prescribed number is subject to this penalty.",
+      "timestamp": "2026-08-08T19:11:07.173833+00:00",
+      "latencia_ms": 33484
+    }
+  ]
+}

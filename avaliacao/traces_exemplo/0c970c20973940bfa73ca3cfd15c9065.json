@@ -1,0 +1,109 @@
+{
+  "session_id": "0c970c20973940bfa73ca3cfd15c9065",
+  "timestamp": "2026-08-08T19:13:17.849053+00:00",
+  "query_original": "What was the outcome of the 2025 Monaco Grand Prix?",
+  "query_reformulada": "What is the official classification and result of the Formula One World Championship event held at Circuit de Monaco in the year 2025?",
+  "resposta": "The outcome of the 2025 Monaco Grand Prix may be uncertain, as there is no information provided in the given context regarding the results or classification of that specific event. The context only provides general information about the FIA Formula One World Championship and its regulations, but does not include any details about the 2025 season or the Monaco Grand Prix specifically.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.7528
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "1.1 The FIA will organise the FIA Formula One World Championship (the \"Championship\") which is the property of the FIA and comprises two titles of World Champion, one for drivers and one for constructors. It consists of the Formula One Grand Prix races which are included in the Formula One calendar and in respect of which the ASNs and organisers have signed organisation agreements with the FIA",
+        "score": 0.7528,
+        "fonte": {
+          "char_count": 396,
+          "chunk_id": 28,
+          "section": "technical",
+          "source_file": "fia_2026_f1_regulations_-_section_c_technical_-_iss_18_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "2.7, when 2026 Formula 1: Operational Regulations 07 May 2026 F2 6 2026 Fédération Internationale de l’Automobile Issue 08",
+        "score": 0.7463,
+        "fonte": {
+          "char_count": 122,
+          "chunk_id": 220,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "1.4 World Championship Titles: a. The Drivers’ Championship title will be awarded to the F1 Driver who has scored the highest number of points, calculated in accordance with Article A2.2, taking into consideration all results obtained during the Competitions that have actually taken place. b",
+        "score": 0.7403,
+        "fonte": {
+          "char_count": 292,
+          "chunk_id": 53,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "2.2, the FIA may at any time make public its decision to conduct an 2026 Formula 1: General Regulatory Provisions 27 February 2026 A2 7 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7316,
+        "fonte": {
+          "char_count": 191,
+          "chunk_id": 217,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". The F1 Driver with the highest number of points at the end of the season, calculated in accordance with Article A2.2, wins the Drivers’ Championship title. “Drivers’ Championship Trophy” means the FIA trophy engraved with the names of the F1 Drivers who win the Drivers’ Championship title, awarded to the World Champion Driver each year at the FIA Prize Giving Ceremony and Gala Dinner",
+        "score": 0.7315,
+        "fonte": {
+          "char_count": 388,
+          "chunk_id": 391,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer accurately states that there is no information provided about the 2025 Monaco Grand Prix, and only general information about the FIA Formula One World Championship regulations.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What was the outcome of the 2025 Monaco Grand Prix?",
+      "saida": "What is the official classification and result of the Formula One World Championship event held at Circuit de Monaco in the year 2025?",
+      "timestamp": "2026-08-08T19:12:52.400013+00:00",
+      "latencia_ms": 2917
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the official classification and result of the Formula One World Championship event held at Circuit de Monaco in the year 2025?",
+      "saida": "5 hits acima de 0.7; best_score=0.7528; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:12:52.439273+00:00",
+      "latencia_ms": 37
+    },
+    {
+      "agente": "generator",
+      "entrada": "What was the outcome of the 2025 Monaco Grand Prix?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:13:04.665858+00:00",
+      "latencia_ms": 12225
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What was the outcome of the 2025 Monaco Grand Prix?",
+        "answer": "The outcome of the 2025 Monaco Grand Prix may be uncertain, as there is no information provided in the given context regarding the results or classification of that specific event. The context only provides general information about the FIA Formula One World Championship and its regulations, but does not include any details about the 2025 season or the Monaco Grand Prix specifically."
+      },
+      "saida": "grounded=True; will_retry=False; The answer accurately states that there is no information provided about the 2025 Monaco Grand Prix, and only general information about the FIA Formula One World Championship regulations.",
+      "timestamp": "2026-08-08T19:13:17.846271+00:00",
+      "latencia_ms": 13178
+    }
+  ]
+}

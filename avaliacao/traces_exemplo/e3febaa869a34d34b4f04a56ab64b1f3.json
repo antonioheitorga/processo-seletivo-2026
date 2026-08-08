@@ -1,0 +1,109 @@
+{
+  "session_id": "e3febaa869a34d34b4f04a56ab64b1f3",
+  "timestamp": "2026-08-08T19:04:38.047635+00:00",
+  "query_original": "What is Parc Fermé and when does it apply?",
+  "query_reformulada": "What are the definitions and application periods for Parc Fermé as per Article 22.2 of the FIA Formula One Technical Regulations?",
+  "resposta": "What is Parc Fermé and when does it apply?\n\nParc Fermé refers to a designated secure area at a Competition where F1 Cars must be kept after qualifying and during certain other periods of the Competition. It applies from the time each F1 Car is deemed to be in parc fermé, which starts immediately (Article 5.1).",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.8296
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "5.1 Each F1 Car will be deemed to be in parc fermé from the time: 2026 Form ula 1: Sporting Regulations 28 April 2026 B2 9 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.8296,
+        "fonte": {
+          "char_count": 178,
+          "chunk_id": 239,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "6.2 When the parc fermé is in use, parc fermé regulations will apply in the area between the Line and the parc fermé entrance. B3.\n6.3 The parc fermé shall be secured such that no unauthorised persons can gain access to it. A maximum of three (3) team personnel per F1 Car will be permitted access to the Parc Fermé area for the sole purpose of fitting cooling fans and undertaking any work required by those officials charged with supervision of parc fermé. B3.",
+        "score": 0.8254,
+        "fonte": {
+          "char_count": 462,
+          "chunk_id": 257,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". c. Does not delay the podium ceremony. Any classified F1 Car which cannot reach the parc fermé under its own power will be placed under the exclusive control of the marshals who will take the F1 Car to the parc fermé. 2026 Form ula 1: Sporting Regulations 28 April 2026 B5 3 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.8127,
+        "fonte": {
+          "char_count": 332,
+          "chunk_id": 474,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". “Parc Fermé” means the designated secure area at a Competition where F1 Cars must be kept after qualifying and during certain other periods of the Competition, and where F1 Teams are prevented from working on their F1 Cars other than adjustments permitted by the FIA. “Person” means a natural person or an organisation or other entity, body, or committee. For the avoidance of doubt, the term Person does not include the FIA",
+        "score": 0.8036,
+        "fonte": {
+          "char_count": 426,
+          "chunk_id": 436,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "5.9 A list of parts replaced with the specific agreement of the Technical Delegate whilst F1 Cars are being held under parc fermé conditions will be published and distributed to all Competitors prior to the Race. B3.6 Post Sprint & Post Race Parc Fermé B3.\n6.1 Only those officials charged with supervision may enter the parc fermé. No intervention of any kind is allowed there unless authorised by such officials. B3.",
+        "score": 0.7953,
+        "fonte": {
+          "char_count": 418,
+          "chunk_id": 256,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer accurately reflects the definition of Parc Fermé and its application time as stated in Article 5.1, with no claims absent from the context.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What is Parc Fermé and when does it apply?",
+      "saida": "What are the definitions and application periods for Parc Fermé as per Article 22.2 of the FIA Formula One Technical Regulations?",
+      "timestamp": "2026-08-08T19:04:08.304839+00:00",
+      "latencia_ms": 3034
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the definitions and application periods for Parc Fermé as per Article 22.2 of the FIA Formula One Technical Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.8296; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:04:08.355041+00:00",
+      "latencia_ms": 47
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is Parc Fermé and when does it apply?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:04:22.699800+00:00",
+      "latencia_ms": 14343
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is Parc Fermé and when does it apply?",
+        "answer": "What is Parc Fermé and when does it apply?\n\nParc Fermé refers to a designated secure area at a Competition where F1 Cars must be kept after qualifying and during certain other periods of the Competition. It applies from the time each F1 Car is deemed to be in parc fermé, which starts immediately (Article 5.1)."
+      },
+      "saida": "grounded=True; will_retry=False; The answer accurately reflects the definition of Parc Fermé and its application time as stated in Article 5.1, with no claims absent from the context.",
+      "timestamp": "2026-08-08T19:04:38.045169+00:00",
+      "latencia_ms": 15342
+    }
+  ]
+}

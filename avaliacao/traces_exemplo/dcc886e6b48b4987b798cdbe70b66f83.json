@@ -1,0 +1,173 @@
+{
+  "session_id": "dcc886e6b48b4987b798cdbe70b66f83",
+  "timestamp": "2026-08-08T19:22:58.302627+00:00",
+  "query_original": "Which city will host the first race of the 2026 F1 calendar?",
+  "query_reformulada": "What are the designated Host Venue(s) for the inaugural event of the 2026 Formula One World Championship schedule, as per Article 3.2 of the FIA F1 2026 Technical and Sporting Regulations?",
+  "resposta": "Segundo o calendário de corridas da Fórmula 1 para a temporada de 2026, a primeira corrida será realizada em Melbourne, na Austrália, entre os dias 6 e 8 de março.",
+  "fonte": "hybrid",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7798
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "2.2, the FIA may at any time make public its decision to conduct an 2026 Formula 1: General Regulatory Provisions 27 February 2026 A2 7 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7798,
+        "fonte": {
+          "char_count": 191,
+          "chunk_id": 217,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". “Reserved Areas” means areas where a Competition is taking place, including the track, the Circuit, the paddock, the Parc Fermé, the service parks or zones, the holding parks, the Pit Lane, the Signalling Area, the 2026 Formula 1: General Regulatory Provisions 27 February 2026 A5 1 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7757,
+        "fonte": {
+          "char_count": 340,
+          "chunk_id": 442,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". In respect of the Championship and within their respective territories, ASNs have authority for (among other things) the issuance of International Licences, the homologation of Circuits, and payment of the Calendar Fee. 2026 Formula 1: General Regulatory Provisions 27 February 2026 A2 1 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7737,
+        "fonte": {
+          "char_count": 345,
+          "chunk_id": 163,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "3.1 and declared under Article B11.\n1.1. B11.\n3.5 TPC may only take place on circuits holding an FIA Grade 1 or FIA Grade 1T Circuit Licence, and may not take place on a circuit hosting a Competition in the Championship: a. In the sixty (60) days prior to the start of the relevant Competition in the Championship, as defined in Article B1.",
+        "score": 0.7633,
+        "fonte": {
+          "char_count": 340,
+          "chunk_id": 681,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "2.7, when 2026 Formula 1: Operational Regulations 07 May 2026 F2 6 2026 Fédération Internationale de l’Automobile Issue 08",
+        "score": 0.7625,
+        "fonte": {
+          "char_count": 122,
+          "chunk_id": 220,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "IT\n\nITA\n\n13\n\nSep\n\nSpanish Grand Prix\n\nMADRID IFEMA\n\nES\n\nESP\n\n26\n\nSep\n\nAzerbaijan Grand Prix\n\nBAKU\n\nAZ\n\nAZE\n\n11\n\nOct\n\nSingapore Grand Prix\n\nSINGAPORE - MARINA BAY\n\nSG\n\nSGP\n\n25\n\nOct\n\nUnited States Grand Prix\n\nCIRCUIT OF THE AMERICAS\n\nUS\n\nUSA\n\n01\n\nNov\n\nMexico City Grand Prix\n\nAutodromo Hermanos Rodriguez\n\nMX\n\nMEX\n\n08\n\nNov\n\nSão Paulo Grand Prix\n\nINTERLAGOS\n\nBR\n\nBRA\n\n21\n\nNov\n\nLas Vegas Grand Prix\n\nLAS VEGAS GRAND PRIX\n\nUS\n\nUSA\n\n29\n\nNov\n\nQatar Grand Prix\n\nQATAR - LUSAIL\n\n06\n\nAbu Dhabi Grand Prix [...] Classification\n\nAU\n\nAUS\n\n15\n\nMar\n\nChinese Grand Prix\n\nSHANGHAI INTERNATIONAL\n\nClassification\n\nCN\n\nCHN\n\n29\n\nMar\n\nJapanese Grand Prix\n\nSUZUKA\n\nClassification\n\nJP\n\nJPN\n\n12\n\nApr\n\nBahrain Grand Prix\n\nBAHRAIN\n\nCalled Off\n\nBH\n\nBRN\n\n19\n\nApr\n\nSaudi Arabian Grand Prix\n\nJEDDAH CORNICHE CIRCUIT\n\nCalled Off\n\nSA\n\nKSA\n\n03\n\nMay\n\nMiami Grand Prix\n\nMIAMI\n\nClassification\n\nUS\n\nUSA\n\n24\n\nMay\n\nCanadian Grand Prix\n\nMONTREAL GILLES VILLENEUVE\n\nClassification\n\nCA\n\nCAN\n\n07\n\nJun\n\nMonaco Grand Prix\n\nMONACO\n\nClassification [...] Classification\n\nMC\n\nMON\n\n14\n\nJun\n\nBarcelona-Catalunya Grand Prix\n\nCATALUNYA\n\nClassification\n\nES\n\nESP\n\n28\n\nJun\n\nAustrian Grand Prix\n\nRED BULL RING - SPIELBERG\n\nClassification\n\nAT\n\nAUT\n\n05\n\nJul\n\nBritish Grand Prix\n\nSILVERSTONE GRAND PRIX\n\nClassification\n\nGB\n\nGBR\n\n19\n\nJul\n\nBelgian Grand Prix\n\nSPA-FRANCORCHAMPS\n\nClassification\n\nBE\n\nBEL\n\n26\n\nJul\n\nHungarian Grand Prix\n\nHUNGARORING\n\nHU\n\nHUN\n\n23\n\nAug\n\nDutch Grand Prix\n\nZANDVOORT\n\nNL\n\nNED\n\n06\n\nSep\n\nItalian Grand Prix\n\nMONZA\n\nIT\n\nITA\n\n13\n\nSep",
+        "titulo": "2026 FIA Formula One World Championship",
+        "fonte": "https://www.fia.com/events/fia-formula-one-world-championship/season-2026/2026-fia-formula-one-world-championship"
+      },
+      {
+        "trecho": "As in 2025, six of the 24 venues on the calendar will host F1 Sprint events. For the 2026 season they are China, Miami, Canada, Great Britain, the Netherlands and Singapore. [...] This change creates a consolidated European leg of the season across the summer months, beginning in Monaco from June 5-7 and finishing in Spain, where Madrid will make its F1 calendar debut from September 11-13. The championship then returns to Asia with the Azerbaijan and Singapore Grands Prix, ahead of a triple header in the Americas, before Las Vegas,Qatar and Abu Dhabi close out the season. [...] ### World Championship Schedule[]\n\nThe 2026 calendar was to feature twenty-four (24) Grands Prix.( However, the Bahrain and Saudi Arabian Grands Prix, which were scheduled for the 12th and 19th of April, were cancelled in light of the war in the Middle East.(\n\n| Round | Grand Prix | Date |  |\n ---  --- |",
+        "titulo": "2026 Formula One Season",
+        "fonte": "https://f1.fandom.com/wiki/2026_Formula_One_Season"
+      },
+      {
+        "trecho": "| Italian GP (Monza) | 07-Sep | Italy F1 | Finished |\n| Azerbaijan GP (Baku) | 21-Sep | Baku F1 | Finished |\n| Singapore (Marina Bay) | 05-Oct | Singapore F1 | Finished |\n| United States (Austin) | 19-Oct | United States F1 | Finished |\n| Mexican GP (Mexico) | 26-Oct | Mexico F1 | Finished |\n| Brazil (Sao Paulo) | 09-Nov | Brazil F1 | Finished |\n| Las Vegas (Las Vegas) | 22-Nov | Las Vegas | Finished |\n| Qatar (Doha) | 30-Nov | Qatar F1 | Finished | [...] | Italian GP (Monza) | 03-Sep | Italy F1 | Finished |\n| Singapore (Marina Bay) | 17-Sep | Singapore F1 | Finished |\n| Japanese GP (Suzuka) | 24-Sep | Japan F1 | Finished |\n| Qatar (Doha) | 08-Oct | Qatar F1 | Finished |\n| United States (Austin) | 22-Oct | United States F1 | Finished |\n| Mexican GP (Mexico) | 29-Oct | Mexico F1 | Finished |\n| Brazil (Sao Paulo) | 05-Nov | Brazil F1 | Finished |\n| Las Vegas (Las Vegas) | 18-Nov | Las Vegas | Finished | [...] | Italian GP (Monza) | 01-Sep | Italy F1 | Finished |\n| Azerbaijan GP (Baku) | 15-Sep | Baku F1 | Finished |\n| Singapore (Marina Bay) | 22-Sep | Singapore F1 | Finished |\n| United States (Austin) | 20-Oct | United States F1 | Finished |\n| Mexican GP (Mexico) | 27-Oct | Mexico F1 | Finished |\n| Brazil (Sao Paulo) | 03-Nov | Brazil F1 | Finished |\n| Las Vegas (Las Vegas) | 23-Nov | Las Vegas | Finished |\n| Qatar (Doha) | 01-Dec | Qatar F1 | Finished |",
+        "titulo": "F1 Calendar 2026 | F1 Grand Prix Race Schedule",
+        "fonte": "https://www.grandprixgrandtours.com/f1-calendar"
+      },
+      {
+        "trecho": "| July 17-19 | Belgium | Spa-Francorchamps |\n| July 24-26 | Hungary | Budapest |\n| August 21-23 | Netherlands | Zandvoort (Sprint) |\n| September 4-6 | Italy | Monza |\n| September 11-13 | Spain | Madrid\\ |\n| September 24-26 | Azerbaijan | Baku |\n| October 9-11 | Singapore | Singapore (Sprint) |\n| October 23-25 | USA | Austin |\n| October 30 - November 1 | Mexico | Mexico City |\n| November 6-8 | Brazil | Sao Paulo |\n| November 19-21 | USA | Las Vegas |\n| November 27-29 | Qatar | Lusail | [...] “My thanks to everyone involved in putting on this incredible season and in delivering a calendar that continues to drive the sport forward on all fronts. And, my thanks to the fans whose passion and unwavering support keep the spirit of our sport alive.”\n\nAs in 2025, six of the 24 venues on the calendar will host F1 Sprint events. For the 2026 season they are China, Miami, Canada, Great Britain, the Netherlands and Singapore. [...] | Date | Country | Venue |\n --- \n| March 6-8 | Australia | Melbourne |\n| March 13-15 | China | Shanghai (Sprint) |\n| March 27-29 | Japan | Suzuka |\n| April 10-12 | Bahrain | Sakhir |\n| April 17-19 | Saudi Arabia | Jeddah |\n| May 1-3 | USA | Miami (Sprint) |\n| May 22-24 | Canada | Montreal (Sprint) |\n| June 5-7 | Monaco | Monaco |\n| June 12-14 | Spain | Barcelona-Catalunya |\n| June 26-28 | Austria | Spielberg |\n| July 3-5 | Great Britain | Silverstone (Sprint) |",
+        "titulo": "Formula 1 reveals calendar for 2026 season",
+        "fonte": "https://www.formula1.com/en/latest/article/formula-1-reveals-calendar-for-2026-season.YctbMZWqBvrgyddrnauo8"
+      },
+      {
+        "trecho": "64. ↑ \"Bahrain and Saudi Arabian GPs will not take place in April\". Formula One. 14 March 2026. Archived from the original on 15 March 2026. Retrieved 14 March 2026.\n65. ↑ Cooper, Adam (13 March 2026). \"F1 Bahrain, Saudi Arabian GP cancellations set to be confirmed this weekend\". Crash.net.\n66. ↑ Camm, George (26 July 2026). \"Formula 1 and FIA confirm that Malaysia will join the 2026 calendar as host venue for the Bahrain Grand Prix\". corp.formula1.com. Retrieved 26 July 2026. [...] 4. ↑ The Bahrain Grand Prix was originally scheduled for 12 April at the Bahrain International Circuit but was postponed and moved to the Sepang International Circuit in Malaysia following the outbreak of the Iran war.\n5. ↑ The Chinese, Miami, Canadian, British, Dutch and Singapore Grands Prix feature the sprint format.\n6. ↑ In the event of a race or sprint ending prematurely, the number of points-paying positions may be reduced, depending on how much of the race or sprint has been completed. [...] 58. 1 2 \"Formula 1 and FIA announce 2026 Sprint Calendar\". Formula 1. Retrieved 16 September 2025.\n59. 1 2 3 4 \"Formula 1 confirms 2026 pre-season testing dates and issues calendar update\". Formula 1. 30 June 2025. Archived from the original on 30 June 2025. Retrieved 30 June 2025.\n60. ↑ \"Formula 1 and FIA confirm Malaysia will join 2026 calendar as host venue for Bahrain Grand Prix\". Formula One. 26 July 2026. Retrieved 26 July 2026.",
+        "titulo": "2026 Formula One World Championship - Wikipedia",
+        "fonte": "https://en.wikipedia.org/wiki/2026_Formula_One_World_Championship"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer is supported by the context, which lists Melbourne as the first venue for the 2026 F1 calendar.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "Which city will host the first race of the 2026 F1 calendar?",
+      "saida": "Which metropolitan area will be designated as the venue for the inaugural Grand Prix event in the 2026 Formula One World Championship schedule?",
+      "timestamp": "2026-08-08T19:21:27.451660+00:00",
+      "latencia_ms": 2735
+    },
+    {
+      "agente": "retriever",
+      "entrada": "Which metropolitan area will be designated as the venue for the inaugural Grand Prix event in the 2026 Formula One World Championship schedule?",
+      "saida": "1 hits acima de 0.7; best_score=0.7123; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:21:27.506926+00:00",
+      "latencia_ms": 52
+    },
+    {
+      "agente": "generator",
+      "entrada": "Which city will host the first race of the 2026 F1 calendar?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:21:36.449686+00:00",
+      "latencia_ms": 8942
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "Which city will host the first race of the 2026 F1 calendar?",
+        "answer": "The 2026 F1 calendar has not been officially announced. However, according to the provided context from the 2026 Formula 1: General Regulatory Provisions document, there is no information regarding the host city of the first race in the 2026 season. Therefore, I must say that the answer may be uncertain."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims uncertainty and lack of information, but does not provide a specific answer to the question.",
+      "timestamp": "2026-08-08T19:21:44.888456+00:00",
+      "latencia_ms": 8435
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "Which city will host the first race of the 2026 F1 calendar?",
+      "saida": "What are the designated Host Venue(s) for the inaugural event of the 2026 Formula One World Championship schedule, as per Article 3.2 of the FIA F1 2026 Technical and Sporting Regulations?",
+      "timestamp": "2026-08-08T19:21:49.723088+00:00",
+      "latencia_ms": 4832
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the designated Host Venue(s) for the inaugural event of the 2026 Formula One World Championship schedule, as per Article 3.2 of the FIA F1 2026 Technical and Sporting Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.7798; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:21:49.769930+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the designated Host Venue(s) for the inaugural event of the 2026 Formula One World Championship schedule, as per Article 3.2 of the FIA F1 2026 Technical and Sporting Regulations?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:21:52.770414+00:00",
+      "latencia_ms": 2999
+    },
+    {
+      "agente": "generator",
+      "entrada": "Which city will host the first race of the 2026 F1 calendar?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:22:25.836290+00:00",
+      "latencia_ms": 33064
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "Which city will host the first race of the 2026 F1 calendar?",
+        "answer": "Segundo o calendário de corridas da Fórmula 1 para a temporada de 2026, a primeira corrida será realizada em Melbourne, na Austrália, entre os dias 6 e 8 de março."
+      },
+      "saida": "grounded=True; will_retry=False; The answer is supported by the context, which lists Melbourne as the first venue for the 2026 F1 calendar.",
+      "timestamp": "2026-08-08T19:22:58.298852+00:00",
+      "latencia_ms": 32459
+    }
+  ]
+}

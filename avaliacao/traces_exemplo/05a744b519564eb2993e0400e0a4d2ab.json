@@ -1,0 +1,109 @@
+{
+  "session_id": "05a744b519564eb2993e0400e0a4d2ab",
+  "timestamp": "2026-08-08T19:07:57.677313+00:00",
+  "query_original": "What does the FIA F1 Technical Regulations define as the 'Power Unit'?",
+  "query_reformulada": "What are the technical specifications and definitions for the Power Unit as outlined in Article 2.1 of the FIA Formula One World Championship 2026 Technical Regulations?",
+  "resposta": "The FIA F1 Technical Regulations define the 'Power Unit' as a constituent element of the Power Unit, as set out within the first column of the tables within Appendix E2.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.8577
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "2.3 These Technical Regulations regard the FIA Formula One World Championship starting from 2026, and additionally outline various requirements that the PU Manufacturers and their Suppliers must satisfy in the period 2022 2025 to be able to homologate a Power Unit for the 2026 FIA Formula One World Championship. C1.3 Interpretation of and amendments to these Technical Regulations C1.",
+        "score": 0.8577,
+        "fonte": {
+          "char_count": 386,
+          "chunk_id": 33,
+          "section": "technical",
+          "source_file": "fia_2026_f1_regulations_-_section_c_technical_-_iss_18_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". “2022 PU”: Power Unit designed to comply with the 2022-2025 Technical Regulations “2026 PU”: Power Unit under development, intended to comply with the 2026-2030 Technical Regulations, including any preliminary components or work leading to that ultimate goal. 2026 Formula 1: Operational Regulations 07 May 2026 F3 1 2026 Fédération Internationale de l’Automobile Issue 08",
+        "score": 0.8576,
+        "fonte": {
+          "char_count": 374,
+          "chunk_id": 252,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "3.1. \"Power Unit Element\" means the constituent element of the Power Unit, as set out within the first column of the tables within Appendix E2. \"Power Unit Manufacturer\" means a legal entity that submits a Registration Form to the FIA in order to be eligible to homologate Power Units for supply to F1 Teams in respect of the 2026 Championship season onwards",
+        "score": 0.8559,
+        "fonte": {
+          "char_count": 358,
+          "chunk_id": 433,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "in the course of Power Unit Activities; and 2026 Formula 1 Regulations: Financial Regulations (Power Unit M anufacturers) 07 May 2026 E9 2026 Fédération Internationale de l’Automobile Issue 05",
+        "score": 0.8252,
+        "fonte": {
+          "char_count": 192,
+          "chunk_id": 63,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". limitations on the ability to make future upgrades to the specification of the Power Unit that is currently homologated for supply to F1 Teams; 2026 Formula 1 Regulations: Financial Regulations (Power Unit M anufacturers) 07 May 2026 E35 2026 Fédération Internationale de l’Automobile Issue 05",
+        "score": 0.8237,
+        "fonte": {
+          "char_count": 295,
+          "chunk_id": 296,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer directly quotes from the context, specifically Appendix E2, which defines what a \"Power Unit Element\" is.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What does the FIA F1 Technical Regulations define as the 'Power Unit'?",
+      "saida": "What are the technical specifications and definitions for the Power Unit as outlined in Article 2.1 of the FIA Formula One World Championship 2026 Technical Regulations?",
+      "timestamp": "2026-08-08T19:07:34.527739+00:00",
+      "latencia_ms": 3547
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the technical specifications and definitions for the Power Unit as outlined in Article 2.1 of the FIA Formula One World Championship 2026 Technical Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.8577; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:07:34.577895+00:00",
+      "latencia_ms": 49
+    },
+    {
+      "agente": "generator",
+      "entrada": "What does the FIA F1 Technical Regulations define as the 'Power Unit'?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:07:44.737708+00:00",
+      "latencia_ms": 10159
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What does the FIA F1 Technical Regulations define as the 'Power Unit'?",
+        "answer": "The FIA F1 Technical Regulations define the 'Power Unit' as a constituent element of the Power Unit, as set out within the first column of the tables within Appendix E2."
+      },
+      "saida": "grounded=True; will_retry=False; The answer directly quotes from the context, specifically Appendix E2, which defines what a \"Power Unit Element\" is.",
+      "timestamp": "2026-08-08T19:07:57.674562+00:00",
+      "latencia_ms": 12934
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "session_id": "0ef4ea6180294cc79852a3e8641207af",
+  "timestamp": "2026-08-08T19:15:08.249485+00:00",
+  "query_original": "What livery colors will Ferrari use for the 2026 season?",
+  "query_reformulada": "What are the official team colours and liveries specified in the FIA Formula One World Championship 2026 Technical Regulations for Scuderia Ferrari?",
+  "resposta": "La livrea ufficiale della Scuderia Ferrari per la stagione 2026 è caratterizzata da un rosso più intenso e brillante, con una finitura lucida dopo sette stagioni di finitura opaca. La livrea include anche un maggior utilizzo del bianco, in linea con il partenariato HP.",
+  "fonte": "hybrid",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7751
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". c. Must be declared on the entry form to the Championship and approved by the FIA. The F1 Team is responsible for the compliance of its Technical Partner with the Regulations. 2026 Formula 1: General Regulatory Provisions 27 February 2026 A5 9 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7751,
+        "fonte": {
+          "char_count": 301,
+          "chunk_id": 505,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". \"Technical Regulations\" means the FIA Formula One Technical Regulations, as amended from time to time. 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D58 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7751,
+        "fonte": {
+          "char_count": 227,
+          "chunk_id": 444,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D30 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7697,
+        "fonte": {
+          "char_count": 124,
+          "chunk_id": 232,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D6 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7691,
+        "fonte": {
+          "char_count": 123,
+          "chunk_id": 32,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D62 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7664,
+        "fonte": {
+          "char_count": 124,
+          "chunk_id": 479,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "‘The colour also maintains continuity with the red used around the turn of the millennium, reaffirming Ferrari’s core values of passion, courage, and identity. Alongside the red, the white, historically used sparingly but distinctively, takes on a new role.’\n\n©Scuderia Ferrari [...] ©Scuderia Ferrari\n\nIt continues: ‘One of the most distinctive features is the return to gloss paint, after seven seasons of matte finish. The 2026 Rosso Scuderia colour is brighter and more intense, with a bold, striking look inspired by the special livery seen at Monza in 2025. [...] Following a terribly disappointing and disheartening 2025 season that initially promised so much, Ferrari is hoping that the radical new regulation changes will work in the favour of its undoubted resources.\n\nThe car certainly looked the part during a 30 second online launch video from Fiorano, and a little different. With more white on the livery as befits its HP partnership, it’s something of a throwback to the 70s machines driven by Niki Lauda.\n\n©Scuderia Ferrari",
+        "titulo": "Scuderia Ferrari unveils retro SF-26 car livery for 2026 F1 season - Motorsport Technology",
+        "fonte": "https://motorsport.tech/formula-1/ferrari-unveils-retro-sf-26-car-livery-for-2026-f1-season"
+      },
+      {
+        "trecho": "how iconic of a color Rosso Corsa is. [...] Aston Martin’s 2026 livery feels like a revision of last year’s rather than a reimagination. There are some changes—the car sports a satin finish, and its lime green accents are more prominent than before—but they’re minimal. The primary hue of British Racing Green still looks good, but it’d be nice to see the team try harder, although considering that it fell to seventh last, it’s probably wise to focus its attention on the track.  \n  \nRacing since: 2018  \nPrincipal: Adrian Newey [...] There may be no team under more pressure in 2026 than Scuderia Ferrari, which failed to put up much of a challenge during Lewis Hamilton’s first season with the outfit. We’ll have to wait to see if the SF-26 car that the seven-time champ and Charles Leclerc will drive this season is up to the task, but we know that it’ll look good regardless. Some may not know that the white segment co-sponsor HP has grown larger since last year, but we think it only manages to highlight just how iconic of a",
+        "titulo": "Every Single 2026 Formula 1 Livery, Ranked",
+        "fonte": "https://robbreport.com/motors/cars/lists/every-single-2026-formula-1-livery-ranked-1237564488"
+      },
+      {
+        "trecho": "Teams will need to rethink their designs: to comply with this new rule, they will need to review their liveries, potentially strengthen their visual identity, and possibly shift towards more \"classic\" or \"colorful\" designs.\n\nPossible additional weight: adding paint or vinyl may slightly increase weight, but teams will have to manage it within their engineering strategies. [...] Grand Prix de Monaco ™\n\n# New F1 livery rules for 2026: more color, less visible carbon\n\nDuring a FIA F1 Commission meeting on November 14, 2025, an important change was approved regarding the visual appearance of the cars: starting in 2026, at least 55% of a car's surface (side and top view) must be covered with paint or stickers, rather than left as bare carbon fiber.\n\nThe stated goal: to improve visual differentiation between cars, as some teams had been removing paint to save weight. [...] Aerodynamic testing restrictions (ATR): Changes to restrictions related to aerodynamic testing are under study to adapt the limits to modern technologies (CFD simulations, etc.), while controlling costs.\n\nMandatory pit stops: A proposal to require two pit stops during Grand Prix races was discussed, but no consensus has been reached so far. The discussion will continue in 2026.\n\n## Expected impacts",
+        "titulo": "New F1 livery rules for 2026: more color, less visible carbon",
+        "fonte": "https://www.monacograndprixticket.com/formula1monaco/news/155-New%20F1%20livery%20rules%20for%202026:%20more%20color,%20less%20visible%20carbon"
+      },
+      {
+        "trecho": "The SF-26 is the first car of a new regulatory cycle, which brings movable front aerodynamics into Formula 1 and introduces a much bigger role for hybrid energy in the power unit.\n\n Maximum turbocharger speed\n 80 mm\n 53 mm\n 350 bar\n\n  Direct injection (max)\n\nLivery\n\nThe season’s livery connects Ferrari’s past, present, as the team moves into the new technical era. One of the most distinctive features is the return to gloss paint, after seven seasons of matte finish.",
+        "titulo": "SF-26, The New 2026 Ferrari Single-Seater - Ferrari.com",
+        "fonte": "https://www.ferrari.com/en-EN/formula1/sf-26"
+      },
+      {
+        "trecho": "to Article C1.2.3, these Regulations are issued by the FIA and apply to the whole calendar year referred to in the title and to the Championship taking place within that calendar year. Any changes made by the FIA for safety reasons may come into effect without notice or delay. C1.2.3 These Technical Regulations regard the FIA Formula One World Championship starting from 2026, and additionally outline various requirements that the PU Manufacturers and their Suppliers must satisfy in the period [...] c. Must be declared on the entry form to the Championship and approved by the FIA. SECTION C: TECHNICAL REGULATIONS C175 2026 Formula 1: Technical Regulations ©2026 Fédération Internationale de l’Automobile 28 April 2026 Issue 17 0 C The F1 Team is responsible for the compliance of its Technical Partner with the Regulations. C17.2 Listed Team Components (LTC) C17.2.1 “Listed Team Components” (LTC) are components whose design, manufacture and Intellectual Property must, subject to Article [...] from the FIA. C17.1.6 Except as otherwise expressly permitted by these Regulations or by the FIA, no F1 Team may directly or indirectly disclose or transfer any Intellectual Property to another F1 Team that is reasonably likely to impact upon the performance of the receiving F1 Team, and no F1 Team may directly or indirectly obtain (by any means) the same from another F1 Team. SECTION C: TECHNICAL REGULATIONS C174 2026 Formula 1: Technical Regulations ©2026 Fédération Internationale de",
+        "titulo": "SECTION C: TECHNICAL REGULATIONS",
+        "fonte": "https://www.statsf1.com/reglement/technique.pdf"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer accurately describes Ferrari's 2026 livery as having a more intense and brilliant red color with a glossy finish, and includes a greater use of white in line with the HP partnership, all of which is supported by the provided context.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What livery colors will Ferrari use for the 2026 season?",
+      "saida": "What are the approved primary and secondary colours for the Ferrari team's car liveries as per Article 3.9 of the FIA Formula One Technical Regulations 2026?",
+      "timestamp": "2026-08-08T19:13:26.683156+00:00",
+      "latencia_ms": 3861
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the approved primary and secondary colours for the Ferrari team's car liveries as per Article 3.9 of the FIA Formula One Technical Regulations 2026?",
+      "saida": "5 hits acima de 0.7; best_score=0.777; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:13:26.735310+00:00",
+      "latencia_ms": 50
+    },
+    {
+      "agente": "generator",
+      "entrada": "What livery colors will Ferrari use for the 2026 season?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:13:42.089021+00:00",
+      "latencia_ms": 15352
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What livery colors will Ferrari use for the 2026 season?",
+        "answer": "The approved primary and secondary colours for the Ferrari team's car liveries are not specified in the provided context. Article 3.9 of the FIA Formula One Technical Regulations 2026 is mentioned, but it does not provide information on the specific livery colors used by Ferrari. Therefore, I am unable to determine the exact livery colors that Ferrari will use for the 2026 season."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims that the context does not specify the livery colors used by Ferrari, which is a truthful statement, but it still fails to provide any information about the actual livery colors, making it a non-answer.",
+      "timestamp": "2026-08-08T19:13:58.452068+00:00",
+      "latencia_ms": 16359
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What livery colors will Ferrari use for the 2026 season?",
+      "saida": "What are the official team colours and liveries specified in the FIA Formula One World Championship 2026 Technical Regulations for Scuderia Ferrari?",
+      "timestamp": "2026-08-08T19:14:02.361424+00:00",
+      "latencia_ms": 3906
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the official team colours and liveries specified in the FIA Formula One World Championship 2026 Technical Regulations for Scuderia Ferrari?",
+      "saida": "5 hits acima de 0.7; best_score=0.7751; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:14:02.406327+00:00",
+      "latencia_ms": 42
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the official team colours and liveries specified in the FIA Formula One World Championship 2026 Technical Regulations for Scuderia Ferrari?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:14:05.818571+00:00",
+      "latencia_ms": 3411
+    },
+    {
+      "agente": "generator",
+      "entrada": "What livery colors will Ferrari use for the 2026 season?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:14:33.929473+00:00",
+      "latencia_ms": 28110
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What livery colors will Ferrari use for the 2026 season?",
+        "answer": "La livrea ufficiale della Scuderia Ferrari per la stagione 2026 è caratterizzata da un rosso più intenso e brillante, con una finitura lucida dopo sette stagioni di finitura opaca. La livrea include anche un maggior utilizzo del bianco, in linea con il partenariato HP."
+      },
+      "saida": "grounded=True; will_retry=False; The answer accurately describes Ferrari's 2026 livery as having a more intense and brilliant red color with a glossy finish, and includes a greater use of white in line with the HP partnership, all of which is supported by the provided context.",
+      "timestamp": "2026-08-08T19:15:08.243757+00:00",
+      "latencia_ms": 34313
+    }
+  ]
+}
