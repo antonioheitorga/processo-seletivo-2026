@@ -1,0 +1,172 @@
+{
+  "session_id": "bench-test-rag-03",
+  "timestamp": "2026-08-08T20:39:18.808415+00:00",
+  "query_original": "How long is the first segment of Sprint Qualifying (SQ1) and how many cars are eliminated at the end of it?",
+  "resposta": "The first segment of Sprint Qualifying (SQ1) is 12 minutes long, and at the end of it, the slowest six F1 Cars will be prohibited from taking any further part in the session.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:39:03.105109+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "How long is the first segment of Sprint Qualifying (SQ1) and how many cars are eliminated at the end of it?",
+      "saida": "What is the duration of the Initial Segment of the Sprint Qualification session in accordance with Article 41.9 of the FIA Formula One World Championship Technical Regulations, and what is the number of cars that will be eliminated at the end of this segment?",
+      "timestamp": "2026-08-08T20:39:08.004074+00:00",
+      "latencia_ms": 4898
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:39:08.006640+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the duration of the Initial Segment of the Sprint Qualification session in accordance with Article 41.9 of the FIA Formula One World Championship Technical Regulations, and what is the number of cars that will be eliminated at the end of this segment?",
+      "saida": {
+        "hits_count": 5,
+        "best_score": 0.8574,
+        "threshold": 0.78,
+        "fallback_to_web": false,
+        "top_hits": [
+          {
+            "score": 0.8574,
+            "content_preview": ". b. After a seven (7) minute break the session will resume for ten 10 minutes (“Sprint Qualifying 2” or “SQ2”) and the sixteen (16) remaining F1 Cars...",
+            "metadata": {
+              "char_count": 377,
+              "chunk_id": 135,
+              "section": "sporting",
+              "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.8571,
+            "content_preview": "2.2 Sprint Qualifying Format The Sprint Qualifying will be run as follows: a. For the first twelve (12) minutes of the session (“Sprint Qualifying 1” ...",
+            "metadata": {
+              "char_count": 405,
+              "chunk_id": 134,
+              "section": "sporting",
+              "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.8439,
+            "content_preview": "2.2 and B2.\n2.3 are based upon twenty-two (22) F1 Cars being eligible to take part in the Competition. If twenty (20) F1Cars are eligible, five (5) F1...",
+            "metadata": {
+              "char_count": 451,
+              "chunk_id": 146,
+              "section": "sporting",
+              "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-08-08T20:39:08.051393+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=corpus, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:39:08.052136+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "How long is the first segment of Sprint Qualifying (SQ1) and how many cars are eliminated at the end of it?",
+        "corpus_context_chars": 1800,
+        "web_context_chars": 0
+      },
+      "saida": {
+        "answer_preview": "The first segment of Sprint Qualifying (SQ1) is 12 minutes long, and at the end of it, the slowest six F1 Cars will be prohibited from taking any further part in the session.",
+        "answer_length": 174
+      },
+      "timestamp": "2026-08-08T20:39:18.804120+00:00",
+      "latencia_ms": 10751
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:39:18.806752+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "corpus",
+        "retriever_hits": 5,
+        "web_hits": 0,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "corpus",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:39:18.807358+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:39:18.807778+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

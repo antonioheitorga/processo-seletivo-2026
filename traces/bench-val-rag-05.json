@@ -1,0 +1,162 @@
+{
+  "session_id": "bench-val-rag-05",
+  "timestamp": "2026-08-08T20:36:42.383662+00:00",
+  "query_original": "What is the Cost Cap amount, in US Dollars, for a Full Year Financial Regulations Reporting Period in which 24 or fewer Competitions take place?",
+  "resposta": "The Cost Cap amount, in US Dollars, for a Full Year Financial Regulations Reporting Period in which 24 or fewer Competitions take place is $215,000,000 adjusted, if applicable, for Indexation.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:36:36.493119+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What is the Cost Cap amount, in US Dollars, for a Full Year Financial Regulations Reporting Period in which 24 or fewer Competitions take place?",
+      "saida": "What is the maximum permitted expenditure under Article 23 of the Financial Regulations, expressed in United States dollars, applicable to a full season reporting period where the number of World Championship events does not exceed 24?",
+      "timestamp": "2026-08-08T20:36:39.355531+00:00",
+      "latencia_ms": 2861
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:36:39.357636+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the maximum permitted expenditure under Article 23 of the Financial Regulations, expressed in United States dollars, applicable to a full season reporting period where the number of World Championship events does not exceed 24?",
+      "saida": {
+        "hits_count": 2,
+        "best_score": 0.799,
+        "threshold": 0.78,
+        "fallback_to_web": false,
+        "top_hits": [
+          {
+            "score": 0.799,
+            "content_preview": ". in the event that more than 24 Competitions take place in that Full Year Financial Regulations Reporting Period, US Dollars 215,000,000, increased b...",
+            "metadata": {
+              "char_count": 393,
+              "chunk_id": 42,
+              "section": "financial_f1_teams",
+              "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.7866,
+            "content_preview": "1.2 The amount of the \"Cost Cap\" shall be: a. in the event that 24 Competitions or fewer take place in the Full Year Financial Regulations Reporting P...",
+            "metadata": {
+              "char_count": 225,
+              "chunk_id": 41,
+              "section": "financial_f1_teams",
+              "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-08-08T20:36:39.393610+00:00",
+      "latencia_ms": 35
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=corpus, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:36:39.394231+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "What is the Cost Cap amount, in US Dollars, for a Full Year Financial Regulations Reporting Period in which 24 or fewer Competitions take place?",
+        "corpus_context_chars": 620,
+        "web_context_chars": 0
+      },
+      "saida": {
+        "answer_preview": "The Cost Cap amount, in US Dollars, for a Full Year Financial Regulations Reporting Period in which 24 or fewer Competitions take place is $215,000,000 adjusted, if applicable, for Indexation.",
+        "answer_length": 192
+      },
+      "timestamp": "2026-08-08T20:36:42.380280+00:00",
+      "latencia_ms": 2985
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:36:42.382216+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "corpus",
+        "retriever_hits": 2,
+        "web_hits": 0,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "corpus",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:36:42.382759+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:36:42.383130+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

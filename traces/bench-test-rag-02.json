@@ -1,0 +1,172 @@
+{
+  "session_id": "bench-test-rag-02",
+  "timestamp": "2026-08-08T20:38:59.172424+00:00",
+  "query_original": "How many points does the driver finishing 2nd in a full-distance Grand Prix receive?",
+  "resposta": "According to Article A2.1, points are awarded based on the final race classification, and depending on the number of laps distance completed by the leader between the start signal and the end-of-session signal of the Race. However, there is no specific table provided in the context for a full-distance Grand Prix. Nevertheless, we can refer to Article A2.1 which mentions that points will be awarded in accordance with column 1 of the table below when the leader has completed two laps but less than 25% of the Scheduled Race Distance.\n\nHowever, since this is not applicable here (as it's a full-distance Grand Prix), we need to look at the general point system. Unfortunately, the provided context does not explicitly state how many points are awarded for second place in a full-distance Grand Prix.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:38:36.414447+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "How many points does the driver finishing 2nd in a full-distance Grand Prix receive?",
+      "saida": "What is the number of championship points awarded to the driver who achieves second place at the conclusion of a Grand Prix that is completed over its full distance?",
+      "timestamp": "2026-08-08T20:38:39.152360+00:00",
+      "latencia_ms": 2737
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:38:39.154870+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the number of championship points awarded to the driver who achieves second place at the conclusion of a Grand Prix that is completed over its full distance?",
+      "saida": {
+        "hits_count": 5,
+        "best_score": 0.8582,
+        "threshold": 0.78,
+        "fallback_to_web": false,
+        "top_hits": [
+          {
+            "score": 0.8582,
+            "content_preview": "2.1 Points awarded for a Race Competition Points for both the Drivers’ Championship and Constructors’ Championship titles will be awarded at each Comp...",
+            "metadata": {
+              "char_count": 333,
+              "chunk_id": 57,
+              "section": "general_provisions",
+              "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+            }
+          },
+          {
+            "score": 0.8252,
+            "content_preview": "2.2 Points awarded for a Sprint At each Sprint, Points for both the Drivers’ and Constructors’ Championship titles will be awarded at each Alternative...",
+            "metadata": {
+              "char_count": 340,
+              "chunk_id": 63,
+              "section": "general_provisions",
+              "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+            }
+          },
+          {
+            "score": 0.8159,
+            "content_preview": ". c. If two or more F1 Drivers or F1 Teams finish the Championship with the same number of points, the higher place in the Championship (in either cas...",
+            "metadata": {
+              "char_count": 492,
+              "chunk_id": 55,
+              "section": "general_provisions",
+              "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-08-08T20:38:39.196190+00:00",
+      "latencia_ms": 40
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=corpus, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:38:39.196930+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "How many points does the driver finishing 2nd in a full-distance Grand Prix receive?",
+        "corpus_context_chars": 2028,
+        "web_context_chars": 0
+      },
+      "saida": {
+        "answer_preview": "According to Article A2.1, points are awarded based on the final race classification, and depending on the number of laps distance completed by the leader between the start signal and the end-of-sessi...",
+        "answer_length": 801
+      },
+      "timestamp": "2026-08-08T20:38:59.167109+00:00",
+      "latencia_ms": 19969
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:38:59.170624+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "corpus",
+        "retriever_hits": 5,
+        "web_hits": 0,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "corpus",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:38:59.171321+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:38:59.171766+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

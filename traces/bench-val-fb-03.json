@@ -1,0 +1,181 @@
+{
+  "session_id": "bench-val-fb-03",
+  "timestamp": "2026-08-08T20:37:49.391469+00:00",
+  "query_original": "Which driver holds the record for most Formula 1 World Championships?",
+  "resposta": "Lewis Hamilton e Michael Schumacher compartilham o recorde de sete títulos de Campeão Mundial de Fórmula 1.",
+  "fonte": "web",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:37:25.404762+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "Which driver holds the record for most Formula 1 World Championships?",
+      "saida": "Which driver holds the record for the highest number of FIA Formula One World Drivers' Championship titles?",
+      "timestamp": "2026-08-08T20:37:27.332776+00:00",
+      "latencia_ms": 1927
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:37:27.336261+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "Which driver holds the record for the highest number of FIA Formula One World Drivers' Championship titles?",
+      "saida": {
+        "hits_count": 0,
+        "best_score": 0.7407,
+        "threshold": 0.78,
+        "fallback_to_web": true,
+        "top_hits": []
+      },
+      "timestamp": "2026-08-08T20:37:27.370340+00:00",
+      "latencia_ms": 33
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "web_searcher",
+        "reason": "best_score=0.7407 abaixo do threshold — delegando ao Web Searcher"
+      },
+      "timestamp": "2026-08-08T20:37:27.371383+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "Which driver holds the record for the highest number of FIA Formula One World Drivers' Championship titles?",
+      "saida": {
+        "results_count": 5,
+        "urls": [
+          "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions",
+          "https://happyhourracing.com/blogs/news/f1-all-time-records-2026-wins-poles-and-titles-by-the-numbers",
+          "https://www.espn.com/auto/story/_/id/42251194/which-f1-drivers-teams-most-championships",
+          "https://racingnews365.com/every-world-champion-in-formula-1-history",
+          "https://www.formula1.com/en/results/2026/drivers"
+        ],
+        "trechos_preview": [
+          "As of the 2026 season, the 76 titles have been won by 35 of the 782 drivers who have started a Grand Prix.( The first champion was Giuseppe Farina, in...",
+          "All-time wins and poles through Round 11 of the 2026 season. (Graphic: Happy Hour Racing, data from the Ergast / jolpica F1 results database)\n\n \n\nThe ...",
+          "Lewis Hamilton and Michael Schumacher own the record for the most career F1 world drivers' titles with seven apiece, while Ferrari has won the most wo...",
+          "The first World Championship of Formula One occurred in 1950, where Giuseppe Farina won the first F1 world title ever. A lot of legendary drivers have...",
+          "| Pos. | Driver | Nationality | Team | Pts. |\n ---  --- \n| 1 | Kimi AntonelliANT | ITA | Mercedes | 219 |\n| 2 | Lewis HamiltonHAM | GBR | Ferrari | 16..."
+        ],
+        "erro": null
+      },
+      "timestamp": "2026-08-08T20:37:29.329148+00:00",
+      "latencia_ms": 1956
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=web, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:37:29.330082+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "Which driver holds the record for most Formula 1 World Championships?",
+        "corpus_context_chars": 0,
+        "web_context_chars": 6406
+      },
+      "saida": {
+        "answer_preview": "Lewis Hamilton e Michael Schumacher compartilham o recorde de sete títulos de Campeão Mundial de Fórmula 1.",
+        "answer_length": 107
+      },
+      "timestamp": "2026-08-08T20:37:49.386253+00:00",
+      "latencia_ms": 20055
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:37:49.389766+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "web",
+        "retriever_hits": 0,
+        "web_hits": 5,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "web",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:37:49.390509+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:37:49.390921+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

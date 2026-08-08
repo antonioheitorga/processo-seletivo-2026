@@ -1,0 +1,172 @@
+{
+  "session_id": "bench-val-rag-04",
+  "timestamp": "2026-08-08T20:36:36.122066+00:00",
+  "query_original": "What percentage of the race winner's completed laps must a car have covered to be classified at the end of a race?",
+  "resposta": "According to section 3.3b, a car must have covered at least 90% of the number of laps completed by the winner (rounded down to the nearest whole number of laps) to be classified at the end of a race.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:36:30.736422+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What percentage of the race winner's completed laps must a car have covered to be classified at the end of a race?",
+      "saida": "What is the minimum proportion of the total number of laps completed by the winning car that a vehicle must have achieved in order to be eligible for classification at the conclusion of a Grand Prix?",
+      "timestamp": "2026-08-08T20:36:33.199497+00:00",
+      "latencia_ms": 2462
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:36:33.202731+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the minimum proportion of the total number of laps completed by the winning car that a vehicle must have achieved in order to be eligible for classification at the conclusion of a Grand Prix?",
+      "saida": {
+        "hits_count": 5,
+        "best_score": 0.8401,
+        "threshold": 0.78,
+        "fallback_to_web": false,
+        "top_hits": [
+          {
+            "score": 0.8401,
+            "content_preview": "3.3b). All F1 Cars will be classified taking into account the number of complete laps they have covered, and for those which have completed the same n...",
+            "metadata": {
+              "char_count": 435,
+              "chunk_id": 165,
+              "section": "sporting",
+              "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.8377,
+            "content_preview": "5.3). All F1 Cars will be classified taking into account the number of complete laps they have covered, and for those which have completed the same nu...",
+            "metadata": {
+              "char_count": 432,
+              "chunk_id": 200,
+              "section": "sporting",
+              "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.8043,
+            "content_preview": ". In all cases, no points will be awarded unless a minimum of two complete and consecutive laps have been completed by the leader without a Safety Car...",
+            "metadata": {
+              "char_count": 467,
+              "chunk_id": 58,
+              "section": "general_provisions",
+              "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-08-08T20:36:33.237786+00:00",
+      "latencia_ms": 34
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=corpus, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:36:33.238749+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "What percentage of the race winner's completed laps must a car have covered to be classified at the end of a race?",
+        "corpus_context_chars": 2287,
+        "web_context_chars": 0
+      },
+      "saida": {
+        "answer_preview": "According to section 3.3b, a car must have covered at least 90% of the number of laps completed by the winner (rounded down to the nearest whole number of laps) to be classified at the end of a race.",
+        "answer_length": 199
+      },
+      "timestamp": "2026-08-08T20:36:36.118241+00:00",
+      "latencia_ms": 2878
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:36:36.120370+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "corpus",
+        "retriever_hits": 5,
+        "web_hits": 0,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "corpus",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:36:36.120942+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:36:36.121375+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

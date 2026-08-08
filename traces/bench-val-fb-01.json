@@ -1,0 +1,181 @@
+{
+  "session_id": "bench-val-fb-01",
+  "timestamp": "2026-08-08T20:37:00.890963+00:00",
+  "query_original": "Who won the 2025 Formula 1 Drivers' World Championship?",
+  "resposta": "Lando Norris won the 2025 Formula 1 Drivers' World Championship.",
+  "fonte": "web",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:36:42.766815+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "Who won the 2025 Formula 1 Drivers' World Championship?",
+      "saida": "Who was declared the winner of the 2025 FIA Formula One World Drivers' Championship?",
+      "timestamp": "2026-08-08T20:36:44.242227+00:00",
+      "latencia_ms": 1475
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:36:44.244421+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "Who was declared the winner of the 2025 FIA Formula One World Drivers' Championship?",
+      "saida": {
+        "hits_count": 0,
+        "best_score": 0.7215,
+        "threshold": 0.78,
+        "fallback_to_web": true,
+        "top_hits": []
+      },
+      "timestamp": "2026-08-08T20:36:44.277872+00:00",
+      "latencia_ms": 32
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "web_searcher",
+        "reason": "best_score=0.7215 abaixo do threshold — delegando ao Web Searcher"
+      },
+      "timestamp": "2026-08-08T20:36:44.278700+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "Who was declared the winner of the 2025 FIA Formula One World Drivers' Championship?",
+      "saida": {
+        "results_count": 5,
+        "urls": [
+          "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers%27_Champions",
+          "https://www.formulaonehistory.com/results/2025-f1-drivers-championship-standings",
+          "https://www.mclaren.com/racing/team/lando-norris/2025-world-drivers-champion",
+          "https://www.espn.com/f1/story/_/id/47151000/lando-norris-wins-first-f1-world-title-championship-2025-abu-dhabi-mclaren",
+          "https://www.nbcnews.com/sports/formula-1/lando-norris-wins-formula-1-world-championship-final-race-2025-rcna246885"
+        ],
+        "trechos_preview": [
+          "|  |\n| 2025 | Image 163: United KingdomLando Norris( | 26 | Image 164: United KingdomMcLaren | Mercedes | P | 7 | 7 | 18 | 6 | 423 | 65.278 | Round 24...",
+          "At the final race of the season, the 2025 Abu Dhabi Grand Prix, McLaren driver Lando Norris took his maiden World Championship title. F1’s 35th World ...",
+          "## UNSEEN TEAM MOMENTS\n\n### WORLD CHAMPION TEAM PHOTO\n\nA full behind-the-scenes look at the team celebrations as Lando Norris was crowned a World Cham...",
+          "## ESPN\n\n# Lando Norris wins first F1 world title after tense Abu Dhabi finale\n\nCopy Link\n\nYAS MARINA, Abu Dhabi -- Lando Norris became the Formula 1 ...",
+          "By Sahil Kapur\n\nLando Norris captured his first ever Formula 1 world championship in the final race of 2025 on Sunday, completing a comeback in a capt..."
+        ],
+        "erro": null
+      },
+      "timestamp": "2026-08-08T20:36:45.933225+00:00",
+      "latencia_ms": 1653
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=web, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:36:45.934074+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "Who won the 2025 Formula 1 Drivers' World Championship?",
+        "corpus_context_chars": 0,
+        "web_context_chars": 6463
+      },
+      "saida": {
+        "answer_preview": "Lando Norris won the 2025 Formula 1 Drivers' World Championship.",
+        "answer_length": 64
+      },
+      "timestamp": "2026-08-08T20:37:00.886713+00:00",
+      "latencia_ms": 14951
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:37:00.889380+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "web",
+        "retriever_hits": 0,
+        "web_hits": 5,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "web",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:37:00.890018+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:37:00.890394+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

@@ -28,6 +28,8 @@ Interface Streamlit                                           ✅
 ```
 
 📐 Arquitetura completa documentada em [docs/architecture.md](docs/architecture.md).
+📋 Justificativa do corpus (os 4 pontos exigidos pelo edital) em [docs/justificativa_corpus.md](docs/justificativa_corpus.md).
+📊 Benchmark de avaliação (20 pares, metodologia, resultados) em [evaluation/README.md](evaluation/README.md).
 
 ### Estrutura do projeto
 
@@ -69,7 +71,14 @@ tests/
 └── conftest.py        # Carrega .env antes dos testes
 
 docs/
-└── architecture.md    # Diagrama do fluxo + contratos dos agentes
+├── architecture.md            # Diagrama do fluxo + contratos dos agentes
+└── justificativa_corpus.md    # Justificativa do corpus (4 pontos exigidos pelo edital)
+
+evaluation/
+├── dataset.json        # 20 pares pergunta/resposta (validação + teste)
+├── run_benchmark.py     # Executa o pipeline completo e pontua cada resposta
+├── README.md            # Metodologia de avaliação
+└── results/              # Resultados gerados (JSON + Markdown) por split
 ```
 
 ---
@@ -262,7 +271,7 @@ A interface sobe em `http://localhost:8501`. Cada query executada gera um arquiv
 - `LLM_MODEL` (default: `llama3.1:8b`)
 - `EMBED_MODEL` (default: `nomic-embed-text`)
 - `CHROMA_COLLECTION` (default: `fia_2026_regulations`)
-- `RETRIEVER_THRESHOLD` (default: `0.75`)
+- `RETRIEVER_THRESHOLD` (default: `0.78`, calibrado empiricamente — ver `evaluation/README.md`)
 - `RETRIEVER_TOP_K` (default: `5`)
 - `TAVILY_API_KEY` (obrigatória para web search)
 - `TRACES_DIR` (default: `./traces`) — pasta onde o trace de cada execução é salvo

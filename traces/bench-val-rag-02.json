@@ -1,0 +1,172 @@
+{
+  "session_id": "bench-val-rag-02",
+  "timestamp": "2026-08-08T20:36:22.459323+00:00",
+  "query_original": "How many points does the winner of a full-distance Grand Prix receive under the 2026 General Regulations?",
+  "resposta": "According to Article 2.1.3 of the 2026 FIA Formula One World Championship Technical and Sporting Regulations, the winner of a full-distance Grand Prix receives 25 points.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:36:17.154224+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "How many points does the winner of a full-distance Grand Prix receive under the 2026 General Regulations?",
+      "saida": "What is the total number of World Championship points awarded to the winner of a Grand Prix that completes its scheduled distance in accordance with Article 2.1.3 of the 2026 FIA Formula One World Championship Technical and Sporting Regulations?",
+      "timestamp": "2026-08-08T20:36:20.176976+00:00",
+      "latencia_ms": 3022
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:36:20.179145+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the total number of World Championship points awarded to the winner of a Grand Prix that completes its scheduled distance in accordance with Article 2.1.3 of the 2026 FIA Formula One World Championship Technical and Sporting Regulations?",
+      "saida": {
+        "hits_count": 5,
+        "best_score": 0.8484,
+        "threshold": 0.78,
+        "fallback_to_web": false,
+        "top_hits": [
+          {
+            "score": 0.8484,
+            "content_preview": ". In all cases, no points will be awarded unless a minimum of two complete and consecutive laps have been completed by the leader without a Safety Car...",
+            "metadata": {
+              "char_count": 467,
+              "chunk_id": 58,
+              "section": "general_provisions",
+              "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+            }
+          },
+          {
+            "score": 0.8385,
+            "content_preview": "1.4 World Championship Titles: a. The Drivers’ Championship title will be awarded to the F1 Driver who has scored the highest number of points, calcul...",
+            "metadata": {
+              "char_count": 292,
+              "chunk_id": 53,
+              "section": "general_provisions",
+              "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+            }
+          },
+          {
+            "score": 0.8277,
+            "content_preview": "2.1 Points awarded for a Race Competition Points for both the Drivers’ Championship and Constructors’ Championship titles will be awarded at each Comp...",
+            "metadata": {
+              "char_count": 333,
+              "chunk_id": 57,
+              "section": "general_provisions",
+              "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-08-08T20:36:20.215819+00:00",
+      "latencia_ms": 36
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=corpus, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:36:20.216489+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "How many points does the winner of a full-distance Grand Prix receive under the 2026 General Regulations?",
+        "corpus_context_chars": 1870,
+        "web_context_chars": 0
+      },
+      "saida": {
+        "answer_preview": "According to Article 2.1.3 of the 2026 FIA Formula One World Championship Technical and Sporting Regulations, the winner of a full-distance Grand Prix receives 25 points.",
+        "answer_length": 170
+      },
+      "timestamp": "2026-08-08T20:36:22.454240+00:00",
+      "latencia_ms": 2237
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:36:22.457477+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "corpus",
+        "retriever_hits": 5,
+        "web_hits": 0,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "corpus",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:36:22.458211+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:36:22.458657+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

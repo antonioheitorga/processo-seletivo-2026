@@ -1,0 +1,181 @@
+{
+  "session_id": "bench-val-fb-05",
+  "timestamp": "2026-08-08T20:38:18.506196+00:00",
+  "query_original": "What was Max Verstappen's reported salary in 2024?",
+  "resposta": "Max Verstappen's reported salary in 2024 was $75 million, according to Racingnews365.com.",
+  "fonte": "web",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:38:02.132067+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What was Max Verstappen's reported salary in 2024?",
+      "saida": "What is the disclosed remuneration for Max Verstappen as per the FIA Formula One World Championship financial regulations for the 2024 season?",
+      "timestamp": "2026-08-08T20:38:04.994244+00:00",
+      "latencia_ms": 2861
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:38:04.996788+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the disclosed remuneration for Max Verstappen as per the FIA Formula One World Championship financial regulations for the 2024 season?",
+      "saida": {
+        "hits_count": 0,
+        "best_score": 0.745,
+        "threshold": 0.78,
+        "fallback_to_web": true,
+        "top_hits": []
+      },
+      "timestamp": "2026-08-08T20:38:05.036569+00:00",
+      "latencia_ms": 39
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "web_searcher",
+        "reason": "best_score=0.745 abaixo do threshold — delegando ao Web Searcher"
+      },
+      "timestamp": "2026-08-08T20:38:05.037465+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What is the disclosed remuneration for Max Verstappen as per the FIA Formula One World Championship financial regulations for the 2024 season?",
+      "saida": {
+        "results_count": 5,
+        "urls": [
+          "https://www.formulaonehistory.com/max-verstappen-net-worth",
+          "https://www.gpblog.com/en/news/verstappen-and-norris-must-pay-over-a-million-euros-to-the-fia",
+          "https://www.facebook.com/racingnews365com/posts/%F0%9D%90%96%F0%9D%90%87%F0%9D%90%80%F0%9D%90%93-%F0%9D%90%80-%F0%9D%90%8F%F0%9D%90%80%F0%9D%90%98-%F0%9D%90%8F%F0%9D%90%80%F0%9D%90%82%F0%9D%90%8A%F0%9D%90%84%F0%9D%90%93-max-verstappen-tops-the-charts-once-again-as-formula-1s-highes/1489937356472806",
+          "https://www.grandprix247.com/f1-driver-news/max-verstappen-exit-would-cost-him-300-million-and-hit-formula-1-revenues-by-100-million",
+          "https://www.skysports.com/f1/news/12433/12631220/max-verstappen-formula-one-world-champion-says-introducing-a-driver-salary-cap-would-be-completely-wrong"
+        ],
+        "trechos_preview": [
+          "Max Verstappen’s dominance on the track has not only made him a multi-time World Champion but also the highest-paid driver on the current F1 grid. Acc...",
+          "Jan 3, 2026 — Max Verstappen and Lando Norris will have to pay well over a million euros for their FIA super licences for the upcoming Formula 1 seaso...",
+          "The 2024 Formula 1 driver salaries are here! Max Verstappen reigns supreme with a mind-blowing $75M, followed by Lewis Hamilton's $57M and ...Read mor...",
+          "Apr 10, 2026 — His personal sponsorship income sits at $25-million annually but at peak dominance, it's natural that number climbs much higher to $50-...",
+          "Jun 10, 2022 — Verstappen, who recently signed a five-year contract extension with Red Bull - reported to be worth £40m - that keeps him tied to the t..."
+        ],
+        "erro": null
+      },
+      "timestamp": "2026-08-08T20:38:07.222080+00:00",
+      "latencia_ms": 2184
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=web, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:38:07.223719+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "What was Max Verstappen's reported salary in 2024?",
+        "corpus_context_chars": 0,
+        "web_context_chars": 2678
+      },
+      "saida": {
+        "answer_preview": "Max Verstappen's reported salary in 2024 was $75 million, according to Racingnews365.com.",
+        "answer_length": 89
+      },
+      "timestamp": "2026-08-08T20:38:18.500838+00:00",
+      "latencia_ms": 11276
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:38:18.504486+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "web",
+        "retriever_hits": 0,
+        "web_hits": 5,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "web",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:38:18.505198+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:38:18.505639+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

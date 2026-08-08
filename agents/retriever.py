@@ -13,7 +13,7 @@ from pathlib import Path
 
 DEFAULT_COLLECTION = "fia_2026_regulations"
 DEFAULT_TOP_K = 5
-DEFAULT_THRESHOLD = 0.75
+DEFAULT_THRESHOLD = 0.78
 
 
 def _vectorstore_path() -> Path:

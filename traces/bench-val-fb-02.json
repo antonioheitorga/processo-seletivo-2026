@@ -1,0 +1,181 @@
+{
+  "session_id": "bench-val-fb-02",
+  "timestamp": "2026-08-08T20:37:25.401121+00:00",
+  "query_original": "What is the capital of France?",
+  "resposta": "Os aerofólios frontais e traseiros terão flaps móveis que podem ser abertos ou fechados dependendo da situação, permitindo a mudança entre o modo de baixa aderência (Straight Mode) e o modo de alta aderência (Corner Mode). O Straight Mode reduz a resistência aerodinâmica para aumentar a velocidade em retas, enquanto o Corner Mode mantém a aderência para fornecer tração nos curvas.",
+  "fonte": "web",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:37:00.894296+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What is the capital of France?",
+      "saida": "What are the stipulations regarding the aerodynamic appendages and drag reduction systems for the 2026 F1 season?",
+      "timestamp": "2026-08-08T20:37:02.742265+00:00",
+      "latencia_ms": 1847
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:37:02.744223+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the stipulations regarding the aerodynamic appendages and drag reduction systems for the 2026 F1 season?",
+      "saida": {
+        "hits_count": 0,
+        "best_score": 0.7638,
+        "threshold": 0.78,
+        "fallback_to_web": true,
+        "top_hits": []
+      },
+      "timestamp": "2026-08-08T20:37:02.779658+00:00",
+      "latencia_ms": 34
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "web_searcher",
+        "reason": "best_score=0.7638 abaixo do threshold — delegando ao Web Searcher"
+      },
+      "timestamp": "2026-08-08T20:37:02.780072+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the stipulations regarding the aerodynamic appendages and drag reduction systems for the 2026 F1 season?",
+      "saida": {
+        "results_count": 5,
+        "urls": [
+          "https://www.formula1.com/en/latest/article/2026-regulations-explained-all-you-need-to-know-about-f1s-new-aerodynamics.7IAt0auc32UkCEFE5ypkTB",
+          "https://www.raceteq.com/articles/2025/10/2026-straightline-mode-replacing-drs-simulations",
+          "https://www.williamsf1.com/articles/71e25d7a-d0f1-4488-a749-f1eb611f0ec6/whats-new-in-f1-for-2026",
+          "https://www.youtube.com/watch?v=b1VWATOjsJc",
+          "https://www.formula1.com/en/latest/article/the-beginners-guide-to-the-2026-regulations.6j0tS0hrHG2T01tpmK6XYz"
+        ],
+        "trechos_preview": [
+          "Since 2011, the rear wing has had an active element within the Drag Reduction System (DRS). It’s use during a Grand Prix was restricted, only chasing ...",
+          "Oct 21, 2025 — One of the biggest aerodynamic changes coming to the 2026 Formula 1 regulations reset is the replacement of the Drag Reduction System (...",
+          "The Drag Reduction System Formula 1 introduced in 2011 will not appear in 2026. However, two new rules will sound quite similar for existing fans, wit...",
+          "going along the road with your palm vertical, feeling the air on your hand. You can really feel it trying to push your hand backwards as well. Then if...",
+          "Overtake Mode effectively replaces a system called DRS (Drag Reduction System) that made a similar sort of impact by opening an element of the rear wi..."
+        ],
+        "erro": null
+      },
+      "timestamp": "2026-08-08T20:37:04.753214+00:00",
+      "latencia_ms": 1972
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=web, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:37:04.754533+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "What is the capital of France?",
+        "corpus_context_chars": 0,
+        "web_context_chars": 5893
+      },
+      "saida": {
+        "answer_preview": "Os aerofólios frontais e traseiros terão flaps móveis que podem ser abertos ou fechados dependendo da situação, permitindo a mudança entre o modo de baixa aderência (Straight Mode) e o modo de alta ad...",
+        "answer_length": 383
+      },
+      "timestamp": "2026-08-08T20:37:25.397591+00:00",
+      "latencia_ms": 20642
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:37:25.399621+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "web",
+        "retriever_hits": 0,
+        "web_hits": 5,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "web",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:37:25.400203+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:37:25.400578+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

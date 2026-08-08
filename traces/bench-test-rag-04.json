@@ -1,0 +1,172 @@
+{
+  "session_id": "bench-test-rag-04",
+  "timestamp": "2026-08-08T20:39:39.463015+00:00",
+  "query_original": "What does the Cost Cap in the F1 Teams Financial Regulations limit, and what freedom does it leave to teams?",
+  "resposta": "The Cost Cap in the F1 Teams Financial Regulations limits certain costs that may be incurred by or on behalf of an F1 Team, including:\n\n* Costs related to developing, manufacturing, testing, and racing F1 Cars\n* These costs are subject to limitation under the Cost Cap, which is defined as a percentage of the team's total revenue (see D10)\n\nThe Cost Cap leaves teams free to decide how to allocate resources within that limit.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:39:21.772044+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What does the Cost Cap in the F1 Teams Financial Regulations limit, and what freedom does it leave to teams?",
+      "saida": "What are the specific expenditure categories subject to limitation under the Financial Regulations' Cost Cap, and what scope for discretionary spending is afforded to Formula 1 teams within this framework?",
+      "timestamp": "2026-08-08T20:39:24.821953+00:00",
+      "latencia_ms": 3049
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:39:24.824423+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the specific expenditure categories subject to limitation under the Financial Regulations' Cost Cap, and what scope for discretionary spending is afforded to Formula 1 teams within this framework?",
+      "saida": {
+        "hits_count": 5,
+        "best_score": 0.8594,
+        "threshold": 0.78,
+        "fallback_to_web": false,
+        "top_hits": [
+          {
+            "score": 0.8594,
+            "content_preview": "2.1 These Financial Regulations define a Cost Cap that limits certain costs that may be incurred by or on behalf of an F1 Team in each Full Year Finan...",
+            "metadata": {
+              "char_count": 412,
+              "chunk_id": 14,
+              "section": "financial_f1_teams",
+              "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.8066,
+            "content_preview": "[Página 34]\nD SECTION D: FINANCIAL REGULATIONS (F1 TEAMS) 0 b. following the review of an F1 Team’s Full Year Reporting Documentation (including, wher...",
+            "metadata": {
+              "char_count": 354,
+              "chunk_id": 253,
+              "section": "financial_f1_teams",
+              "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.8054,
+            "content_preview": ". require the Individual F1 Team Member to bear the reasonable costs incurred by the Cost Cap Administration in connection with any investigations int...",
+            "metadata": {
+              "char_count": 385,
+              "chunk_id": 183,
+              "section": "financial_f1_teams",
+              "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-08-08T20:39:24.869745+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=corpus, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:39:24.871285+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "What does the Cost Cap in the F1 Teams Financial Regulations limit, and what freedom does it leave to teams?",
+        "corpus_context_chars": 2018,
+        "web_context_chars": 0
+      },
+      "saida": {
+        "answer_preview": "The Cost Cap in the F1 Teams Financial Regulations limits certain costs that may be incurred by or on behalf of an F1 Team, including:\n\n* Costs related to developing, manufacturing, testing, and racin...",
+        "answer_length": 427
+      },
+      "timestamp": "2026-08-08T20:39:39.458822+00:00",
+      "latencia_ms": 14587
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:39:39.461433+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "corpus",
+        "retriever_hits": 5,
+        "web_hits": 0,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "corpus",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:39:39.462074+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:39:39.462462+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "session_id": "bench-test-fb-05",
+  "timestamp": "2026-08-08T20:41:56.270187+00:00",
+  "query_original": "What was the weather like during the 2024 Abu Dhabi Grand Prix race?",
+  "resposta": "The weather during the 2024 Abu Dhabi Grand Prix race was clear, with average daytime temperatures around 26°C (79°F) and nighttime temperatures typically dropping to approximately 21°C (70°F).",
+  "fonte": "web",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:41:29.588947+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What was the weather like during the 2024 Abu Dhabi Grand Prix race?",
+      "saida": "What were the meteorological conditions prevailing during the 2024 Formula One World Championship event held at the Yas Marina Circuit in Abu Dhabi?",
+      "timestamp": "2026-08-08T20:41:32.303926+00:00",
+      "latencia_ms": 2714
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:41:32.306246+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What were the meteorological conditions prevailing during the 2024 Formula One World Championship event held at the Yas Marina Circuit in Abu Dhabi?",
+      "saida": {
+        "hits_count": 0,
+        "best_score": 0.7251,
+        "threshold": 0.78,
+        "fallback_to_web": true,
+        "top_hits": []
+      },
+      "timestamp": "2026-08-08T20:41:32.345782+00:00",
+      "latencia_ms": 38
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "web_searcher",
+        "reason": "best_score=0.7251 abaixo do threshold — delegando ao Web Searcher"
+      },
+      "timestamp": "2026-08-08T20:41:32.346648+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What were the meteorological conditions prevailing during the 2024 Formula One World Championship event held at the Yas Marina Circuit in Abu Dhabi?",
+      "saida": {
+        "results_count": 5,
+        "urls": [
+          "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix",
+          "https://www.abudhabi.gp/en/weather-forecast-23",
+          "https://www.formula1.com/en/latest/article/what-is-the-weather-forecast-for-the-2025-abu-dhabi-grand-prix.4W7mwkrCgjIv001Pwdfcmm",
+          "https://motorsportstats.com/results/fia-formula-one-world-championship/2024/abu-dhabi-grand-prix/info",
+          "https://www.redbull.com/us-en/how-does-weather-impact-f1"
+        ],
+        "trechos_preview": [
+          "| Race 24 of 24 in the 2024 Formula One World Championship  |  |  | ←Previous race | |\n| Layout of the Yas Marina Circuit Layout of the Yas Marina Cir...",
+          "Average daytime temperatures hover around 26°C (79°F), while nighttime temperatures typically drop to approximately 21°C (70°F). You may notice slight",
+          "Formula 1 moves on to the Yas Marina Circuit this weekend for the season-closing Abu Dhabi Grand Prix – but what kind of weather conditions are set to...",
+          "Motorsport Stats Logo\nFia Logo\n\nAbu Dhabi Grand Prix country\n\nAbu Dhabi GP\n\n06 December - 08 December, 2024\n\nYas Marina Circuit\n\nFIA Formula One World...",
+          "Max Verstappen of the Netherlands driving the (1) Oracle Red Bull Racing RB20 on track during the F1 Grand Prix of Brazil at Autodromo Jose Carlos Pac..."
+        ],
+        "erro": null
+      },
+      "timestamp": "2026-08-08T20:41:34.378123+00:00",
+      "latencia_ms": 2030
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=web, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:41:34.379113+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "What was the weather like during the 2024 Abu Dhabi Grand Prix race?",
+        "corpus_context_chars": 0,
+        "web_context_chars": 6108
+      },
+      "saida": {
+        "answer_preview": "The weather during the 2024 Abu Dhabi Grand Prix race was clear, with average daytime temperatures around 26°C (79°F) and nighttime temperatures typically dropping to approximately 21°C (70°F).",
+        "answer_length": 193
+      },
+      "timestamp": "2026-08-08T20:41:56.264971+00:00",
+      "latencia_ms": 21885
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:41:56.267503+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "web",
+        "retriever_hits": 0,
+        "web_hits": 5,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "web",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:41:56.268450+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:41:56.269216+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

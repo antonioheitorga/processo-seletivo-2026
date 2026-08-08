@@ -1,0 +1,167 @@
+{
+  "descricao": "Benchmark de avaliação do sistema RAG multiagente FIA 2026 F1 Regulations. 20 pares pergunta/resposta esperada, divididos em validação (10) e teste (10). Em cada split, 5 perguntas são respondíveis pelo corpus (RAG) e 5 são projetadas para acionar o fallback de busca web, por não existir resposta nos regulamentos.",
+  "validacao": [
+    {
+      "id": "val-rag-01",
+      "pergunta": "What is the minimum car mass, before Nominal Tyre Mass, during Sprint Qualifying and Qualifying sessions in the 2026 F1 Technical Regulations?",
+      "resposta_esperada": "726 kg, plus the Nominal Tyre Mass.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "technical"
+    },
+    {
+      "id": "val-rag-02",
+      "pergunta": "How many points does the winner of a full-distance Grand Prix receive under the 2026 General Regulations?",
+      "resposta_esperada": "25 points.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "general_provisions"
+    },
+    {
+      "id": "val-rag-03",
+      "pergunta": "What is the maximum number of team personnel allowed access to the Parc Fermé area per F1 Car, and for what purpose?",
+      "resposta_esperada": "A maximum of 3 team personnel per F1 Car, solely to fit cooling fans and carry out work required by officials supervising parc fermé.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "sporting"
+    },
+    {
+      "id": "val-rag-04",
+      "pergunta": "What percentage of the race winner's completed laps must a car have covered to be classified at the end of a race?",
+      "resposta_esperada": "At least 90% of the number of laps covered by the winner, rounded down to the nearest whole number of laps.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "sporting"
+    },
+    {
+      "id": "val-rag-05",
+      "pergunta": "What is the Cost Cap amount, in US Dollars, for a Full Year Financial Regulations Reporting Period in which 24 or fewer Competitions take place?",
+      "resposta_esperada": "US Dollars 215,000,000, adjusted for Indexation if applicable.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "financial_f1_teams"
+    },
+    {
+      "id": "val-fb-01",
+      "pergunta": "Who won the 2025 Formula 1 Drivers' World Championship?",
+      "resposta_esperada": "Não consta no corpus regulatório; resposta deve vir de busca web e é dependente de dado factual de temporada, fora do escopo do documento.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    },
+    {
+      "id": "val-fb-02",
+      "pergunta": "What is the capital of France?",
+      "resposta_esperada": "Não consta no corpus regulatório (fora do domínio de F1). Resposta deve vir de busca web: Paris.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    },
+    {
+      "id": "val-fb-03",
+      "pergunta": "Which driver holds the record for most Formula 1 World Championships?",
+      "resposta_esperada": "Não consta no corpus regulatório (fato histórico, não regra). Resposta deve vir de busca web.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    },
+    {
+      "id": "val-fb-04",
+      "pergunta": "What happened during the 2024 Abu Dhabi Grand Prix?",
+      "resposta_esperada": "Não consta no corpus regulatório (evento específico de corrida). Resposta deve vir de busca web.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    },
+    {
+      "id": "val-fb-05",
+      "pergunta": "What was Max Verstappen's reported salary in 2024?",
+      "resposta_esperada": "Não consta no corpus regulatório (dado comercial/individual, não regra). Resposta deve vir de busca web.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    }
+  ],
+  "teste": [
+    {
+      "id": "test-rag-01",
+      "pergunta": "What is the minimum car mass, before Nominal Tyre Mass, in F1 sessions other than Sprint Qualifying and Qualifying?",
+      "resposta_esperada": "724 kg, plus the Nominal Tyre Mass.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "technical"
+    },
+    {
+      "id": "test-rag-02",
+      "pergunta": "How many points does the driver finishing 2nd in a full-distance Grand Prix receive?",
+      "resposta_esperada": "18 points.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "general_provisions"
+    },
+    {
+      "id": "test-rag-03",
+      "pergunta": "How long is the first segment of Sprint Qualifying (SQ1) and how many cars are eliminated at the end of it?",
+      "resposta_esperada": "SQ1 lasts 12 minutes; the six (6) slowest cars are eliminated at the end of it.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "sporting"
+    },
+    {
+      "id": "test-rag-04",
+      "pergunta": "What does the Cost Cap in the F1 Teams Financial Regulations limit, and what freedom does it leave to teams?",
+      "resposta_esperada": "It limits certain costs an F1 Team may incur in a Reporting Period to develop, manufacture, test, and race F1 Cars, while leaving the team free to decide how to allocate resources within that Cost Cap.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "financial_f1_teams"
+    },
+    {
+      "id": "test-rag-05",
+      "pergunta": "During which two types of sessions does the higher Minimum Mass of 726kg (plus Nominal Tyre Mass) apply?",
+      "resposta_esperada": "During Sprint Qualifying and Qualifying sessions.",
+      "tipo": "rag",
+      "fonte_esperada": "corpus",
+      "secao": "technical"
+    },
+    {
+      "id": "test-fb-01",
+      "pergunta": "Which team won the 2025 Formula 1 Constructors' Championship?",
+      "resposta_esperada": "Não consta no corpus regulatório; resposta deve vir de busca web e é dependente de dado factual de temporada.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    },
+    {
+      "id": "test-fb-02",
+      "pergunta": "Who is the current CEO of Formula 1 (Liberty Media / Formula One Group)?",
+      "resposta_esperada": "Não consta no corpus regulatório (cargo corporativo, não regra técnica/esportiva). Resposta deve vir de busca web.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    },
+    {
+      "id": "test-fb-03",
+      "pergunta": "What is the population of Brazil in 2026?",
+      "resposta_esperada": "Não consta no corpus regulatório (fora do domínio de F1). Resposta deve vir de busca web.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    },
+    {
+      "id": "test-fb-04",
+      "pergunta": "Which driver lineup changes were announced for the 2027 Formula 1 season?",
+      "resposta_esperada": "Não consta no corpus regulatório (é regulamento, não notícia de contratação) e trata de período fora da cobertura do documento. Resposta deve vir de busca web.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    },
+    {
+      "id": "test-fb-05",
+      "pergunta": "What was the weather like during the 2024 Abu Dhabi Grand Prix race?",
+      "resposta_esperada": "Não consta no corpus regulatório (condição meteorológica de evento específico). Resposta deve vir de busca web.",
+      "tipo": "fallback",
+      "fonte_esperada": "web",
+      "secao": null
+    }
+  ]
+}

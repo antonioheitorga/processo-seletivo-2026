@@ -1,0 +1,172 @@
+{
+  "session_id": "bench-val-rag-03",
+  "timestamp": "2026-08-08T20:36:30.347956+00:00",
+  "query_original": "What is the maximum number of team personnel allowed access to the Parc Fermé area per F1 Car, and for what purpose?",
+  "resposta": "According to Article 22.4 of the FIA F1 2026 Technical Regulations, a maximum of three (3) team personnel per F1 Car will be permitted access to the Parc Fermé area for the sole purpose of fitting cooling fans and undertaking any work required by those officials charged with supervision of parc fermé.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:36:22.828481+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What is the maximum number of team personnel allowed access to the Parc Fermé area per F1 Car, and for what purpose?",
+      "saida": "What is the maximum number of Team Personnel permitted access to the Pit Lane and Parc Fermé areas per Formula One Car, as specified in Article 22.4 of the FIA F1 2026 Technical Regulations, and what are the designated purposes for such access?",
+      "timestamp": "2026-08-08T20:36:26.410501+00:00",
+      "latencia_ms": 3581
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:36:26.412594+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the maximum number of Team Personnel permitted access to the Pit Lane and Parc Fermé areas per Formula One Car, as specified in Article 22.4 of the FIA F1 2026 Technical Regulations, and what are the designated purposes for such access?",
+      "saida": {
+        "hits_count": 5,
+        "best_score": 0.8603,
+        "threshold": 0.78,
+        "fallback_to_web": false,
+        "top_hits": [
+          {
+            "score": 0.8603,
+            "content_preview": "6.2 When the parc fermé is in use, parc fermé regulations will apply in the area between the Line and the parc fermé entrance. B3.\n6.3 The parc fermé ...",
+            "metadata": {
+              "char_count": 462,
+              "chunk_id": 257,
+              "section": "sporting",
+              "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.8431,
+            "content_preview": ". c. F1 Team personnel are only allowed in the Pit Lane immediately before they are required to work on an F1 Car and must withdraw as soon as the wor...",
+            "metadata": {
+              "char_count": 276,
+              "chunk_id": 67,
+              "section": "sporting",
+              "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+            }
+          },
+          {
+            "score": 0.8078,
+            "content_preview": "16.1. The Safety Car will subsequently lead all cars into the pit lane, and into the designated Parc Fermé area, at the end of the following lap. 2026...",
+            "metadata": {
+              "char_count": 258,
+              "chunk_id": 407,
+              "section": "sporting",
+              "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+            }
+          }
+        ]
+      },
+      "timestamp": "2026-08-08T20:36:26.449266+00:00",
+      "latencia_ms": 36
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=corpus, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:36:26.450024+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "What is the maximum number of team personnel allowed access to the Parc Fermé area per F1 Car, and for what purpose?",
+        "corpus_context_chars": 1950,
+        "web_context_chars": 0
+      },
+      "saida": {
+        "answer_preview": "According to Article 22.4 of the FIA F1 2026 Technical Regulations, a maximum of three (3) team personnel per F1 Car will be permitted access to the Parc Fermé area for the sole purpose of fitting coo...",
+        "answer_length": 302
+      },
+      "timestamp": "2026-08-08T20:36:30.344341+00:00",
+      "latencia_ms": 3893
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:36:30.346401+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "corpus",
+        "retriever_hits": 5,
+        "web_hits": 0,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "corpus",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:36:30.346998+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:36:30.347400+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

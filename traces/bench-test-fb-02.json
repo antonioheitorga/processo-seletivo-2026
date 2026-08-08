@@ -1,0 +1,181 @@
+{
+  "session_id": "bench-test-fb-02",
+  "timestamp": "2026-08-08T20:40:48.555642+00:00",
+  "query_original": "Who is the current CEO of Formula 1 (Liberty Media / Formula One Group)?",
+  "resposta": "The current CEO of Formula 1 is Stefano Domenicali, as per the Wikipedia article on Formula One Group. He has been serving as President and Chief Executive Officer since 2020.",
+  "fonte": "web",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:40:20.660276+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "Who is the current CEO of Formula 1 (Liberty Media / Formula One Group)?",
+      "saida": "What are the current and past identities of the Chief Executive Officers affiliated with Liberty Media Corporation, the parent company of the Formula One Group, as per Article 2.3 of the FIA Formula One World Championship Sporting Regulations?",
+      "timestamp": "2026-08-08T20:40:24.969699+00:00",
+      "latencia_ms": 4308
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:40:24.972499+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the current and past identities of the Chief Executive Officers affiliated with Liberty Media Corporation, the parent company of the Formula One Group, as per Article 2.3 of the FIA Formula One World Championship Sporting Regulations?",
+      "saida": {
+        "hits_count": 0,
+        "best_score": 0.7239,
+        "threshold": 0.78,
+        "fallback_to_web": true,
+        "top_hits": []
+      },
+      "timestamp": "2026-08-08T20:40:25.017858+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "web_searcher",
+        "reason": "best_score=0.7239 abaixo do threshold — delegando ao Web Searcher"
+      },
+      "timestamp": "2026-08-08T20:40:25.018676+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the current and past identities of the Chief Executive Officers affiliated with Liberty Media Corporation, the parent company of the Formula One Group, as per Article 2.3 of the FIA Formula One World Championship Sporting Regulations?",
+      "saida": {
+        "results_count": 5,
+        "urls": [
+          "https://www.libertymedia.com/investors/financial-information/sec-filings/content/0001104659-26-020653/0001104659-26-020653.pdf",
+          "https://www.libertymedia.com/news/detail/305/liberty-media-corporation-completes-acquisition-of-formula-1",
+          "https://en.wikipedia.org/wiki/Formula_One_Group",
+          "https://corp.formula1.com/team",
+          "https://www.statsf1.com/reglement/sportif.pdf"
+        ],
+        "trechos_preview": [
+          "LIBERTY MEDIA CORPORATION Date: February 26, 2026 By: /s/ DEREK CHANG Derek Chang President and Chief Executive Officer Date: February 26, 2026 By: /s...",
+          "ENGLEWOOD, Colo. & LONDON--(BUSINESS WIRE)-- Liberty Media Corporation (\"Liberty Media\") (Nasdaq: LSXMA, LSXMB, LSXMK, BATRA, BATRK, LMCA, LMCK) and D...",
+          "In late 2016, Liberty Media agreed to buy controlling interest in the Formula One Group for $4.4 billion (£3.3 billion).( The deal was approved by reg...",
+          "He combines his passion for racing with basketball, mountain sports and aviation.\n\nImage 3\n\n### Duncan Llowarch – Chief Financial Officer\n\nDuncan Llow...",
+          "to the design of their tyres. i. Drivers participating in these tests must be eligible for a Full Super Licence and must have either competed in at le..."
+        ],
+        "erro": null
+      },
+      "timestamp": "2026-08-08T20:40:28.637520+00:00",
+      "latencia_ms": 3618
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=web, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:40:28.638864+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "Who is the current CEO of Formula 1 (Liberty Media / Formula One Group)?",
+        "corpus_context_chars": 0,
+        "web_context_chars": 6582
+      },
+      "saida": {
+        "answer_preview": "The current CEO of Formula 1 is Stefano Domenicali, as per the Wikipedia article on Formula One Group. He has been serving as President and Chief Executive Officer since 2020.",
+        "answer_length": 175
+      },
+      "timestamp": "2026-08-08T20:40:48.550447+00:00",
+      "latencia_ms": 19910
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:40:48.553989+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "web",
+        "retriever_hits": 0,
+        "web_hits": 5,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "web",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:40:48.554705+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:40:48.555105+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}

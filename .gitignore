@@ -10,8 +10,11 @@ __pycache__/
 .venv/
 venv/
 
-# Traces gerados em runtime
-traces/
+# Traces gerados em runtime (sessões ad-hoc via Streamlit) — ignoradas.
+# Traces do benchmark (evaluation/run_benchmark.py, prefixo bench-*) são
+# versionadas como evidência de execução, incluindo casos de fallback.
+traces/*
+!traces/bench-*.json
 
 # IDE
 .vscode/

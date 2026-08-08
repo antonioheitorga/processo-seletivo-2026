@@ -1,0 +1,181 @@
+{
+  "session_id": "bench-val-fb-04",
+  "timestamp": "2026-08-08T20:38:02.128624+00:00",
+  "query_original": "What happened during the 2024 Abu Dhabi Grand Prix?",
+  "resposta": "Durante o Grande Prêmio da Abu Dhabi de 2024, Lando Norris venceu a corrida para garantir ao McLaren seu primeiro título de construtores desde 1998. Carlos Sainz e Charles Leclerc terminaram em segundo e terceiro lugar, respectivamente. Além disso, houve incidentes durante a corrida, incluindo uma colisão entre Sergio Pérez e Valtteri Bottas, que fez com que Pérez se retirasse da corrida.",
+  "fonte": "web",
+  "low_confidence": false,
+  "trace": [
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": false,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "reformulator",
+        "reason": "query ainda não reformulada — delegando ao Reformulador"
+      },
+      "timestamp": "2026-08-08T20:37:49.394607+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What happened during the 2024 Abu Dhabi Grand Prix?",
+      "saida": "What are the key events and incidents that occurred during the 2024 Formula One World Championship event held at the Yas Marina Circuit in Abu Dhabi, United Arab Emirates?",
+      "timestamp": "2026-08-08T20:37:52.584393+00:00",
+      "latencia_ms": 3189
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": false,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "retriever",
+        "reason": "busca vetorial pendente — delegando ao Retriever"
+      },
+      "timestamp": "2026-08-08T20:37:52.587159+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the key events and incidents that occurred during the 2024 Formula One World Championship event held at the Yas Marina Circuit in Abu Dhabi, United Arab Emirates?",
+      "saida": {
+        "hits_count": 0,
+        "best_score": 0.6703,
+        "threshold": 0.78,
+        "fallback_to_web": true,
+        "top_hits": []
+      },
+      "timestamp": "2026-08-08T20:37:52.629289+00:00",
+      "latencia_ms": 41
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": false,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "web_searcher",
+        "reason": "best_score=0.6703 abaixo do threshold — delegando ao Web Searcher"
+      },
+      "timestamp": "2026-08-08T20:37:52.630048+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the key events and incidents that occurred during the 2024 Formula One World Championship event held at the Yas Marina Circuit in Abu Dhabi, United Arab Emirates?",
+      "saida": {
+        "results_count": 5,
+        "urls": [
+          "https://en.wikipedia.org/wiki/2024_Abu_Dhabi_Grand_Prix",
+          "https://www.espn.com/f1/report/_/id/600041153",
+          "https://motorsportstats.com/results/fia-formula-one-world-championship/2024/abu-dhabi-grand-prix/info",
+          "https://www.formula1.com/en/racing/2024/united-arab-emirates",
+          "https://www.instagram.com/reel/DR95wdcDGBe"
+        ],
+        "trechos_preview": [
+          "Motor car race\n\nThe 2024 Abu Dhabi Grand Prix (officially known as the Formula 1 Etihad Airways Abu Dhabi Grand Prix 2024) was a Formula One motor rac...",
+          "\"Yep, move of a world champion that one,\" Piastri said sarcastically on the radio afterward. Verstappen clinched his fourth drivers' championship at t...",
+          "Click here for the information relating to the Abu Dhabi Grand Prix. Summary event information, timetable and venue and circuit information.",
+          "Assuming you can’t get a room with a trackside view in the spectacular whale-shaped Yas Hotel – or a berth in a boat’s cabin in the marina – opt for a...",
+          "Unexpected chaos at the F1 paddock in Abu Dhabi just moments before race action kicked off.   \nA crash inside the paddock area caused a brief stir, bu..."
+        ],
+        "erro": null
+      },
+      "timestamp": "2026-08-08T20:37:53.238599+00:00",
+      "latencia_ms": 608
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": false,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "generator",
+        "reason": "contexto pronto (fonte=web, low_confidence=False) — delegando ao Gerador"
+      },
+      "timestamp": "2026-08-08T20:37:53.240487+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "generator",
+      "entrada": {
+        "query_original": "What happened during the 2024 Abu Dhabi Grand Prix?",
+        "corpus_context_chars": 0,
+        "web_context_chars": 5412
+      },
+      "saida": {
+        "answer_preview": "Durante o Grande Prêmio da Abu Dhabi de 2024, Lando Norris venceu a corrida para garantir ao McLaren seu primeiro título de construtores desde 1998. Carlos Sainz e Charles Leclerc terminaram em segund...",
+        "answer_length": 391
+      },
+      "timestamp": "2026-08-08T20:38:02.124683+00:00",
+      "latencia_ms": 8883
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": false
+      },
+      "saida": {
+        "next_step": "judge",
+        "reason": "resposta gerada — delegando ao Judge"
+      },
+      "timestamp": "2026-08-08T20:38:02.127111+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "judge",
+      "entrada": {
+        "sources_used": "web",
+        "retriever_hits": 0,
+        "web_hits": 5,
+        "low_confidence": false
+      },
+      "saida": {
+        "approved": true,
+        "decision": "approve",
+        "sources_used": "web",
+        "reasons": []
+      },
+      "timestamp": "2026-08-08T20:38:02.127695+00:00",
+      "latencia_ms": 0
+    },
+    {
+      "agente": "orchestrator",
+      "entrada": {
+        "query_reformulada": true,
+        "retriever_result": true,
+        "web_result": true,
+        "generator_result": true,
+        "judge_result": true
+      },
+      "saida": {
+        "next_step": "done",
+        "reason": "judge=approve — finalizando resposta para o usuário"
+      },
+      "timestamp": "2026-08-08T20:38:02.128069+00:00",
+      "latencia_ms": 0
+    }
+  ]
+}
