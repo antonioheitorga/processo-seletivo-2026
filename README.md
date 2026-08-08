@@ -21,8 +21,9 @@ Reformulador                                                  ✅
 Retriever                                                     ✅
 Web Searcher                                                  ✅
 Gerador                                                       ✅
-Orquestrador                                                  ✅
-Observabilidade (trace JSON)                                  ✅
+Judge/Verifier                                                ✅
+Orquestrador (hub-and-spoke)                                  ✅
+Observabilidade (trace JSON enriquecido)                      ✅
 Interface Streamlit                                           ✅
 ```
 
@@ -51,10 +52,11 @@ agents/
 ├── reformulator.py    # Reescreve a query para busca semântica
 ├── retriever.py       # Busca vetorial no ChromaDB com controle de confiança
 ├── web_searcher.py    # Fallback via Tavily quando o corpus não é suficiente
-└── generator.py       # Gera resposta final com contexto corpus/web
+├── generator.py       # Gera texto a partir do contexto recebido (responsabilidade única)
+└── judge.py           # Valida a resposta com base em sinais de confiança
 
 orchestration/
-└── orchestrator.py    # Grafo LangGraph com roteamento condicional
+└── orchestrator.py    # Nó central hub-and-spoke — decide o próximo agente a cada passo
 
 tests/
 ├── test_reformulator.py
@@ -62,6 +64,7 @@ tests/
 ├── test_retriever_integration.py
 ├── test_web_searcher.py
 ├── test_generator.py
+├── test_judge.py
 ├── test_orchestrator.py
 └── conftest.py        # Carrega .env antes dos testes
 
@@ -179,34 +182,45 @@ Saída (`web_result`):
 Também appenda em `trace`.
 
 ### Sprint 4 — Gerador (`agents/generator.py`)
-Gera resposta final com contexto do corpus e/ou web.
+Responsabilidade única: gerar texto a partir do contexto recebido. Não calcula
+métricas de fonte nem flags de confiança — isso é do Orquestrador.
+
+Anti-alucinação por design: se corpus e web estão ambos vazios, NÃO chama o LLM
+e retorna `{"result": null, "reason": ...}`.
 
 Entradas:
-- `query_original` / `query_reformulada`
-- `retriever_result`
-- `web_result` (com compatibilidade para `resultados_web` / `encontrou_web`)
+- `query_original`, `query_reformulada`
+- `retriever_result`, `web_result`
 
-Saídas:
-- `generator_result`:
-  - `answer`
-  - `sources_used` (`corpus`, `web`, `hybrid`, `none`)
-  - `low_confidence`
-  - `confidence_notice`
-- campos compatíveis no state:
-  - `resposta`
-  - `fonte`
-  - `low_confidence`
-  - `confidence_warning`
-- `trace` (append)
+Saída (`generator_result`):
+- `result` — `"ok"` ou `None` (quando contexto vazio)
+- `answer` — texto da resposta (vazio se `result=None`)
+- `reason` — motivo do `None` quando aplicável
+
+Também appenda em `trace`.
+
+### Sprint 4 — Judge/Verifier (`agents/judge.py`)
+Valida a resposta gerada com base em sinais de confiança. Determinístico (sem LLM).
+Aprova quando há `answer` + evidência (corpus ou web) + não-low_confidence.
+
+Saída (`judge_result`):
+- `approved` — bool
+- `decision` — `"approve"` ou `"revise"`
+- `sources_used` — eco do generator
+- `reasons` — lista de motivos quando rejeitado (`empty_answer`, `no_evidence`, `low_confidence`)
+
+Também escreve `needs_revision` e appenda em `trace`.
 
 ### Sprint 4 — Orquestrador (`orchestration/orchestrator.py`)
-Monta o grafo LangGraph que conecta os 4 agentes. Roteamento condicional determinístico (sem LLM):
+Nó central hub-and-spoke. Todo agente, ao terminar, retorna ao Orquestrador,
+que inspeciona o estado e decide qual chamar a seguir. Roteamento determinístico
+(sem LLM), com `reason` por decisão registrado no trace.
 
-```
-reformulator → retriever → {fallback_to_web?}
-                              ├─ False → generator
-                              └─ True  → web_searcher → generator
-```
+Responsabilidades:
+- Decidir o próximo agente baseado no estado atual
+- Calcular `fonte` (`corpus` / `web` / `hybrid` / `none`) e `low_confidence`
+- Aplicar anti-alucinação por design (aborta geração se corpus + web vazios)
+- Montar a resposta final para o usuário
 
 Componentes expostos:
 - `GraphState` — TypedDict com todos os campos do estado compartilhado
@@ -222,9 +236,10 @@ load_dotenv()
 from orchestration.orchestrator import run
 
 resultado = run("What is DRS?")
-print(resultado["fonte"])         # "corpus" | "web" | "hybrid" | "none"
+print(resultado["fonte"])           # "corpus" | "web" | "hybrid" | "none"
 print(resultado["resposta"])
-print(resultado["trace"])         # lista com entrada de cada agente
+print(resultado["low_confidence"])  # bool
+print(resultado["trace"])           # lista com entrada de cada agente + orquestrador intercalado
 ```
 
 ---
