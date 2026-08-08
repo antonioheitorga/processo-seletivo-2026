@@ -21,12 +21,16 @@ Reformulador                                                  ✅
 Retriever                                                     ✅
 Web Searcher                                                  ✅
 Gerador                                                       ✅
+Verificador (loop de reflexão)                                ✅
 Orquestrador                                                  ✅
 Observabilidade (trace JSON)                                  ✅
 Interface Streamlit                                           ✅
+Benchmark de avaliação (avaliacao/)                            ✅
 ```
 
 📐 Arquitetura completa documentada em [docs/architecture.md](docs/architecture.md).
+📄 Justificativa do corpus (por que este corpus, RAG+web, limitações esperadas, fallback) em [docs/corpus.md](docs/corpus.md).
+📊 Benchmark de avaliação (20 pares, metodologia e resultados) em [avaliacao/](avaliacao/).
 
 ### Estrutura do projeto
 
@@ -48,13 +52,14 @@ Os diretórios `extracted/`, `processed/`, `chunks/` e `vectorstore/` são gerad
 
 ```
 agents/
-├── reformulator.py    # Reescreve a query para busca semântica
+├── reformulator.py    # Reescreve a query para busca semântica (recebe feedback do verificador em retentativas)
 ├── retriever.py       # Busca vetorial no ChromaDB com controle de confiança
 ├── web_searcher.py    # Fallback via Tavily quando o corpus não é suficiente
-└── generator.py       # Gera resposta final com contexto corpus/web
+├── generator.py       # Gera resposta final com contexto corpus/web
+└── verifier.py        # Verifica se a resposta está fundamentada no contexto; aciona o loop de reflexão
 
 orchestration/
-└── orchestrator.py    # Grafo LangGraph com roteamento condicional
+└── orchestrator.py    # Grafo LangGraph com roteamento condicional (inclui o loop de reflexão pós-verifier)
 
 tests/
 ├── test_reformulator.py
@@ -62,6 +67,7 @@ tests/
 ├── test_retriever_integration.py
 ├── test_web_searcher.py
 ├── test_generator.py
+├── test_verifier.py
 ├── test_orchestrator.py
 └── conftest.py        # Carrega .env antes dos testes
 
@@ -199,13 +205,44 @@ Saídas:
   - `confidence_warning`
 - `trace` (append)
 
-### Sprint 4 — Orquestrador (`orchestration/orchestrator.py`)
-Monta o grafo LangGraph que conecta os 4 agentes. Roteamento condicional determinístico (sem LLM):
+### Sprint 5 — Verificador (`agents/verifier.py`)
+Fecha o loop de reflexão: julga, com um LLM, se a resposta do Gerador está
+fundamentada no contexto recuperado (corpus e/ou web) — não apenas se uma
+fonte foi encontrada, mas se ela de fato sustenta o que foi respondido.
+
+Entradas:
+- `query_original`
+- `generator_result` (resposta a verificar)
+- `retriever_result`, `web_result` (contexto contra o qual verificar)
+- `retry_count`
+
+Saídas:
+- `verifier_result`:
+  - `grounded` (`bool`)
+  - `justification`
+  - `attempt`
+  - `will_retry`
+- `retry_count` (incrementado quando `grounded=False`)
+- ao esgotar `VERIFIER_MAX_RETRIES` sem fundamentação confirmada: `low_confidence=True`, `confidence_warning`
+- `trace` (append)
+
+Quando `will_retry=True`, o orquestrador volta ao Reformulador, que recebe a
+justificativa do Verificador (`verifier_result.justification`) e a usa para
+tentar uma reformulação mais ampla — o loop de reflexão citado no edital
+como diferencial.
+
+### Sprint 5 — Orquestrador (`orchestration/orchestrator.py`)
+Monta o grafo LangGraph que conecta os 5 agentes. Roteamento condicional determinístico (sem LLM — quem decide com LLM são os agentes, não o grafo):
 
 ```
 reformulator → retriever → {fallback_to_web?}
                               ├─ False → generator
                               └─ True  → web_searcher → generator
+                                                            ↓
+                                                        verifier → {grounded?}
+                                                                     ├─ True                      → fim
+                                                                     ├─ False, retry disponível    → volta pro reformulator
+                                                                     └─ False, retries esgotados   → fim (low_confidence=True)
 ```
 
 Componentes expostos:
@@ -250,6 +287,7 @@ A interface sobe em `http://localhost:8501`. Cada query executada gera um arquiv
 - `RETRIEVER_THRESHOLD` (default: `0.75`)
 - `RETRIEVER_TOP_K` (default: `5`)
 - `TAVILY_API_KEY` (obrigatória para web search)
+- `VERIFIER_MAX_RETRIES` (default: `1`) — nº máximo de retentativas do loop de reflexão
 - `TRACES_DIR` (default: `./traces`) — pasta onde o trace de cada execução é salvo
 
 ---

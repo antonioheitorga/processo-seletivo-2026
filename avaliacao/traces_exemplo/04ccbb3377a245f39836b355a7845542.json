@@ -1,0 +1,109 @@
+{
+  "session_id": "04ccbb3377a245f39836b355a7845542",
+  "timestamp": "2026-08-08T19:08:37.275622+00:00",
+  "query_original": "How are penalties for causing a collision or on-track incident decided under the Sporting Regulations?",
+  "query_reformulada": "What is the procedure for determining and applying penalties to drivers involved in collisions or on-track incidents as per Article 37.9 of the FIA Formula One Sporting Regulations?",
+  "resposta": "According to Article 37.9 of the FIA Formula One Sporting Regulations, penalties for causing a collision or on-track incident are decided by the stewards at their discretion. Unless it is clear that a driver was wholly or predominantly to blame for an Incident, no penalty will be imposed. The stewards may impose specific penalties as set out in these regulations, in addition to or instead of other available penalties.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.8452
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "9.3 Imposition of Penalties It shall be at the discretion of the stewards to decide if any driver involved in an Incident should be penalised. Unless it is clear to the stewards that a driver was wholly or predominantly to blame for an Incident no penalty will be imposed. The stewards may impose the penalties specifically set out in these FIA F1 Regulations in addition to or instead of any other penalties available to them under the ISC. B1.",
+        "score": 0.8452,
+        "fonte": {
+          "char_count": 445,
+          "chunk_id": 103,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "9.1 Reporting of Incident(s) The Race Director may report any on-track incident or suspected breach of these FIA F1 Regulations or the ISC (an “Incident”) to the stewards. B1.",
+        "score": 0.7933,
+        "fonte": {
+          "char_count": 175,
+          "chunk_id": 100,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "4.3) and the procedure defined in this article. Any penalties received for the Race will be added up and be applied using the procedure defined in this article. If Qualifying does not take place at a Competition, and with acceptance of the Stewards that the session cannot take place, the grid for the Race will be defined based upon the Drivers’ 2026 Form ula 1: Sporting Regulations 28 April 2026 B2 3 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7915,
+        "fonte": {
+          "char_count": 459,
+          "chunk_id": 188,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": "9.4 Penalties for Incident(s) during a LTCS In the event of an incident during any LTCS the Stewards may delete a driver’s lap time (or lap times) or drop the driver such number of grid positions as they consider appropriate. a. Unless it is completely clear that a driver committed a driving infringement any such incident will normally be investigated after the relevant session. 2026 Form ula 1: Sporting Regulations 28 April 2026 B1 3 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7871,
+        "fonte": {
+          "char_count": 494,
+          "chunk_id": 104,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". i. If an F1 Car is deemed to have been released in an unsafe condition during any LTCS, the stewards may drop the driver such number of grid positions as they consider appropriate. Such penalty will be applied to the Race unless the infringement has been committed during the sprint qualifying session, in which case the penalty will be applied to the sprint session. ii",
+        "score": 0.7868,
+        "fonte": {
+          "char_count": 372,
+          "chunk_id": 65,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer accurately reflects the language and content of Article 9.3, which explicitly states that penalties for causing a collision or on-track incident are decided by the stewards at their discretion.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "How are penalties for causing a collision or on-track incident decided under the Sporting Regulations?",
+      "saida": "What is the procedure for determining and applying penalties to drivers involved in collisions or on-track incidents as per Article 37.9 of the FIA Formula One Sporting Regulations?",
+      "timestamp": "2026-08-08T19:08:06.039111+00:00",
+      "latencia_ms": 3713
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the procedure for determining and applying penalties to drivers involved in collisions or on-track incidents as per Article 37.9 of the FIA Formula One Sporting Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.8452; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:08:06.086932+00:00",
+      "latencia_ms": 45
+    },
+    {
+      "agente": "generator",
+      "entrada": "How are penalties for causing a collision or on-track incident decided under the Sporting Regulations?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:08:21.693140+00:00",
+      "latencia_ms": 15605
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "How are penalties for causing a collision or on-track incident decided under the Sporting Regulations?",
+        "answer": "According to Article 37.9 of the FIA Formula One Sporting Regulations, penalties for causing a collision or on-track incident are decided by the stewards at their discretion. Unless it is clear that a driver was wholly or predominantly to blame for an Incident, no penalty will be imposed. The stewards may impose specific penalties as set out in these regulations, in addition to or instead of other available penalties."
+      },
+      "saida": "grounded=True; will_retry=False; The answer accurately reflects the language and content of Article 9.3, which explicitly states that penalties for causing a collision or on-track incident are decided by the stewards at their discretion.",
+      "timestamp": "2026-08-08T19:08:37.272081+00:00",
+      "latencia_ms": 15578
+    }
+  ]
+}

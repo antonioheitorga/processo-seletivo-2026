@@ -1,0 +1,162 @@
+[
+  {
+    "id": "C01",
+    "pergunta": "How many points does the winner of a Formula 1 race receive, and does the full amount always apply regardless of how much of the race is completed?",
+    "resposta_esperada": "The winner only receives the full 25 points if the leader has completed at least 75% of the Scheduled Race Distance (Column 4 of the points table in Article 2.1 of the General Provisions). For lower distance thresholds the points are reduced: 19 points for 50-75%, 13 points for 25-50%, 6 points for 2 laps up to 25%; if the leader completes fewer than 2 consecutive laps, no points are awarded at all.",
+    "espera_fallback": false,
+    "secao_esperada": "general_provisions",
+    "split": "val"
+  },
+  {
+    "id": "C02",
+    "pergunta": "What is the minimum mass of an F1 car during Qualifying and Sprint Qualifying sessions in the 2026 Technical Regulations?",
+    "resposta_esperada": "726 kg plus the Nominal Tyre Mass, per Article C4.1. In all other sessions the minimum mass is 724 kg plus the Nominal Tyre Mass.",
+    "espera_fallback": false,
+    "secao_esperada": "technical",
+    "split": "val"
+  },
+  {
+    "id": "C03",
+    "pergunta": "What does the Cost Cap in the Financial Regulations for F1 Teams limit?",
+    "resposta_esperada": "It limits certain Relevant Costs that may be incurred by or on behalf of an F1 Team during each Full Year Financial Regulations Reporting Period relating to operating the team, including costs to develop, manufacture, test and race F1 Cars.",
+    "espera_fallback": false,
+    "secao_esperada": "financial_f1_teams",
+    "split": "val"
+  },
+  {
+    "id": "C04",
+    "pergunta": "What is Parc Fermé and when does it apply?",
+    "resposta_esperada": "Parc Fermé is the designated secure area at a Competition where F1 Cars must be kept after qualifying and during certain other periods of the Competition. While parc fermé conditions apply, teams are prevented from working on their cars other than adjustments explicitly permitted by the FIA.",
+    "espera_fallback": false,
+    "secao_esperada": "general_provisions / sporting",
+    "split": "val"
+  },
+  {
+    "id": "C05",
+    "pergunta": "What is the FIA's definition of 'Sprint' in the F1 Regulations?",
+    "resposta_esperada": "'Sprint' means an FIA Formula One Sprint, including FIA Formula One Sprint qualifying events, as defined in the FIA Sporting Regulations in force during the applicable period.",
+    "espera_fallback": false,
+    "secao_esperada": "general_provisions",
+    "split": "val"
+  },
+  {
+    "id": "C06",
+    "pergunta": "What is the Full Year Reporting Deadline under the F1 Teams Financial Regulations?",
+    "resposta_esperada": "19:00 CET on 31 March (or the next business day if 31 March is not a business day), in respect of the Full Year Financial Regulations Reporting Period ending on 31 December of the preceding year.",
+    "espera_fallback": false,
+    "secao_esperada": "financial_f1_teams",
+    "split": "test"
+  },
+  {
+    "id": "C07",
+    "pergunta": "What does the FIA F1 Technical Regulations define as the 'Power Unit'?",
+    "resposta_esperada": "The internal combustion engine and turbocharger, complete with its ancillaries, the energy recovery system, and all actuation systems and PU control electronics necessary to make them function at all times.",
+    "espera_fallback": false,
+    "secao_esperada": "technical / general_provisions",
+    "split": "test"
+  },
+  {
+    "id": "C08",
+    "pergunta": "How are penalties for causing a collision or on-track incident decided under the Sporting Regulations?",
+    "resposta_esperada": "It is at the stewards' discretion: unless it is clear a driver was wholly or predominantly to blame for an Incident, no penalty is imposed. When a penalty is imposed it can include a time penalty (e.g. a 5-second penalty), a grid-place penalty, or a driver reprimand — with five reprimands in the same Championship (at least four for driving infringements) triggering a ten grid-place penalty.",
+    "espera_fallback": false,
+    "secao_esperada": "sporting",
+    "split": "test"
+  },
+  {
+    "id": "C09",
+    "pergunta": "When is no points awarded to the leader of a Sprint session?",
+    "resposta_esperada": "If the leader has completed fewer than two complete and consecutive laps, or has completed two laps but less than 50% of the Scheduled Sprint Distance, no points are awarded for the Sprint (Article 2.2 of the General Provisions).",
+    "espera_fallback": false,
+    "secao_esperada": "general_provisions",
+    "split": "test"
+  },
+  {
+    "id": "C10",
+    "pergunta": "What penalty applies the first time a driver uses an additional Power Unit element beyond the number prescribed for the Championship?",
+    "resposta_esperada": "A ten (10) grid place penalty is imposed at the first Competition where the additional element of that type is used; subsequent uses of an additional element of the same type incur further (smaller, cumulative) grid place penalties per the table in the Sporting Regulations.",
+    "espera_fallback": false,
+    "secao_esperada": "sporting",
+    "split": "test"
+  },
+  {
+    "id": "F01",
+    "pergunta": "What team does Lewis Hamilton drive for in the 2026 season?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (real-world team lineup, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer gives a specific, plausible team name sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "val"
+  },
+  {
+    "id": "F02",
+    "pergunta": "What was the outcome of the 2025 Monaco Grand Prix?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (historical race result, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer gives a specific, plausible race outcome sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "val"
+  },
+  {
+    "id": "F03",
+    "pergunta": "What livery colors will Ferrari use for the 2026 season?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (team livery/branding, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer gives specific, plausible livery details sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "val"
+  },
+  {
+    "id": "F04",
+    "pergunta": "What is DRS and how does it work?",
+    "resposta_esperada": "This question looks in-domain but the FIA F1 2026 Regulations do not define 'DRS' (removed for 2026 in favour of active aerodynamics) — it exists to test whether the system correctly falls back to the web instead of assuming DRS still exists. Score 1.0 if the answer correctly explains DRS using web content (ideally noting it was replaced/removed for 2026, but a correct general DRS explanation from the web also counts); 0.5 if it hedges but still attempts an answer; 0.0 if it fabricates DRS rules as if they were in the 2026 regulations, or fails to attempt an answer.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "val"
+  },
+  {
+    "id": "F05",
+    "pergunta": "Who holds the F1 record for most pole positions in history?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (historical statistic, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer names a specific, plausible driver sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "val"
+  },
+  {
+    "id": "F06",
+    "pergunta": "What is the ticket price for the 2026 Monaco Grand Prix?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (commercial ticket pricing, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer gives a specific, plausible price/range sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "test"
+  },
+  {
+    "id": "F07",
+    "pergunta": "Which city will host the first race of the 2026 F1 calendar?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (calendar/venue, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer names a specific, plausible host city sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "test"
+  },
+  {
+    "id": "F08",
+    "pergunta": "Who is Max Verstappen contracted with for the 2027 season?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (driver contract, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer gives a specific, plausible team/contract sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "test"
+  },
+  {
+    "id": "F09",
+    "pergunta": "What is the fastest lap ever recorded at Monza?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (historical lap record, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer gives a specific, plausible lap time sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "test"
+  },
+  {
+    "id": "F10",
+    "pergunta": "Which streaming platform broadcasts F1 races in the United States?",
+    "resposta_esperada": "This question is intentionally outside the FIA F1 2026 Regulations corpus (broadcast rights, not regulatory content) — it exists to test the fallback path. Score 1.0 if the answer names a specific, plausible platform sourced from web content; 0.5 if it hedges but still attempts an answer; 0.0 if it fails to attempt an answer despite having web results available.",
+    "espera_fallback": true,
+    "secao_esperada": null,
+    "split": "test"
+  }
+]

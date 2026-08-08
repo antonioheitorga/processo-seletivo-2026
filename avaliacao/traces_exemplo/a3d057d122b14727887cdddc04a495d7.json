@@ -1,0 +1,173 @@
+{
+  "session_id": "a3d057d122b14727887cdddc04a495d7",
+  "timestamp": "2026-08-08T19:24:50.504547+00:00",
+  "query_original": "Who is Max Verstappen contracted with for the 2027 season?",
+  "query_reformulada": "What are the contractual arrangements of Max Verstappen for the 2027 Formula One World Championship season, specifically regarding his team affiliation and driver agreement?",
+  "resposta": "Het antwoord op de vraag wie Max Verstappen contractueel verbonden is voor het seizoen 2027, kan niet met zekerheid worden gegeven. Volgens de beschikbare context zijn er verschillende bronnen die suggereren dat hij mogelijk een nieuw contract zal tekenen bij Red Bull, maar er zijn ook bronnen die vermelden dat hij een exit-clausule heeft in zijn huidige contract en mogelijk naar een andere team zou kunnen overstappen.",
+  "fonte": "hybrid",
+  "low_confidence": true,
+  "confidence_warning": "Verificador não conseguiu confirmar que a resposta está fundamentada no contexto recuperado após 2 tentativa(s). The answer states that it cannot be determined with certainty who Max Verstappen is contracted to for the 2027 season, as there are conflicting reports and exit clauses mentioned in the context.",
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7321
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". payable to the Commercial Rights Holder to the Championship by an F1 Team pursuant to its acceptance as a signatory to a contract with the Commercial Rights Holder and/or the FIA relating to the F1 Team’s participation in the Championship; m",
+        "score": 0.7321,
+        "fonte": {
+          "char_count": 243,
+          "chunk_id": 70,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". require the Individual F1 Team Member to bear the reasonable costs incurred by the Cost Cap Administration in connection with any investigations into the Individual F1 Team Member’s compliance with these Financial Regulations and/or the preparation of the ABA. 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D24 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7231,
+        "fonte": {
+          "char_count": 385,
+          "chunk_id": 183,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". c. Must be declared on the entry form to the Championship and approved by the FIA. The F1 Team is responsible for the compliance of its Technical Partner with the Regulations. 2026 Formula 1: General Regulatory Provisions 27 February 2026 A5 9 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7219,
+        "fonte": {
+          "char_count": 301,
+          "chunk_id": 505,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". The Promoter must comply with all requirements set out in the FIA Rules and Regulations. The Promoter of a Competition must procure that all Competitors, their personnel and drivers are covered by third party insurance in accordance with the FIA requirements. The following conditions apply: 2026 Formula 1: General Regulatory Provisions 27 February 2026 A2 0 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.7185,
+        "fonte": {
+          "char_count": 417,
+          "chunk_id": 153,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". ii) Which of the Competitors entered F1 Cars this driver will use. d. They carry the competition number that has been allocated to them. e) They use the power unit and tyres which are allocated to the nominated driver. f) They are in possession of a Super Licence or Free Practice Super Licence. 2026 Form ula 1: Sporting Regulations 28 April 2026 B1 1 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7168,
+        "fonte": {
+          "char_count": 410,
+          "chunk_id": 85,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "Reports suggest Max Verstappen intends to stay with Red Bull for another season despite having an exit clause in his contract. If true, it would remove one of the biggest uncertainties in the current F1 driver market—at least for 2027.\n\nWHY THIS MAKES SENSE [...] Welcome back to F1 Grandstand with Tony Craig — bringing you the biggest F1 driver market news, Formula 1 updates and F1 Live discussion from inside the paddock.\n\n🚨 TODAY'S F1 DRIVER MARKET HEADLINES:\n• Max Verstappen reportedly commits to Red Bull for 2027\n• Why Tom Clarkson's information could be credible\n• Zak Brown's long-term Verstappen strategy explained\n• Oscar Piastri's contract clauses under the spotlight\n• Could Verstappen still join McLaren in 2028?\n\nVERSTAPPEN'S 2027 DECISION [...] # Verstappen's 2027 Decision REVEALED? | F1 News\n##  F1 Grandstand\n18200 subscribers\n168 likes\n\n### Description\n6787 views\nPosted: 13 Jul 2026\nF1 Driver Market news takes another twist as reports suggest Max Verstappen has already decided to remain with Red Bull for the 2027 Formula 1 season.\n\nBut could that decision actually fit perfectly into Zak Brown's long-term McLaren plan?\n\n👉 Subscribe to F1 Grandstand:",
+        "titulo": "Verstappen's 2027 Decision REVEALED? | F1 News",
+        "fonte": "https://www.youtube.com/watch?v=zU2wWIn4dTc"
+      },
+      {
+        "trecho": "A look at how long each Formula 1 driver's contract is believed to be, as it stands in 2026, amid the potential for some key moves heading into the 2027 season.\n\n## McLaren\n\n### Lando Norris - 2027\n\nLando Norris agreed to an extension shortly before the start of the 2024 F1 season on a \"multi-year\" extension to his previous deal, which had been set to expire in 2025.\n\nThis means reigning world champion Norris is tied to McLaren until at least the end of 2027.\n\n### Oscar Piastri - 2028 [...] ### Franco Colapinto - 2026\n\nFranco Colapinto replaced Jack Doohan just six rounds into the 2025 season and recovered from a shaky start to his Alpine career to earn a seat for this season.\n\nThe Argentine will need to find another step in performance to remain with the team for 2027 but currently has the backing of Alpine executive advisor Flavio Briatore.\n\nPlease use Chrome browser for a more accessible video player\n\n## Cadillac\n\n### Sergio Perez - 2027 [...] Sergio Perez returns to F1 this year with newcomers Cadillac after a season out of the sport and will be with the American outfit for at least two seasons.\n\nAlthough Perez was only confirmed for 2026, Sky Sports News understands he signed a multi-year deal.\n\n### Valtteri Bottas - 2027\n\nValtteri Bottas is also understood to have agreed a multi-year contract that will see him be with Cadillac until at least the end of 2027.",
+        "titulo": "F1 driver contracts: How long are Lewis Hamilton, Max Verstappen, Lando Norris and other Formula 1 stars signed for? | F1 News | Sky Sports",
+        "fonte": "https://www.skysports.com/f1/news/12040/13511938/f1-driver-contracts-how-long-are-lewis-hamilton-max-verstappen-lando-norris-and-other-formula-1-stars-signed-for-ahead-of-2026-season"
+      },
+      {
+        "trecho": "| Year | Age | Status | Base Salary | Cash Total | Cash Cumulative | Cash Remaining |\n ---  ---  --- \n| 2024 |  | 26 |  | $55,000,000 | $55,000,000 | $55,000,000 \n| 2025 |  | 27 |  | $65,000,000 | $65,000,000 | $120,000,000 \n| 2026 |  | 28 |  | $70,000,000 | $70,000,000 | $190,000,000 \n| 2027 |  | 29 | Estimate | $70,000,000 | $65,000,000 | $255,000,000 \n| 2028 |  | 30 | Estimate | $70,000,000 | $65,000,000 | $320,000,000 \n\nContract Notes [...] | 2021 |  | 23 | $25,000,000 |  | $42,000,000 | $95,427,500 |\n| 2022 |  | 24 | $25,000,000 |  | $25,000,000 | $120,427,500 |\n| 2023 |  | 25 |  | $25,000,000 | $70,000,000 | $190,427,500 |\n| 2024 |  | 26 | $55,000,000 |  | $55,000,000 | $245,427,500 |\n| 2025 |  | 27 | $65,000,000 |  | $65,000,000 | $310,427,500 |\n| Total |  |  |  | $42,000,000 | $310,427,500 | $310,427,500 |\n| 2026 |  | 28 | $70,000,000 |  | $70,000,000 |  |\n| 2027 |  | 29 | $70,000,000 |  | $65,000,000 |  | [...] + Atlanta United FC ATL Atlanta UnitedAtlanta United FC\n  + CF Montreal MTL MontrealCF Montreal\n  + Charlotte FC CLT CharlotteCharlotte FC\n  + Chicago Fire CHI FireChicago Fire\n  + Columbus Crew CLB Columbus CrewColumbus Crew\n  + D.C. United DC UnitedD.C. United\n  + FC Cincinnati CIN CincinnatiFC Cincinnati\n  + Inter Miami CF MIA Inter MiamiInter Miami CF\n  + Nashville SC NSH NashvilleNashville SC\n  + New England Revolution NE RevolutionNew England Revolution",
+        "titulo": "Max Verstappen Contract, Salary & Cap Hit 2026 | Spotrac",
+        "fonte": "https://www.spotrac.com/formula1/player/_/id/47373/max-verstappen"
+      },
+      {
+        "trecho": "Having impressed greatly since his F1 debut in 2023, Piastri has been locked down by McLaren until at least the end of the 2027 season, and possibly longer. As with any contract, there are likely to be various options and clauses on both sides.\n\nNorris%20Piastri%20waving.png\n\n### Mercedes\n\nGeorge Russell: 2026 [...] Bottas spent 2025 in a back-up role at Mercedes after losing his seat at Kick Sauber, but the 10-time Grand Prix winner sealed a return for 2026 with new team Cadillac – signing a deal that will run until at least the end of 2027.\n\nSergio Perez: ‘Multi-year’ deal\n\nCadillac chose two pairs of experienced hands for the start to their F1 journey, with six-time Grand Prix winner Perez – who was dropped by Red Bull at the end of 2024 – also making a comeback on similar terms to Bottas. [...] Lewis Hamilton: ‘Multi-year’ deal\n\nHamilton’s blockbuster switch from Mercedes to Ferrari was also communicated under a multi-year headline. There have been suggestions that the deal is for three years, running through 2027, which is the length of contract he pursued at the Silver Arrows.\n\nMELBOURNE, AUSTRALIA - MARCH 06: Lewis Hamilton of Great Britain and Scuderia Ferrari and Charles\n\n### Williams\n\nAlex Albon: ‘Multi-year’ deal",
+        "titulo": "F1 DRIVER CONTRACTS: From Max Verstappen to Lewis Hamilton – how long do the drivers’ current deals last?",
+        "fonte": "https://www.formula1.com/en/latest/article/f1-driver-contracts-from-max-verstappen-to-lewis-hamilton-how-long-do-the-drivers-current-deals-last.4ub4xFggoaKgzMCTZhdSXw"
+      },
+      {
+        "trecho": "Red Bull’s drop down the competitive order has fuelled speculation that the Dutchman could look for a move to a more competitive team.\n\nVermeulen has stated that the Verstappen camp is keen to make a decision on its 2027 plans in the near future.\n\n“We want to make a decision quickly so that everyone knows where they stand, possibly even before the summer break,” he said. [...] However, reports have suggested that the agreement includes performance-related exit clauses.\n\nVerstappen has been an outspoken critic of the new 2026 Formula 1 regulations, stating that a 60/40 split between the combustion engine and battery would be the minimum requirement for him to remain in the sport. The FIA is currently planning to introduce such a balance from 2028.",
+        "titulo": "Max Verstappen manager provides F1 contract update: 'We want to make a decision' | RacingNews365",
+        "fonte": "https://racingnews365.com/max-verstappen-manager-provides-f1-contract-update"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": false,
+    "justificativa": "The answer states that it cannot be determined with certainty who Max Verstappen is contracted to for the 2027 season, as there are conflicting reports and exit clauses mentioned in the context.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "Who is Max Verstappen contracted with for the 2027 season?",
+      "saida": "What are the driver lineups and team affiliations for the 2027 Formula One World Championship season, specifically regarding Max Verstappen's contractual arrangements?",
+      "timestamp": "2026-08-08T19:23:08.944090+00:00",
+      "latencia_ms": 3043
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the driver lineups and team affiliations for the 2027 Formula One World Championship season, specifically regarding Max Verstappen's contractual arrangements?",
+      "saida": "5 hits acima de 0.7; best_score=0.7433; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:23:09.011881+00:00",
+      "latencia_ms": 64
+    },
+    {
+      "agente": "generator",
+      "entrada": "Who is Max Verstappen contracted with for the 2027 season?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:23:20.178166+00:00",
+      "latencia_ms": 11165
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "Who is Max Verstappen contracted with for the 2027 season?",
+        "answer": "The available context does not provide information on Max Verstappen's contractual arrangements for the 2027 season. The provided documents only cover the 2026 Formula 1 regulations, including general provisions, sporting regulations, operational regulations, and financial regulations for F1 teams. Therefore, I must say that the answer may be uncertain regarding Max Verstappen's team affiliation for the 2027 season."
+      },
+      "saida": "grounded=False; will_retry=True; The answer states that the context does not provide information on Max Verstappen's contractual arrangements for the 2027 season, which is a truthful hedge indicating that the question was not answered.",
+      "timestamp": "2026-08-08T19:23:32.179414+00:00",
+      "latencia_ms": 11998
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "Who is Max Verstappen contracted with for the 2027 season?",
+      "saida": "What are the contractual arrangements of Max Verstappen for the 2027 Formula One World Championship season, specifically regarding his team affiliation and driver agreement?",
+      "timestamp": "2026-08-08T19:23:35.876254+00:00",
+      "latencia_ms": 3693
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the contractual arrangements of Max Verstappen for the 2027 Formula One World Championship season, specifically regarding his team affiliation and driver agreement?",
+      "saida": "5 hits acima de 0.7; best_score=0.7321; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:23:35.922975+00:00",
+      "latencia_ms": 44
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the contractual arrangements of Max Verstappen for the 2027 Formula One World Championship season, specifically regarding his team affiliation and driver agreement?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:23:39.409285+00:00",
+      "latencia_ms": 3485
+    },
+    {
+      "agente": "generator",
+      "entrada": "Who is Max Verstappen contracted with for the 2027 season?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:24:16.329045+00:00",
+      "latencia_ms": 36919
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "Who is Max Verstappen contracted with for the 2027 season?",
+        "answer": "Het antwoord op de vraag wie Max Verstappen contractueel verbonden is voor het seizoen 2027, kan niet met zekerheid worden gegeven. Volgens de beschikbare context zijn er verschillende bronnen die suggereren dat hij mogelijk een nieuw contract zal tekenen bij Red Bull, maar er zijn ook bronnen die vermelden dat hij een exit-clausule heeft in zijn huidige contract en mogelijk naar een andere team zou kunnen overstappen."
+      },
+      "saida": "grounded=False; will_retry=False; The answer states that it cannot be determined with certainty who Max Verstappen is contracted to for the 2027 season, as there are conflicting reports and exit clauses mentioned in the context.",
+      "timestamp": "2026-08-08T19:24:50.500568+00:00",
+      "latencia_ms": 34167
+    }
+  ]
+}

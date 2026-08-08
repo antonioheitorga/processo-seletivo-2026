@@ -1,0 +1,109 @@
+{
+  "session_id": "35586afbf1b0438d877dd1277e87e49e",
+  "timestamp": "2026-08-08T19:03:04.730253+00:00",
+  "query_original": "How many points does the winner of a Formula 1 race receive, and does the full amount always apply regardless of how much of the race is completed?",
+  "query_reformulada": "What are the championship point allocations for the winner of an FIA Formula One World Championship event, and do these allocations remain unchanged even if the scheduled distance or duration of the event is not fully completed?",
+  "resposta": "The winner of a Formula 1 race receives 25 points. However, this amount does not always apply regardless of how much of the race is completed. According to Article A2.1, if less than 25% of the Scheduled Race Distance has been completed by the leader, points will be awarded in accordance with column 1 of the table below, which may be fewer than 25 points.",
+  "fonte": "corpus",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": false,
+    "motivo": "Corpus retornou hit(s) acima do threshold; fallback não foi necessário.",
+    "threshold": 0.7,
+    "best_score": 0.8263
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": "2.1 Points awarded for a Race Competition Points for both the Drivers’ Championship and Constructors’ Championship titles will be awarded at each Competition based on the final race classification, and depending on the number of laps distance completed by the leader between the start signal and the end-of-session signal of the Race",
+        "score": 0.8263,
+        "fonte": {
+          "char_count": 333,
+          "chunk_id": 57,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". In all cases, no points will be awarded unless a minimum of two complete and consecutive laps have been completed by the leader without a Safety Car or Virtual Safety Car procedure. a. If the leader has completed two laps but less than 25% of the Scheduled Race Distance, points will be awarded in accordance with column 1 of the table below. 2026 Formula 1: General Regulatory Provisions 27 February 2026 A 9 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.8086,
+        "fonte": {
+          "char_count": 467,
+          "chunk_id": 58,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "1.4 World Championship Titles: a. The Drivers’ Championship title will be awarded to the F1 Driver who has scored the highest number of points, calculated in accordance with Article A2.2, taking into consideration all results obtained during the Competitions that have actually taken place. b",
+        "score": 0.8047,
+        "fonte": {
+          "char_count": 292,
+          "chunk_id": 53,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "2.2 Points awarded for a Sprint At each Sprint, Points for both the Drivers’ and Constructors’ Championship titles will be awarded at each Alternative Format Competition based on the final Sprint classification, and depending on the number of laps completed by the leader between the start signal and the end-of-session signal of the Sprint",
+        "score": 0.8009,
+        "fonte": {
+          "char_count": 340,
+          "chunk_id": 63,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". c. If two or more F1 Drivers or F1 Teams finish the Championship with the same number of points, the higher place in the Championship (in either case) shall be awarded to: i. The holder of the greatest number of first places in a race. ii. If the number of first places is the same, the holder of the greatest number of second places in a race. iii. If the number of second places is the same, the holder of the greatest number of third places in a race and so on until a winner emerges. iv",
+        "score": 0.791,
+        "fonte": {
+          "char_count": 492,
+          "chunk_id": 55,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      }
+    ],
+    "web": []
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer accurately states that the winner receives 25 points, and also correctly notes that this amount may not always apply if less than 25% of the Scheduled Race Distance has been completed.",
+    "tentativas": 1
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "How many points does the winner of a Formula 1 race receive, and does the full amount always apply regardless of how much of the race is completed?",
+      "saida": "What are the championship point allocations for the winner of an FIA Formula One World Championship event, and do these allocations remain unchanged even if the scheduled distance or duration of the event is not fully completed?",
+      "timestamp": "2026-08-08T19:02:43.844213+00:00",
+      "latencia_ms": 2969
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the championship point allocations for the winner of an FIA Formula One World Championship event, and do these allocations remain unchanged even if the scheduled distance or duration of the event is not fully completed?",
+      "saida": "5 hits acima de 0.7; best_score=0.8263; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:02:44.969968+00:00",
+      "latencia_ms": 1123
+    },
+    {
+      "agente": "generator",
+      "entrada": "How many points does the winner of a Formula 1 race receive, and does the full amount always apply regardless of how much of the race is completed?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:02:54.586186+00:00",
+      "latencia_ms": 9615
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "How many points does the winner of a Formula 1 race receive, and does the full amount always apply regardless of how much of the race is completed?",
+        "answer": "The winner of a Formula 1 race receives 25 points. However, this amount does not always apply regardless of how much of the race is completed. According to Article A2.1, if less than 25% of the Scheduled Race Distance has been completed by the leader, points will be awarded in accordance with column 1 of the table below, which may be fewer than 25 points."
+      },
+      "saida": "grounded=True; will_retry=False; The answer accurately states that the winner receives 25 points, and also correctly notes that this amount may not always apply if less than 25% of the Scheduled Race Distance has been completed.",
+      "timestamp": "2026-08-08T19:03:04.726776+00:00",
+      "latencia_ms": 10137
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "session_id": "fba9c27f86f8406c96d617691f297fa7",
+  "timestamp": "2026-08-08T19:19:38.997590+00:00",
+  "query_original": "Who holds the F1 record for most pole positions in history?",
+  "query_reformulada": "What is the driver with the highest number of qualifying sessions resulting in first position on the starting grid throughout Formula 1's history, according to the official FIA records?",
+  "resposta": "Según la lista de récords de Fórmula 1 en Wikipedia, Michael Schumacher es el piloto con más pole positions en la historia, con un total de 68.",
+  "fonte": "hybrid",
+  "low_confidence": true,
+  "confidence_warning": "Verificador não conseguiu confirmar que a resposta está fundamentada no contexto recuperado após 2 tentativa(s). The answer claims Michael Schumacher has 68 pole positions, but the context only shows a list of driver records with incomplete information and does not provide any data on pole positions for Michael Schumacher.",
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7278
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". “F1 Driver” means any person (a) engaged by a Reporting Group Entity whose primary role is as a driver engaged in the racing of F1 Cars in the Championship for or on behalf of the F1 Team during Year N; and (b) who has driven in a race for the F1 Team in the Championship during the Year N. A driver is considered an F1 Driver from the time that they are first entered in a Competition, provided that they actually start in that Competition",
+        "score": 0.7278,
+        "fonte": {
+          "char_count": 442,
+          "chunk_id": 404,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": ". \"F1 Driver\" means any person: a. engaged by a Reporting Group Entity whose primary role is as a driver engaged in the racing of F1 Cars in the Championship for or on behalf of the F1 Team during the Financial Regulations Reporting Period; and b. who has driven in a race for the F1 Team in the Championship during the Financial Regulations Reporting Period",
+        "score": 0.7263,
+        "fonte": {
+          "char_count": 358,
+          "chunk_id": 328,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      },
+      {
+        "trecho": ". If two (2) or more drivers set identical lap times during a Free Practice session, those drivers’ relative positions will be determined by the chronological order in which their lap times where set, the driver who set the lap time first having the highest relative classification, followed by the driver who set the lap time second, and so on and so forth. B2.2 Sprint Qualifying Session B2.",
+        "score": 0.7222,
+        "fonte": {
+          "char_count": 393,
+          "chunk_id": 131,
+          "section": "sporting",
+          "source_file": "fia_2026_f1_regulations_-_section_b_sporting_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "| 6 | Image 310: United KingdomStirling Moss | 1951–1961 | 67 | 16 | 23.88% |\n| 7 | Image 311: GermanyMichael Schumacher | 1991–2006, 2010–2012 | 308 | 68 | 22.08% |\n| 8 | Image 312: NetherlandsMax Verstappen | 2015–2026 | 244 | 48 | 19.67% |\n| 9 | Image 313: GermanySebastian Vettel | 2007–2022 | 300 | 57 | 19.00% |\n| 10 | Image 314: ItalyKimi Antonelli | 2025–2026 | 35 | 6 | 17.14% |\n| Source:( | [...] |  | Driver | Seasons | Poles | Wins | Percentage |\n ---  ---  --- |\n| 1 | Image 376: ItalyKimi Antonelli | 2025–2026 | 6 | 5 | 83.33% |\n| 2 | Image 377: NetherlandsMax Verstappen | 2015–2026 | 48 | 37 | 77.08% |\n| 3 | Image 378: AustraliaOscar Piastri | 2023–2026 | 6 | 4 | 66.67% |\n| Image 379: BrazilEmerson Fittipaldi | 1970–1980 | 6 | 4 |\n| 5 | Image 380: ItalyAlberto Ascari | 1950–1955 | 14 | 9 | 64.29% |",
+        "titulo": "List of Formula One driver records",
+        "fonte": "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_records"
+      },
+      {
+        "trecho": "1 Lando Norris (McLaren)   \n2 Charles Leclerc (Ferrari)   \n3 Oscar Piastri (McLaren)  \n4 Max Verstappen (Red Bull)   \n5 Lewis Hamilton (Ferrari)   \n6 George Russell (Mercedes)   \n7 Kimi Antonelli (Mercedes)   \n8 Isack Hadjar (Red Bull)   \n9 Arvid Lindblad (Racing Bulls)   \n10 Nico Hulkenberg (Audi)   \n11 Liam Lawson (Racing Bulls)   \n12 Pierre Gasly (Alpine)  \n13 Franco Colapinto (Alpine)  \n14 Gabriel Bortoleto (Audi)   \n15 Esteban Ocon (Haas)   \n16 Fernando Alonso (Aston Martin) [...] 17 Ollie Bearman (Haas)   \n18 Carlos Sainz (Williams)   \n19 Alex Albon (Williams)   \n20 Lance Stroll (Aston Martin)   \n21 Valtteri Bottas (Cadillac)   \nPitlane: Sergio Perez (Cadillac) [...] Sergio Perez, who qualified 22nd and slowest of all, will start from the pitlane after his team broke parc ferme to make changes to his Cadillac.\n\nHere's the starting grid as it stands:",
+        "titulo": "F1 2026 Hungarian GP starting grid after penalties and pitlane start",
+        "fonte": "https://www.the-race.com/formula-1/f1-2026-hungarian-gp-starting-grid-after-hamilton-antonelli-penalties"
+      },
+      {
+        "trecho": "| 15 | Esteban Ocon (Haas) | 16 | Fernando Alonso (Aston Martin) |\n| 17 | Oliver Bearman (Haas) | 18 | Carlos Sainz (Williams) |\n| 19 | Alexander Albon (Williams) | 20 | Lance Stroll (Aston Martin) |\n| 21 | Valtteri Bottas (Cadillac) | 22 | Sergio Pérez (Cadillac) | [...] |  |  |  |  |\n ---  --- |\n| 1 | Lando Norris (McLaren) | 2 | Charles Leclerc (Ferrari) |\n| 3 | Oscar Piastri (McLaren) | 4 | Max Verstappen (Red Bull) |\n| 5 | Lewis Hamilton (Ferrari) | 6 | George Russell (Mercedes) |\n| 7 | Kimi Antonelli (Mercedes) | 8 | Isack Hadjar (Red Bull) |\n| 9 | Arvid Lindblad (Racing Bulls) | 10 | Nico Hülkenberg (Audi) |\n| 11 | Liam Lawson (Racing Bulls) | 12 | Pierre Gasly (Alpine) |\n| 13 | Franco Colapinto (Alpine) | 14 | Gabriel Bortoleto (Audi) | [...] ## Hungarian Grand Prix - Saturday Lewis Hamilton, Ferrari\n\n## Hungarian Grand Prix - Saturday Esteban Ocon, Haas F1 Team\n\n## Hungarian Grand Prix - Saturday Sergio Perez, Cadillac Racing\n\n## Hungarian Grand Prix - Saturday Charles Leclerc, Ferrari\n\n## Hungarian Grand Prix - Saturday Lando Norris, McLaren\n\n## Hungarian Grand Prix - Saturday Esteban Ocon, Haas F1 Team\n\n## Hungarian Grand Prix - Saturday Lance Stroll, Aston Martin Racing\n\n## Hungarian Grand Prix - Saturday Pierre Gasly, Alpine",
+        "titulo": "This is the starting grid for the 2026 F1 Hungarian GP",
+        "fonte": "https://www.motorsport.com/f1/news/the-starting-grid-for-the-2026-f1-hungarian-grand-prix/10841785"
+      },
+      {
+        "trecho": "## 2026 Season\n\nDRIVERS TEAMS\n\nImage 27\n\n1 stKimi AntonelliMercedes 219 PTS\n\nImage 28\n\n2 ndLewis HamiltonFerrari 169 PTS\n\nImage 29\n\n3 rdGeorge RussellMercedes 160 PTS [...] Image 11: grillthegridep2_august72026.jpgGrill The Grid Episode 2: The 0-99 challengeImage 12: BARCELONA, SPAIN - JUNE 14: George Russell of Great Britain driving the (63) Mercedes AMG PetronasThe points Mercedes have lost to reliability issues so farImage 13: EXCLUSIVEINTERVIEWADHOC%20FEATURE%20V4%20DISPLAY.pngWhy Bottas believes his best years are still to comeImage 14: Kimi Raikkonen (FIN) McLaren in an ice car. Formula One World Championship, Rd 7, Monaco GrandWhy F1 drivers have these",
+        "titulo": "F1 - The Official Home of Formula 1® Racing",
+        "fonte": "https://www.formula1.com"
+      },
+      {
+        "trecho": "| 13. | Franco Colapinto | Alpine |\n| 14. | Gabriel Bortoleto | Audi |\n| 15. | Esteban Ocon | Haas |\n| 16. | Fernando Alonso | Aston Martin |\n| 17. | Oliver Bearman | Haas |\n| 18. | Carlos Sainz | Williams |\n| 19. | Alex Albon | Williams |\n| 20. | Lance Stroll | Aston Martin |\n| 21. | Valtteri Bottas | Cadillac |\n| Pit lane | Sergio Perez | Cadillac | [...] | Position | Driver | Team |\n| POLE | Lando Norris | McLaren |\n| 2. | Charles Leclerc | Ferrari |\n| 3. | Oscar Piastri | McLaren |\n| 4. | Max Verstappen | Red Bull |\n| 5. | Lewis Hamilton - THREE-PLACE PENALTY | Ferrari |\n| 6. | George Russell | Mercedes |\n| 7. | Kimi Antonelli - THREE-PLACE PENALTY | Mercedes |\n| 8. | Isack Hadjar | Red Bull |\n| 9. | Arvid Lindblad | Racing Bulls |\n| 10. | Nico Hulkenberg | Audi |\n| 11. | Liam Lawson | Racing Bulls |\n| 12. | Pierre Gasly | Alpine | [...] Check out the full adjusted starting grid in Budapest for the 2026 F1 Hungarian Grand Prix.\n\nJake Nichol\n\nJake Nichol\n\n1 comment   1\n\nLogo Google Add us as preferred source\n\nArticle\n\n To news overview   © XPBimages\n\nLando Norris will start the Hungarian Grand Prix from pole position - his first since Las Vegas in 2025.\n\nThe reigning champion defeated Lewis Hamilton by 0.012s at the Hungaroring, with Charles Leclerc third and Kimi Antonelli the best-placed Mercedes in fourth.",
+        "titulo": "Adjusted starting grid for 2026 F1 Hungarian Grand Prix after Hamilton, Antonelli penalties | RacingNews365",
+        "fonte": "https://racingnews365.com/adjusted-starting-grid-for-2026-f1-hungarian-grand-prix-after-lewis-hamilton-penalty"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": false,
+    "justificativa": "The answer claims Michael Schumacher has 68 pole positions, but the context only shows a list of driver records with incomplete information and does not provide any data on pole positions for Michael Schumacher.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "Who holds the F1 record for most pole positions in history?",
+      "saida": "What is the name of the driver who has achieved the highest number of pole positions throughout the history of Formula 1, as per Article 27.2 of the FIA F1 2026 Technical and Sporting Regulations?",
+      "timestamp": "2026-08-08T19:17:59.359179+00:00",
+      "latencia_ms": 5257
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the name of the driver who has achieved the highest number of pole positions throughout the history of Formula 1, as per Article 27.2 of the FIA F1 2026 Technical and Sporting Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.7599; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:17:59.423476+00:00",
+      "latencia_ms": 60
+    },
+    {
+      "agente": "generator",
+      "entrada": "Who holds the F1 record for most pole positions in history?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:18:09.219642+00:00",
+      "latencia_ms": 9795
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "Who holds the F1 record for most pole positions in history?",
+        "answer": "The name of the driver who has achieved the highest number of pole positions throughout the history of Formula 1 is Lewis Hamilton."
+      },
+      "saida": "grounded=False; will_retry=True; The context does not mention Lewis Hamilton or any information about pole positions, making the answer an unsupported claim.",
+      "timestamp": "2026-08-08T19:18:23.369877+00:00",
+      "latencia_ms": 14147
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "Who holds the F1 record for most pole positions in history?",
+      "saida": "What is the driver with the highest number of qualifying sessions resulting in first position on the starting grid throughout Formula 1's history, according to the official FIA records?",
+      "timestamp": "2026-08-08T19:18:28.130236+00:00",
+      "latencia_ms": 4758
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the driver with the highest number of qualifying sessions resulting in first position on the starting grid throughout Formula 1's history, according to the official FIA records?",
+      "saida": "3 hits acima de 0.7; best_score=0.7278; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:18:28.185288+00:00",
+      "latencia_ms": 52
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What is the driver with the highest number of qualifying sessions resulting in first position on the starting grid throughout Formula 1's history, according to the official FIA records?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:18:30.735292+00:00",
+      "latencia_ms": 2549
+    },
+    {
+      "agente": "generator",
+      "entrada": "Who holds the F1 record for most pole positions in history?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:19:02.660353+00:00",
+      "latencia_ms": 31924
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "Who holds the F1 record for most pole positions in history?",
+        "answer": "Según la lista de récords de Fórmula 1 en Wikipedia, Michael Schumacher es el piloto con más pole positions en la historia, con un total de 68."
+      },
+      "saida": "grounded=False; will_retry=False; The answer claims Michael Schumacher has 68 pole positions, but the context only shows a list of driver records with incomplete information and does not provide any data on pole positions for Michael Schumacher.",
+      "timestamp": "2026-08-08T19:19:38.995324+00:00",
+      "latencia_ms": 36330
+    }
+  ]
+}

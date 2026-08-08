@@ -1,0 +1,173 @@
+{
+  "session_id": "e5f28ad2ff1c4f57b3790fbc547b019a",
+  "timestamp": "2026-08-08T19:17:40.798741+00:00",
+  "query_original": "What is DRS and how does it work?",
+  "query_reformulada": "What are the operational parameters of the Drag Reduction System (DRS) feature in accordance with Article 27.2 of the FIA Formula One Technical Regulations, and what specific aerodynamic benefits does its activation provide to a competing vehicle?",
+  "resposta": "The Drag Reduction System (DRS) was a feature that allowed drivers to reduce drag on their car's rear wing by opening a flap, increasing straight-line speed and providing an overtaking advantage. However, it has been removed from Formula 1 for the 2026 season and replaced with an \"active aerodynamics\" system.\n\nAccording to Article C3 of the 2026 FIA Formula One Technical Regulations, the primary objectives of the regulations are to promote close racing by minimizing the aerodynamic performance loss when one car follows another, and to ensure aerodynamic performance remains compatible with the required operation performance of the Power Unit (PU).\n\nThe new active aero system will involve movable front and rear wings, designed to increase cornering speeds with the standard 'Z-Mode'. However, the operational parameters of this system are not specified in the provided context.\n\nIt is worth noting that the original DRS system allowed for a speed increase of 10-12 km/h (6.2-7.5 mph) by the end of the activation zone, but its exact aerodynamic benefits and operational parameters are uncertain without further information from the FIA regulations or technical documentation.",
+  "fonte": "hybrid",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7517
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". Systems which apply lubricant directly or indirectly to the wind tunnel tyres in order to reduce friction at the contact patches are permitted. 2026 Formula 1: Operational Regulations 07 May 2026 F1 1 2026 Fédération Internationale de l’Automobile Issue 08",
+        "score": 0.7517,
+        "fonte": {
+          "char_count": 258,
+          "chunk_id": 75,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "1.2 Restricted Aerodynamic testing is the testing by a F1 Team or any Associate of a F1 Team and/or by any contracted party of a F1 Team or of any Associate of a F1 Team or any external entity working on behalf of a F1 Team or for its own purposes and subsequently providing the results of its work to a F1 Team in a test environment or numerical simulation of a representation of an F1 car or subcomponent in order to measure, observe or infer any forces, displacements, pressures or air flow direction",
+        "score": 0.7425,
+        "fonte": {
+          "char_count": 503,
+          "chunk_id": 35,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": "2.6. “Formula One Car”: An automobile (the car) designed solely for speed races on circuits or closed courses that is propelled by its own means, moving by constantly taking real support on the ground, of which the propulsion and steering are under the direct control of a driver aboard the vehicle. It 2026 Form ula 1: Technical Regulations 07 May 2026 C1 92 2026 Fédération Internationale de l’Automobile Issue 18",
+        "score": 0.7423,
+        "fonte": {
+          "char_count": 415,
+          "chunk_id": 1423,
+          "section": "technical",
+          "source_file": "fia_2026_f1_regulations_-_section_c_technical_-_iss_18_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". designated as Technical Directives or Sporting Directives; ii. providing interpretation, instruction, clarification, information, and/or additional detail regarding specific provisions of the FIA F1 Regulations; iii. providing details of inspections, checks, or measurements that may be carried out by the FIA to verify the compliance of F1 Cars with the FIA F1 Regulations; iv",
+        "score": 0.7288,
+        "fonte": {
+          "char_count": 379,
+          "chunk_id": 35,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "5.1 Any aerodynamic test conducted by an F1 car at any Competition or any aerodynamic test conducted by an F1 car during and at track testing as defined by Article B11 of the Sporting Regulations will not be considered as Restricted Aerodynamic testing. F4.",
+        "score": 0.7287,
+        "fonte": {
+          "char_count": 257,
+          "chunk_id": 114,
+          "section": "operational",
+          "source_file": "fia_2026_f1_regulations_-_section_f_operational_-_iss_08_-_2026-05-07.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "[edit]\n\nIn Formula One, the DRS opened an adjustable flap on the rear wing of the car, in order to reduce drag, thus giving a pursuing car an overtaking advantage over the car in front. The FIA estimate the speed increase to be 10–12 km/h (6.2–7.5 mph) by the end of the activation zone, while others, such as technical staff at racecar-engineering.com, cite a much lower figure of 4–5 km/h (2.5–3.1 mph). When the DRS is deactivated or closed, it increases downforce, giving better cornering. [...] DRS was removed from Formula One for the 2026 season, and was replaced with an \"active aerodynamics\" system under the new 2026 regulations.\n\n## Rationale\n\n[edit] [...] The horizontal elements of the rear wing consist of the main plane and the flap. The DRS allows the flap to lift a maximum of 85 millimetres (3.3 in) from the fixed main plane. This reduces drag from the wing and results in less downforce. In a straight line, where downforce isn't needed, it allows for faster acceleration and potential top speed, unless limited by the mechanical limits of the engine and transmission. Sam Michael, former sporting director of the McLaren team, believes that DRS",
+        "titulo": "Drag reduction system - Wikipedia",
+        "fonte": "https://en.wikipedia.org/wiki/Drag_reduction_system"
+      },
+      {
+        "trecho": "decreasing aerodynamic drag and leading to between 15kph and 30kph extra top-end speed. [...] The Drag Reduction System (DRS) was first introduced in Formula 1 during the 2011 season. The concept behind DRS was simple: create a system that allowed drivers to adjust the aerodynamics of their car’s rear wing to reduce drag and increase straight-line speed. Opening a flap in the rear wing, DRS helps drivers to overtake and makes races more exciting for fans when a car runs within one second of the car ahead. Drivers can also activate this system during practice and qualifying laps, even [...] last car generation introduced in 2022 and the final season for the drag reduction system (DRS), first implemented in 2011 as an overtaking aid. From 2026, the sport would adopt cars with active aerodynamics and movable wings.",
+        "titulo": "F1 DRS: What is the Drag Reduction System in F1? How does it work? | F1 History",
+        "fonte": "https://www.formulaonehistory.com/f1-drs-ultimate-guide"
+      },
+      {
+        "trecho": "be generating more downforce in order to give the cars more grip through the corners. Of course, when the wings are closed, drag levels will be higher from the cars. Once they are out of the corners and onto the straights, they will be able to activate what is known as the X mode instead of DRS. X mode has been designed to reduce the amount of drag that the cars produce when they're going down the straights. And they will achieve this with both the front and rear wings opening. This will [...] from what we currently have, meaning that it will be less powerful, but it will still be a V6 engine like what we currently have because of the reduction in power from the engine and the increase in the battery power. We have the X and Z modes for the aerodynamics. But Mr. pulse. With that in mind, how will the F1 cars overtake if they can all go into low drag at the same time? And if there is no more DRS, well, that is where the override feature will be coming in. And this is essentially an [...] opening. This will increase the straight line performance from the cars and we will see a higher top speed from what they can achieve. And this will reduce the amount of drag that they produce. Why do they want to reduce the amount of drag? Well, it's so that the power units can work as the FIA intend for them to work. Now, the FIA themselves will be able to disable X mode from the drivers if they feel like it is not safe to run in those conditions. I have a feeling we will see it being",
+        "titulo": "F1 2026 Regulations - What is Changing?",
+        "fonte": "https://www.youtube.com/watch?v=K5fbL_-Nm5k"
+      },
+      {
+        "trecho": "REGULATIONS C14 2026 Formula 1 Regulations: Technical Regulations ©2025 Fédération Internationale de l’Automobile 10 June 2025 Issue 12 0 C a. be rigidly constructed and immobile relative to their defined Frame of Reference defined in Article C3.4. b. These components must also provide a uniform, solid, hard, continuous, and impervious surface at all times. Where an Aerodynamic Component complies with a test defined in Article C3.18, it will be considered compliant with (a) above for the [...] they consider (in their sole discretion) that such new system, procedure, or technology adds no value to Formula One in general, it may be specifically prohibited by the FIA. SECTION C: TECHNICAL REGULATIONS C9 2026 Formula 1 Regulations: Technical Regulations ©2025 Fédération Internationale de l’Automobile 10 June 2025 Issue 12 0 C C1.7 Duty of Competitor and PU Manufacturer It is the duty of each Competitor to satisfy the FIA and the stewards that its Formula 1 Car complies with these [...] Rims and tyres. vi brake disc assemblies, calipers, and pads. C3.2 General Principles C3.2.1 Objectives of Article C3 A The primary objectives of Article C3 is are: a. to promote close racing by minimising the aerodynamic performance loss when one car follows another. b. to ensure aerodynamic performance remains compatible with the required operation performance of the PU. To assess this these objectives, F1 Teams may be asked to provide relevant information to the FIA upon request. The",
+        "titulo": "SECTION C: TECHNICAL REGULATIONS",
+        "fonte": "https://api.fia.com/system/files/documents/fia_2026_f1_regulations_-_section_c_technical_-_iss_12_-_2025-06-10.pdf"
+      },
+      {
+        "trecho": "Jun 6, 2024 — The revised active aero system will involve movable front and rear wings. It is designed to increase cornering speeds with the standard 'Z-Mode' ...Read more",
+        "titulo": "FIA Announces Details of 2026 Formula 1 Technical ...",
+        "fonte": "https://www.racecar-engineering.com/articles/f1/fia-announces-details-of-2026-formula-1-technical-regulations"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "Every claim in the answer is supported by the context, and the answer addresses the question with real information. The answer accurately describes the Drag Reduction System (DRS) as a feature that allowed drivers to reduce drag on their car's rear wing, increasing straight-line speed and providing an overtaking advantage, and correctly states that it has been removed from Formula 1 for the 2026 season and replaced with an \"active aerodynamics\" system.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "What is DRS and how does it work?",
+      "saida": "What is the Drag Reduction System (DRS) and how does its operation comply with Article 27.2 of the FIA Formula One Technical Regulations?",
+      "timestamp": "2026-08-08T19:15:22.073175+00:00",
+      "latencia_ms": 4353
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What is the Drag Reduction System (DRS) and how does its operation comply with Article 27.2 of the FIA Formula One Technical Regulations?",
+      "saida": "5 hits acima de 0.7; best_score=0.7513; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:15:22.131569+00:00",
+      "latencia_ms": 56
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is DRS and how does it work?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:15:44.104009+00:00",
+      "latencia_ms": 21972
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is DRS and how does it work?",
+        "answer": "The Drag Reduction System (DRS) is not explicitly mentioned in the provided context. However, based on general knowledge, DRS allows drivers to temporarily reduce drag on their car by opening a flap on the rear wing, enabling overtaking opportunities. \n\nSince there's no specific information about DRS in the provided corpus, I'll refer to Article 27.2 of the FIA Formula One Technical Regulations, which is mentioned in the reformulated query.\n\nUnfortunately, without further context or clarification from the regulations, it's uncertain how exactly DRS operates under Article 27.2."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims that DRS allows drivers to temporarily reduce drag on their car, but this information is absent from the provided context.",
+      "timestamp": "2026-08-08T19:15:57.801749+00:00",
+      "latencia_ms": 13694
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "What is DRS and how does it work?",
+      "saida": "What are the operational parameters of the Drag Reduction System (DRS) feature in accordance with Article 27.2 of the FIA Formula One Technical Regulations, and what specific aerodynamic benefits does its activation provide to a competing vehicle?",
+      "timestamp": "2026-08-08T19:16:03.797546+00:00",
+      "latencia_ms": 5993
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the operational parameters of the Drag Reduction System (DRS) feature in accordance with Article 27.2 of the FIA Formula One Technical Regulations, and what specific aerodynamic benefits does its activation provide to a competing vehicle?",
+      "saida": "5 hits acima de 0.7; best_score=0.7517; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:16:03.857168+00:00",
+      "latencia_ms": 57
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the operational parameters of the Drag Reduction System (DRS) feature in accordance with Article 27.2 of the FIA Formula One Technical Regulations, and what specific aerodynamic benefits does its activation provide to a competing vehicle?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:16:06.927465+00:00",
+      "latencia_ms": 3069
+    },
+    {
+      "agente": "generator",
+      "entrada": "What is DRS and how does it work?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:16:55.332799+00:00",
+      "latencia_ms": 48404
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "What is DRS and how does it work?",
+        "answer": "The Drag Reduction System (DRS) was a feature that allowed drivers to reduce drag on their car's rear wing by opening a flap, increasing straight-line speed and providing an overtaking advantage. However, it has been removed from Formula 1 for the 2026 season and replaced with an \"active aerodynamics\" system.\n\nAccording to Article C3 of the 2026 FIA Formula One Technical Regulations, the primary objectives of the regulations are to promote close racing by minimizing the aerodynamic performance loss when one car follows another, and to ensure aerodynamic performance remains compatible with the required operation performance of the Power Unit (PU).\n\nThe new active aero system will involve movable front and rear wings, designed to increase cornering speeds with the standard 'Z-Mode'. However, the operational parameters of this system are not specified in the provided context.\n\nIt is worth noting that the original DRS system allowed for a speed increase of 10-12 km/h (6.2-7.5 mph) by the end of the activation zone, but its exact aerodynamic benefits and operational parameters are uncertain without further information from the FIA regulations or technical documentation."
+      },
+      "saida": "grounded=True; will_retry=False; Every claim in the answer is supported by the context, and the answer addresses the question with real information. The answer accurately describes the Drag Reduction System (DRS) as a feature that allowed drivers to reduce drag on their car's rear wing, increasing straight-line speed and providing an overtaking advantage, and correctly states that it has been removed from Formula 1 for the 2026 season and replaced with an \"active aerodynamics\" system.",
+      "timestamp": "2026-08-08T19:17:40.796018+00:00",
+      "latencia_ms": 45460
+    }
+  ]
+}

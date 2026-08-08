@@ -1,0 +1,153 @@
+{
+  "session_id": "5ff9dc4dae714f8490a980dd816d0bea",
+  "timestamp": "2026-08-08T19:28:18.269948+00:00",
+  "query_original": "Which streaming platform broadcasts F1 races in the United States?",
+  "query_reformulada": "What are the designated media service providers for Formula 1 events in the United States, as per Article 28 of the International Sporting Code and the relevant Commercial Agreement?",
+  "resposta": "Según el acuerdo entre F1 y Apple, a partir de 2026, la plataforma de streaming Apple TV será la única que transmitirá las carreras de Fórmula 1 en los Estados Unidos.",
+  "fonte": "hybrid",
+  "low_confidence": false,
+  "confidence_warning": null,
+  "fallback": {
+    "acionado": true,
+    "motivo": "Score do corpus passou do threshold, mas a 1ª resposta foi reprovada pelo Verificador (não fundamentada) — retentativa acionou busca web também.",
+    "threshold": 0.7,
+    "best_score": 0.7612
+  },
+  "recuperado": {
+    "corpus": [
+      {
+        "trecho": ". the undertaking of Marketing Services; 2026 Formula 1 Regulations: Financial Regulations (Power Unit M anufacturers) 07 May 2026 E48 2026 Fédération Internationale de l’Automobile Issue 05",
+        "score": 0.7612,
+        "fonte": {
+          "char_count": 190,
+          "chunk_id": 409,
+          "section": "financial_pu_manufacturers",
+          "source_file": "fia_2026_f1_regulations_-_section_e_financial_-_pu_manufacturers_-_iss_05_-_2026-05-07.pdf"
+        }
+      },
+      {
+        "trecho": ". The Promoter must comply with all requirements set out in the FIA Rules and Regulations. The Promoter of a Competition must procure that all Competitors, their personnel and drivers are covered by third party insurance in accordance with the FIA requirements. The following conditions apply: 2026 Formula 1: General Regulatory Provisions 27 February 2026 A2 0 2026 Fédération Internationale de l’Automobile Issue 02",
+        "score": 0.713,
+        "fonte": {
+          "char_count": 417,
+          "chunk_id": 153,
+          "section": "general_provisions",
+          "source_file": "fia_2026_f1_regulations_-_section_a_general_provisions_-_iss_02_-_2026-02-27.pdf"
+        }
+      },
+      {
+        "trecho": "6.2.5 The President of the Hearing may permit any person who is entitled or permitted to be present at the hearing to attend the hearing via videoconference or other virtual means. 2026 Formula 1: Financial Regulations (F1 Teams) 28 April 2026 D28 2026 Fédération Internationale de l’Automobile Issue 06",
+        "score": 0.7023,
+        "fonte": {
+          "char_count": 303,
+          "chunk_id": 214,
+          "section": "financial_f1_teams",
+          "source_file": "fia_2026_f1_regulations_-_section_d_financial_-_f1_teams_-_iss_06_-_2026-04-28.pdf"
+        }
+      }
+    ],
+    "web": [
+      {
+        "trecho": "F1’s decision to ditch its traditional linear broadcasting partner in the U.S. and move to a streaming giant such as Apple represents a major philosophy shift.\n\nAlthough the deal is only for the rights to broadcast F1 in the United States, the sport’s recent surge in popularity in America has been at the heart of its growth in recent years. This makes this arguably the most significant TV deal since Liberty Media’s takeover as F1’s commercial rights holder in 2017. [...] ESPN has held the U.S. rights since 2018. But when the sports media conglomerate’s exclusive negotiating period over an extension to the current arrangement expired early in 2025, other potential broadcasters, including Netflix, began circling.\n\n Follow live coverage of the United States Grand Prix today [...] Advertisement\n\nThis success played a key role in subsequent negotiations over the 2026 U.S. TV rights, where Apple’s significantly higher offer ultimately won out over the incumbent.\n\nIn a statement issued after the news of Apple’s deal was revealed, ESPN said it was “incredibly proud of what we and Formula 1 accomplished together in the United States and look forward to a strong finish in this final season. We wish F1 well in the future.”\n\nWhat Our Experts Are Saying",
+        "titulo": "Apple TV becomes Formula One’s exclusive U.S. broadcaster, starting in 2026 - The Athletic",
+        "fonte": "https://www.nytimes.com/athletic/6723310/2025/10/17/f1-apple-tv-formula-one-streaming-rights"
+      },
+      {
+        "trecho": "The most significant change in the F1 media landscape for 2026 sees Apple acquiring broadcast rights in the US. Unlike a linear broadcaster though, the tech giant clearly views the broadcast as the floor for its partnership rather than the ceiling and has announced a wealth of fan engagement innovations that will weave F1 seamlessly into the Apple ecosystem. [...] deals with Netflix, IMAX, Tubi, alongside bars and restaurants, will not only give fans alternative ways to watch but help mitigate concerns about a potential drop in viewership in the US given the cost of an Apple TV subscription. [...] Apple will pioneer a customisable multi-view feature and dedicated feeds and data channels for their broadcast, but more significant are the ways in which the brand will help F1 reach fans beyond their living rooms. The Apple Sports app will serve as an F1 hub on mobile. Push notifications to iPhone and Apple Watch and custom widgets on home screens will embed F1 into fans’ personal devices. Apple News, Maps, and Music will all have dedicated F1 output, and distribution deals with Netflix,",
+        "titulo": "F1 2026 – The Off-track State of Play | MKTG",
+        "fonte": "https://mktg.com/speed-reads/f1-2026-the-off-track-state-of-play"
+      },
+      {
+        "trecho": "17 October 2025\n\nA five-year Formula 1 Apple US broadcast deal 2026 confirmed. With Apple TV to stream every F1 session live, expanding the sport’s reach across America, the deal reshapes how America will watch Formula 1 live on Apple TV As ESPN bows put of F1 Coverage in the U.S\n\nformula 1 apple us broadcast deal 2026\n\nFormula 1 and Apple confirm new five-year U.S. broadcast partnership beginning in 2026. Image courtesy of Formula 1 Media. [...] It’s official. Apple will hold the keys to Formula 1’s U.S. coverage from 2026. Every practice, qualifying, Sprint, and Grand Prix session will air on Apple TV, marking the end of a decade under ESPN and the beginning of a fully digital model built around Apple’s global ecosystem.\n\nThe partnership brings two of the world’s most recognisable brands together, aiming to grow F1’s already-surging American audience through a mix of live sport and cross-platform storytelling. [...] > “We’re thrilled to expand our relationship with Formula 1 and offer Apple TV subscribers front-row access to one of the fastest-growing sports on the planet.”\n>\n> Eddy Cue, Apple SVP of Services\n\n## Confirmed and Unconfirmed Details\n\n### What’s Confirmed\n\nApple will be Formula 1’s exclusive broadcast partner in the United States from 2026.\n\nEvery session, including practice, qualifying, Sprint, and race, will air on Apple TV.",
+        "titulo": "Formula 1 Apple US Broadcast Deal 2026: Full Details",
+        "fonte": "https://coffeecornermotorsport.com/formula-1-apple-us-broadcast-deal-2026"
+      },
+      {
+        "trecho": "Formula 1 has announced Apple will become the sport’s exclusive U.S. broadcast partner in a brand new deal, which insiders estimate to be worth $150 million a year. Starting in 2026, the agreement will last for five years and brings together two brands with a shared passion for innovation and entertainment. [...] U.S. front row access to one of the most exciting and fastest-growing sports on the planet,” said Eddy Cue, Apple’s Senior Vice President of Services. “2026 marks a transformative new era for Formula 1 from new teams to new regulations and cars with the best drivers in the world, and we look forward to delivering premium and innovative fan-first coverage to our customers in a way that only Apple can.” [...] “We’re thrilled to expand our relationship with Formula 1 and offer Apple TV subscribers in the",
+        "titulo": "Apple secures F1 broadcast deal for the U.S.",
+        "fonte": "https://f1miamigp.com/news/press-release/apple-secures-f1-broadcast-deal-for-the-us"
+      },
+      {
+        "trecho": "HomeHome\n\n Media\n FIA Networks\n\n Facebook\n Twitter\n Instagram\n YouTube\n TikTok\n\nHome",
+        "titulo": "2026 FIA Formula One World Championship",
+        "fonte": "https://www.fia.com/events/fia-formula-one-world-championship/season-2026/2026-fia-formula-one-world-championship"
+      }
+    ]
+  },
+  "verificacao": {
+    "grounded": true,
+    "justificativa": "The answer is directly supported by the context, which states that Apple TV will be the exclusive U.S. broadcaster for F1 races starting in 2026.",
+    "tentativas": 2
+  },
+  "trace": [
+    {
+      "agente": "reformulator",
+      "entrada": "Which streaming platform broadcasts F1 races in the United States?",
+      "saida": "What are the official broadcasting rights for Formula One events in the United States, specifically regarding live coverage and highlights packages, as per Article 28 of the International Sporting Code?",
+      "timestamp": "2026-08-08T19:27:10.606903+00:00",
+      "latencia_ms": 3176
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the official broadcasting rights for Formula One events in the United States, specifically regarding live coverage and highlights packages, as per Article 28 of the International Sporting Code?",
+      "saida": "5 hits acima de 0.7; best_score=0.7246; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:27:10.662989+00:00",
+      "latencia_ms": 53
+    },
+    {
+      "agente": "generator",
+      "entrada": "Which streaming platform broadcasts F1 races in the United States?",
+      "saida": "resposta gerada com fonte=corpus, low_confidence=False",
+      "timestamp": "2026-08-08T19:27:20.976437+00:00",
+      "latencia_ms": 10312
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "Which streaming platform broadcasts F1 races in the United States?",
+        "answer": "Unfortunately, I couldn't find any information about broadcasting rights for Formula One events in the United States within the provided context. The context focuses on general regulatory provisions, financial regulations, and governance of F1 activities, but does not mention specific broadcasting rights or streaming platforms. Therefore, my response may be uncertain regarding this query."
+      },
+      "saida": "grounded=False; will_retry=True; The answer claims uncertainty and lack of information about broadcasting rights, but does not provide any actual information about streaming platforms.",
+      "timestamp": "2026-08-08T19:27:31.657161+00:00",
+      "latencia_ms": 10677
+    },
+    {
+      "agente": "reformulator",
+      "entrada": "Which streaming platform broadcasts F1 races in the United States?",
+      "saida": "What are the designated media service providers for Formula 1 events in the United States, as per Article 28 of the International Sporting Code and the relevant Commercial Agreement?",
+      "timestamp": "2026-08-08T19:27:35.491383+00:00",
+      "latencia_ms": 3833
+    },
+    {
+      "agente": "retriever",
+      "entrada": "What are the designated media service providers for Formula 1 events in the United States, as per Article 28 of the International Sporting Code and the relevant Commercial Agreement?",
+      "saida": "3 hits acima de 0.7; best_score=0.7612; fallback_to_web=False",
+      "timestamp": "2026-08-08T19:27:35.541498+00:00",
+      "latencia_ms": 45
+    },
+    {
+      "agente": "web_searcher",
+      "entrada": "What are the designated media service providers for Formula 1 events in the United States, as per Article 28 of the International Sporting Code and the relevant Commercial Agreement?",
+      "saida": "5 resultados",
+      "timestamp": "2026-08-08T19:27:38.622002+00:00",
+      "latencia_ms": 3079
+    },
+    {
+      "agente": "generator",
+      "entrada": "Which streaming platform broadcasts F1 races in the United States?",
+      "saida": "resposta gerada com fonte=hybrid, low_confidence=False",
+      "timestamp": "2026-08-08T19:27:57.767328+00:00",
+      "latencia_ms": 19144
+    },
+    {
+      "agente": "verifier",
+      "entrada": {
+        "query_original": "Which streaming platform broadcasts F1 races in the United States?",
+        "answer": "Según el acuerdo entre F1 y Apple, a partir de 2026, la plataforma de streaming Apple TV será la única que transmitirá las carreras de Fórmula 1 en los Estados Unidos."
+      },
+      "saida": "grounded=True; will_retry=False; The answer is directly supported by the context, which states that Apple TV will be the exclusive U.S. broadcaster for F1 races starting in 2026.",
+      "timestamp": "2026-08-08T19:28:18.266984+00:00",
+      "latencia_ms": 20497
+    }
+  ]
+}
