@@ -69,11 +69,23 @@ def _render_trace(trace: list[dict]) -> None:
             st.divider()
 
 
+def _render_verifier_badge(verifier_result: dict) -> None:
+    if not verifier_result:
+        return
+    attempt = verifier_result.get("attempt", 1)
+    if verifier_result.get("grounded"):
+        label = "✅ Fundamentado" if attempt == 1 else f"✅ Fundamentado (tentativa {attempt})"
+        st.caption(label)
+    else:
+        st.caption(f"⚠️ Não fundamentado após {attempt} tentativa(s) — {verifier_result.get('justification', '')}")
+
+
 def _render_result(item: dict, trace_in_expander: bool = True) -> None:
     fonte = item.get("fonte", "none")
     low = item.get("low_confidence", False)
 
     st.markdown(f"**Fonte:** {_badge(fonte)}")
+    _render_verifier_badge(item.get("verifier_result", {}))
 
     if low:
         st.warning("⚠️ Baixa confiança — nenhuma fonte encontrou contexto relevante. A resposta pode ser imprecisa.")
@@ -109,6 +121,7 @@ if submitted and query.strip():
         "resposta": state.get("resposta", ""),
         "fonte": state.get("fonte", "none"),
         "low_confidence": state.get("low_confidence", False),
+        "verifier_result": state.get("verifier_result", {}),
         "trace": state.get("trace", []),
         "session_id": state.get("session_id", ""),
     }

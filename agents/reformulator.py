@@ -20,20 +20,33 @@ Rules:
 - Use formal regulatory vocabulary
 - Always respond in English, regardless of the input language
 - Output ONLY the rewritten query: no quotes, no explanations, no prefixes
-
+{retry_note}
 Original query: {query}
 
 Rewritten query:"""
+
+RETRY_NOTE_TEMPLATE = """
+Note: a previous attempt for this query failed the fundamentedness check ({justification}). \
+Try a broader or alternative phrasing/vocabulary to improve retrieval coverage.
+"""
 
 
 def reformulate(state: dict) -> dict:
     """Reformula a query original para busca semântica.
 
-    Lê: state["query_original"]
+    Lê: state["query_original"] e, em retentativas do loop de reflexão,
+        state["verifier_result"] (feedback do Verificador)
     Escreve: query_reformulada, trace (append)
     """
     inicio = time.time()
     query_original = state["query_original"]
+
+    verifier_result = state.get("verifier_result") or {}
+    retry_note = ""
+    if verifier_result.get("will_retry"):
+        retry_note = RETRY_NOTE_TEMPLATE.format(
+            justification=verifier_result.get("justification", "resposta não fundamentada")
+        )
 
     llm = ChatOllama(
         base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
@@ -41,7 +54,7 @@ def reformulate(state: dict) -> dict:
         temperature=0.0,
     )
     chain = ChatPromptTemplate.from_template(PROMPT_TEMPLATE) | llm
-    resposta = chain.invoke({"query": query_original})
+    resposta = chain.invoke({"query": query_original, "retry_note": retry_note})
     query_reformulada = resposta.content.strip().strip('"\'').strip()
 
     return {
